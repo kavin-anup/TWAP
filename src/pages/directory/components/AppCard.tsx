@@ -1,4 +1,4 @@
-import { App } from '../types';
+import type { App } from '../types';
 
 interface AppCardProps {
   app: App;

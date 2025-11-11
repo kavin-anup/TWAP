@@ -4,7 +4,7 @@ import Footer from '../../components/feature/Footer';
 import DirectoryHero from './components/DirectoryHero';
 import DirectoryFilters from './components/DirectoryFilters';
 import DirectoryGrid from './components/DirectoryGrid';
-import { App } from './types';
+import type { App } from './types';
 
 // Mock data for apps
 const mockApps: App[] = [
