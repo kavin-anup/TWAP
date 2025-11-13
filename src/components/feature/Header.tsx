@@ -6,14 +6,14 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#1F2853] border-b border-white/10">
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <img 
               src="https://static.readdy.ai/image/19a52a0e7cd11d182286c46a940c9855/e182590b8be678e75f8d6849629e767f.png" 
               alt="The Web App Pro" 
-              className="h-14 w-auto object-contain"
+              className="h-10 md:h-14 w-auto object-contain"
             />
           </Link>
 
@@ -62,8 +62,8 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-            <nav className="flex flex-col space-y-4 px-4">
+          <div className="md:hidden mt-3 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+            <nav className="flex flex-col space-y-2 sm:space-y-3 px-3 sm:px-4">
               <Link 
                 to="/" 
                 className="text-white font-['Manrope'] font-medium hover:text-[#ffcee0] transition-colors py-2"

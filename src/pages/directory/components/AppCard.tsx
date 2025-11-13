@@ -40,7 +40,7 @@ export default function AppCard({ app, viewMode }: AppCardProps) {
 
   if (viewMode === 'list') {
     return (
-      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-gray-200 cursor-pointer">
+      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 border border-gray-100 hover:border-gray-200 cursor-pointer">
         <div className="flex items-start gap-6">
           {/* App Logo */}
           <div className="flex-shrink-0">
@@ -98,7 +98,7 @@ export default function AppCard({ app, viewMode }: AppCardProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-gray-200 cursor-pointer group">
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 border border-gray-100 hover:border-gray-200 cursor-pointer group">
       {/* Featured Badge */}
       {app.featured && (
         <div className="mb-4">

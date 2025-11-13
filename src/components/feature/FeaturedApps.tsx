@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const categories = [
   { id: 'marketing', name: 'Marketing' },
@@ -189,7 +189,21 @@ const allApps = {
 export default function FeaturedApps() {
   const [activeCategory, setActiveCategory] = useState('marketing');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerView = 3;
+  const [cardsPerView, setCardsPerView] = useState(3);
+
+  // Determine cards per view responsively
+  useEffect(() => {
+    const getCardsPerView = () => {
+      if (typeof window === 'undefined') return 3;
+      if (window.innerWidth < 768) return 1; // < md
+      if (window.innerWidth < 1024) return 2; // md
+      return 3; // lg+
+    };
+    setCardsPerView(getCardsPerView());
+    const onResize = () => setCardsPerView(getCardsPerView());
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   
   const currentApps = allApps[activeCategory as keyof typeof allApps];
   const totalSlides = Math.ceil(currentApps.length / cardsPerView);
@@ -246,7 +260,7 @@ export default function FeaturedApps() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-[#1F2853]/80 backdrop-blur-sm text-white p-3 rounded-full hover:bg-[#1F2853] transition-all cursor-pointer"
+            className="hidden md:flex absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-[#1F2853]/80 backdrop-blur-sm text-white p-3 rounded-full hover:bg-[#1F2853] transition-all cursor-pointer"
           >
             <div className="w-6 h-6 flex items-center justify-center">
               <i className="ri-arrow-left-line text-xl"></i>
@@ -255,7 +269,7 @@ export default function FeaturedApps() {
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-[#1F2853]/80 backdrop-blur-sm text-white p-3 rounded-full hover:bg-[#1F2853] transition-all cursor-pointer"
+            className="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-[#1F2853]/80 backdrop-blur-sm text-white p-3 rounded-full hover:bg-[#1F2853] transition-all cursor-pointer"
           >
             <div className="w-6 h-6 flex items-center justify-center">
               <i className="ri-arrow-right-line text-xl"></i>
@@ -270,13 +284,13 @@ export default function FeaturedApps() {
             >
               {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {currentApps
                       .slice(slideIndex * cardsPerView, (slideIndex + 1) * cardsPerView)
                       .map((app, index) => (
                         <div
                           key={app.name}
-                          className="bg-white/90 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                          className="bg-white/90 backdrop-blur-md border border-white/20 rounded-xl p-5 md:p-6 hover:bg-white/95 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                           style={{
                             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%)',
                             backdropFilter: 'blur(20px)',
@@ -292,35 +306,35 @@ export default function FeaturedApps() {
                           )}
 
                           {/* App Logo and Info */}
-                          <div className="flex items-start gap-4 mb-4">
+                          <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                             <img
                               src={app.logo}
                               alt={`${app.name} logo`}
-                              className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
+                              className="w-12 h-12 md:w-16 md:h-16 rounded-lg object-cover flex-shrink-0"
                             />
                             <div className="flex-1">
-                              <h3 className="text-xl font-bold text-gray-900 mb-1">{app.name}</h3>
-                              <p className="text-[#1F2853] text-sm font-medium mb-2">{app.category}</p>
+                              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-0.5 md:mb-1">{app.name}</h3>
+                              <p className="text-[#1F2853] text-xs md:text-sm font-medium mb-1.5 md:mb-2">{app.category}</p>
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center">
                                   {[...Array(5)].map((_, i) => (
-                                    <div key={i} className="w-4 h-4 flex items-center justify-center">
-                                      <i className={`ri-star-${i < Math.floor(app.rating) ? 'fill' : i < app.rating ? 'half-fill' : 'line'} text-yellow-400 text-sm`}></i>
+                                    <div key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 flex items-center justify-center">
+                                      <i className={`ri-star-${i < Math.floor(app.rating) ? 'fill' : i < app.rating ? 'half-fill' : 'line'} text-yellow-400 text-xs md:text-sm`}></i>
                                     </div>
                                   ))}
                                 </div>
-                                <span className="text-gray-900 text-sm font-medium">{app.rating}</span>
+                                <span className="text-gray-900 text-xs md:text-sm font-medium">{app.rating}</span>
                               </div>
                             </div>
                           </div>
 
                           {/* Description */}
-                          <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                          <p className="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">
                             {app.description}
                           </p>
 
                           {/* View Details Button */}
-                          <button className="w-full bg-[#b9ed2a] hover:bg-[#a5d426] text-[#1F2853] py-3 px-4 rounded-lg font-medium transition-colors cursor-pointer whitespace-nowrap">
+                          <button className="w-full bg-[#b9ed2a] hover:bg-[#a5d426] text-[#1F2853] py-2.5 md:py-3 px-4 rounded-lg font-medium transition-colors cursor-pointer whitespace-nowrap">
                             View Details
                           </button>
                         </div>
