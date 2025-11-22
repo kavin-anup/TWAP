@@ -18,7 +18,7 @@ export default function FounderStories() {
     {
       id: 1,
       name: "Sarah Chen",
-      title: "CEO & Co-founder",
+      title: "Founder & CEO",
       company: "MindFlow AI",
       productName: "MindFlow - AI Writing Assistant",
       question: "What inspired you to create MindFlow AI?",
@@ -29,7 +29,7 @@ export default function FounderStories() {
     {
       id: 2,
       name: "Marcus Rodriguez",
-      title: "Founder & CTO",
+      title: "Co-Founder & CTO",
       company: "DataSync Pro",
       productName: "DataSync - Business Analytics Platform",
       question: "How does DataSync solve real business problems?",
@@ -40,7 +40,7 @@ export default function FounderStories() {
     {
       id: 3,
       name: "Emily Watson",
-      title: "Founder & Head of Product",
+      title: "Co-Founder & Head of Product",
       company: "EcoTrack Solutions",
       productName: "EcoTrack - Sustainability Management",
       question: "Why is sustainability tracking crucial for businesses today?",
@@ -51,88 +51,213 @@ export default function FounderStories() {
   ]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-[#f7f5ef] to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1F2853] mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#f7f5ef] via-white to-[#f7f5ef] relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#f25a1a]/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1F2853]/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Service Hero Section */}
+        <div className="text-center mb-12 lg:mb-16">
+          <div className="inline-block mb-6">
+            <span className="px-6 py-2 bg-gradient-to-r from-[#ffcee0]/20 to-[#ffb3d6]/20 backdrop-blur-sm border border-[#ffcee0]/30 rounded-full text-[#f25a1a] text-sm font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Full-Scale Visibility Platform
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1F2853] mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
             Founder Stories
           </h2>
-          <p className="text-lg text-gray-600 mb-12" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Straight from the minds behind the apps
+          <p className="text-xl sm:text-2xl text-gray-700 mb-4 max-w-3xl mx-auto" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            Amplifying the voices of app founders
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            Get featured with professional interviews, video content, and spotlight exposure that puts you and your product front and center.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {founders.map((founder) => (
-            <div key={founder.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-              {/* Video Thumbnail */}
-              <div className="relative overflow-hidden">
-                <img 
-                  src={founder.videoThumbnail}
-                  alt={`${founder.productName} demo`}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
-                    <div className="w-6 h-6 flex items-center justify-center text-[#f25a1a]">
-                      <i className="ri-play-fill text-xl"></i>
+        {/* Featured Founder (First one prominently) */}
+        <div className="mb-12 lg:mb-16">
+          <div 
+            className="rounded-3xl overflow-hidden relative group"
+            style={{
+              background: 'linear-gradient(135deg, rgba(31, 40, 83, 0.05) 0%, rgba(22, 32, 64, 0.08) 100%)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.5)',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
+            }}
+          >
+            {/* Glassmorphism overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent pointer-events-none"></div>
+            
+            <div className="grid lg:grid-cols-2 gap-0 relative z-10">
+              {/* Founder Profile - Left Side */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md">
+                <div className="flex flex-col items-start mb-6">
+                  {/* Large Avatar */}
+                  <div className="relative mb-6 group/avatar">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#f25a1a]/30 to-[#ff7043]/20 rounded-full blur-2xl group-hover/avatar:blur-3xl transition-all duration-500"></div>
+                    <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl" style={{ boxShadow: '0 10px 40px rgba(242, 90, 26, 0.3)' }}>
+                      <img 
+                        src={founders[0].avatar}
+                        alt={founders[0].name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#f25a1a] to-[#ff7043] rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                      <i className="ri-verified-badge-fill text-white text-xl"></i>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2 mb-6">
+                    <h3 className="text-3xl lg:text-4xl font-bold text-[#1F2853]" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      {founders[0].name}
+                    </h3>
+                    <p className="text-xl text-[#f25a1a] font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {founders[0].title}
+                    </p>
+                    <p className="text-lg text-gray-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {founders[0].company}
+                    </p>
+                  </div>
+
+                  {/* Product Name */}
+                  <div className="mb-6 p-4 bg-gradient-to-r from-[#ffcee0]/30 to-[#ffb3d6]/30 backdrop-blur-sm rounded-xl border border-[#ffcee0]/40">
+                    <span className="text-[#1F2853] font-bold text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {founders[0].productName}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Interview Content - Right Side */}
+              <div className="p-8 lg:p-12 bg-white/60 backdrop-blur-md">
+                <div className="mb-6">
+                  <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#f25a1a]/10 rounded-full border border-[#f25a1a]/20">
+                    <i className="ri-vidicon-line text-[#f25a1a]"></i>
+                    <span className="text-[#f25a1a] font-semibold text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Featured Interview
+                    </span>
+                  </div>
+                  <h4 className="text-2xl lg:text-3xl font-bold text-[#1F2853] mb-4 leading-tight" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    "{founders[0].question}"
+                  </h4>
+                </div>
+                
+                <p className="text-lg text-gray-700 leading-relaxed mb-8" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  {founders[0].answer}
+                </p>
+
+                {/* Video Thumbnail */}
+                <div className="relative rounded-xl overflow-hidden group/video cursor-pointer" style={{ boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)' }}>
+                  <img 
+                    src={founders[0].videoThumbnail}
+                    alt={`${founders[0].productName} demo`}
+                    className="w-full h-64 object-cover group-hover/video:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center">
+                    <div className="w-20 h-20 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover/video:scale-110 transition-transform duration-300" style={{ boxShadow: '0 10px 40px rgba(242, 90, 26, 0.4)' }}>
+                      <div className="w-8 h-8 flex items-center justify-center text-[#f25a1a] ml-1">
+                        <i className="ri-play-fill text-2xl"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-[#f25a1a] text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Interview
-                  </span>
-                </div>
               </div>
-              
-              <div className="p-6">
-                {/* Founder Info */}
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#f25a1a] mr-4">
-                    <img 
-                      src={founder.avatar}
-                      alt={founder.name}
-                      className="w-full h-full object-cover"
-                    />
+            </div>
+          </div>
+        </div>
+
+        {/* Other Founders Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+          {founders.slice(1).map((founder) => (
+            <div 
+              key={founder.id} 
+              className="rounded-2xl overflow-hidden relative group"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.6)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              {/* Glassmorphism overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent pointer-events-none"></div>
+
+              <div className="relative z-10">
+                {/* Video Thumbnail */}
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={founder.videoThumbnail}
+                    alt={`${founder.productName} demo`}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center group-hover:from-black/70 transition-colors">
+                    <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform cursor-pointer" style={{ boxShadow: '0 8px 30px rgba(242, 90, 26, 0.3)' }}>
+                      <div className="w-6 h-6 flex items-center justify-center text-[#f25a1a] ml-1">
+                        <i className="ri-play-fill text-xl"></i>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-[#1F2853]" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                      {founder.name}
-                    </h3>
-                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      {founder.title}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-4 py-2 bg-gradient-to-r from-[#f25a1a] to-[#ff7043] text-white rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Interview
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  {/* Founder Info */}
+                  <div className="flex items-center mb-4">
+                    <div className="relative mr-4">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#f25a1a]/30 to-[#ff7043]/20 rounded-full blur-lg"></div>
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden border-[3px] border-white shadow-lg" style={{ boxShadow: '0 4px 20px rgba(242, 90, 26, 0.3)' }}>
+                        <img 
+                          src={founder.avatar}
+                          alt={founder.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-[#1F2853]" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        {founder.name}
+                      </h3>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                        {founder.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Product Name */}
+                  <div className="mb-4">
+                    <span className="text-[#f25a1a] font-semibold text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {founder.productName}
+                    </span>
+                  </div>
+                  
+                  {/* Interview Question */}
+                  <div className="mb-4">
+                    <h4 className="text-[#1F2853] font-semibold mb-2 text-base leading-tight" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      "{founder.question}"
+                    </h4>
+                    
+                    <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {founder.answer}
                     </p>
                   </div>
-                </div>
-
-                {/* Product Name */}
-                <div className="mb-4">
-                  <span className="text-[#f25a1a] font-semibold text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    {founder.productName}
-                  </span>
-                </div>
-                
-                {/* Interview Question */}
-                <div className="mb-4">
-                  <h4 className="text-[#1F2853] font-semibold mb-2 text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                    "{founder.question}"
-                  </h4>
                   
-                  <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    {founder.answer}
-                  </p>
-                </div>
-                
-                {/* Company Badge */}
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-                  <span className="text-xs text-gray-500 font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    {founder.company}
-                  </span>
-                  <div className="flex items-center text-[#f25a1a] text-xs font-medium cursor-pointer hover:text-[#d14815] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    Watch Full Interview
-                    <div className="w-3 h-3 flex items-center justify-center ml-1">
-                      <i className="ri-external-link-line"></i>
+                  {/* Company Badge */}
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
+                    <span className="text-sm text-gray-600 font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {founder.company}
+                    </span>
+                    <div className="flex items-center text-[#f25a1a] text-sm font-semibold cursor-pointer hover:text-[#d14815] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      Watch Full Interview
+                      <div className="w-4 h-4 flex items-center justify-center ml-1">
+                        <i className="ri-external-link-line"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -141,10 +266,40 @@ export default function FounderStories() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-[#f25a1a] to-[#ff7043] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Share Your Story
-          </button>
+        {/* CTA Section */}
+        <div 
+          className="text-center rounded-3xl p-8 lg:p-12 relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, rgba(31, 40, 83, 0.08) 0%, rgba(22, 32, 64, 0.12) 100%)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
+          }}
+        >
+          {/* Glassmorphism overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent pointer-events-none"></div>
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F2853] mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Ready to share your founder story?
+            </h3>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Join our featured founders and get full-scale visibility for you and your product
+            </p>
+            <button 
+              className="bg-gradient-to-r from-[#f25a1a] to-[#ff7043] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 whitespace-nowrap text-base lg:text-lg relative overflow-hidden group/btn" 
+              style={{ 
+                fontFamily: 'Poppins, sans-serif',
+                boxShadow: '0 10px 30px rgba(242, 90, 26, 0.4)'
+              }}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Share Your Story
+                <i className="ri-arrow-right-line group-hover/btn:translate-x-1 transition-transform"></i>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#ff7043] to-[#f25a1a] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </div>
         </div>
       </div>
     </section>

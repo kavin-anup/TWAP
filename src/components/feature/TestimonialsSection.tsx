@@ -10,10 +10,47 @@ interface Testimonial {
   avatar: string;
   companyLogo: string;
   rating: number;
-  serviceType: 'App Submission' | 'Automation Services';
+  serviceType: 'App Submission' | 'Automation Services' | 'Reviews';
 }
 
 export default function TestimonialsSection() {
+  // Color mapping based on service type
+  const getServiceColors = (serviceType: string) => {
+    switch (serviceType) {
+      case 'Automation Services':
+        return {
+          badge: 'bg-green-500',
+          badgeText: 'text-white',
+          quotes: 'text-green-500',
+          resultsBg: 'bg-green-50',
+          resultsBorder: 'border-green-200',
+          resultsText: 'text-green-700',
+          avatarBorder: 'border-green-500'
+        };
+      case 'Reviews':
+        return {
+          badge: 'bg-[#ffcee0]',
+          badgeText: 'text-[#1F2853]',
+          quotes: 'text-pink-500',
+          resultsBg: 'bg-[#ffcee0]/20',
+          resultsBorder: 'border-pink-300',
+          resultsText: 'text-pink-600',
+          avatarBorder: 'border-pink-400'
+        };
+      case 'App Submission':
+      default:
+        return {
+          badge: 'bg-[#f25a1a]',
+          badgeText: 'text-white',
+          quotes: 'text-[#f25a1a]',
+          resultsBg: 'bg-orange-50',
+          resultsBorder: 'border-orange-200',
+          resultsText: 'text-[#f25a1a]',
+          avatarBorder: 'border-[#f25a1a]'
+        };
+    }
+  };
+
   const [testimonials] = useState<Testimonial[]>([
     {
       id: 1,
@@ -74,49 +111,51 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-gradient-to-br from-[#f7f5ef] to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
-              <div className="p-8">
-                {/* Service Type Badge */}
-                <div className="flex justify-between items-start mb-6">
-                  <span className="bg-[#f25a1a] text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {testimonial.serviceType}
-                  </span>
-                  <div className="flex space-x-1">
-                    {renderStars(testimonial.rating)}
-                  </div>
-                </div>
-
-                {/* Testimonial Text */}
-                <div className="mb-6">
-                  <div className="w-8 h-8 flex items-center justify-center text-[#f25a1a] mb-4">
-                    <i className="ri-double-quotes-l text-2xl"></i>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    {testimonial.testimonial}
-                  </p>
-                </div>
-
-                {/* Outcome */}
-                <div className="bg-white/80 rounded-lg p-4 mb-6 border border-[#f25a1a]/20">
-                  <h4 className="text-sm font-semibold text-[#1F2853] mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                    Key Results:
-                  </h4>
-                  <p className="text-[#f25a1a] font-medium text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    {testimonial.outcome}
-                  </p>
-                </div>
-
-                {/* Client Info */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#f25a1a] mr-4">
-                      <img 
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                      />
+          {testimonials.map((testimonial) => {
+            const colors = getServiceColors(testimonial.serviceType);
+            return (
+              <div key={testimonial.id} className="bg-gradient-to-br from-[#f7f5ef] to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
+                <div className="p-8">
+                  {/* Service Type Badge */}
+                  <div className="flex justify-between items-start mb-6">
+                    <span className={`${colors.badge} ${colors.badgeText} px-3 py-1 rounded-full text-sm font-medium`}>
+                      {testimonial.serviceType}
+                    </span>
+                    <div className="flex space-x-1">
+                      {renderStars(testimonial.rating)}
                     </div>
+                  </div>
+
+                  {/* Testimonial Text */}
+                  <div className="mb-6">
+                    <div className={`w-8 h-8 flex items-center justify-center ${colors.quotes} mb-4`}>
+                      <i className="ri-double-quotes-l text-2xl"></i>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {testimonial.testimonial}
+                    </p>
+                  </div>
+
+                  {/* Outcome */}
+                  <div className={`${colors.resultsBg} rounded-lg p-4 mb-6 border ${colors.resultsBorder}`}>
+                    <h4 className="text-sm font-semibold text-[#1F2853] mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      Key Results:
+                    </h4>
+                    <p className={`${colors.resultsText} font-medium text-sm`} style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {testimonial.outcome}
+                    </p>
+                  </div>
+
+                  {/* Client Info */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 rounded-full overflow-hidden border-2 ${colors.avatarBorder} mr-4`}>
+                        <img 
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     <div>
                       <h3 className="text-[#1F2853] font-bold text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
                         {testimonial.name}
@@ -145,7 +184,8 @@ export default function TestimonialsSection() {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA Section */}
