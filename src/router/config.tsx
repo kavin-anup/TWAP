@@ -6,6 +6,9 @@ import ReviewsPage from '../pages/reviews/page';
 import NewsPage from '../pages/news/page';
 import InsightsPage from '../pages/insights/page';
 import ServicesPage from '../pages/services/page';
+import ProductsPage from '../pages/products/page';
+import ProductDetailPage from '../pages/product-detail/page';
+import ProductReviewPage from '../pages/product-review/page';
 
 const routes: RouteObject[] = [
   {
@@ -31,6 +34,18 @@ const routes: RouteObject[] = [
   {
     path: '/services',
     element: <ServicesPage />,
+  },
+  {
+    path: '/products',
+    element: <ProductsPage />,
+  },
+  {
+    path: '/products/:id',
+    element: <ProductDetailPage />,
+  },
+  {
+    path: '/product-review',
+    element: <ProductReviewPage />,
   },
   {
     path: '*',

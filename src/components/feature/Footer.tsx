@@ -86,20 +86,16 @@ export default function Footer() {
               {/* Brand Section - Left */}
               <div className="lg:col-span-1">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#1F2853] to-[#f25a1a] rounded-lg flex items-center justify-center">
-                    <span
-                      className="text-white font-bold text-xl"
-                      style={{ fontFamily: "Manrope, sans-serif" }}
-                    >
-                      TWAP
-                    </span>
-                  </div>
-                  <h3
-                    className="text-2xl font-bold text-[#1F2853]"
-                    style={{ fontFamily: "Manrope, sans-serif" }}
+                  <a
+                    href="/"
+                    className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
                   >
-                    The Web App Pro
-                  </h3>
+                    <img
+                      src="https://static.readdy.ai/image/19a52a0e7cd11d182286c46a940c9855/e182590b8be678e75f8d6849629e767f.png"
+                      alt="The Web App Pro"
+                      className="h-8 md:h-14 w-auto object-contain invert"
+                    />
+                  </a>
                 </div>
                 <p
                   className="text-gray-600 text-sm mb-6"
