@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -66,12 +66,35 @@ export default function TopAgency() {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType>(null);
 
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, []);
+
   const handleSlideChange = (swiper: SwiperType) => {
-    setActiveIndex(swiper.realIndex);
+    const index = swiper.realIndex;
+    if (index >= 0 && index < agencies.length) {
+      setActiveIndex(index);
+    }
   };
 
   const handleSlideClick = (index: number) => {
-    swiperRef.current?.slideToLoop(index);
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(index);
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
   };
 
   const activeAgency = agencies[activeIndex] || agencies[0];
@@ -99,18 +122,24 @@ export default function TopAgency() {
             {/* Slider Section */}
             <div className="w-full lg:w-1/2 overflow-hidden">
               <Swiper
+                onSwiper={(swiper) => {
+                  swiperRef.current = swiper;
+                  // Force update after initialization to ensure loop works
+                  setTimeout(() => {
+                    swiper.update();
+                  }, 50);
+                }}
+                onSlideChange={handleSlideChange}
                 modules={[Navigation]}
                 spaceBetween={24}
                 slidesPerView={1}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
-                onSlideChange={handleSlideChange}
+                loop={true}
+                speed={500}
                 breakpoints={{
                   640: {
                     slidesPerView: 2,
                   },
                 }}
-                loop={true}
-                loopAdditionalSlides={2}
                 className="w-full"
               >
                 {agencies.map((agency, index) => (
@@ -152,14 +181,14 @@ export default function TopAgency() {
               {/* Navigation Buttons */}
               <div className="flex justify-center gap-4 mt-6">
                 <button
-                  onClick={() => swiperRef.current?.slidePrev()}
+                  onClick={handlePrev}
                   className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-[#252c52] transition-colors duration-200"
                   aria-label="Previous slide"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={() => swiperRef.current?.slideNext()}
+                  onClick={handleNext}
                   className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-[#252c52] transition-colors duration-200"
                   aria-label="Next slide"
                 >
