@@ -59,7 +59,7 @@ export default function RichMenu({ isOpen, onClose }: RichMenuProps) {
     return (
         <div className="flex fixed inset-0 z-40 items-start justify-center pt-24 pb-10 px-4">
             <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose}></div>
-            <div className="relative z-50 w-full max-w-5xl bg-[#1a1b20]/50 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200" style={{ height: 'min(600px, auto)' }}>
+            <div className="relative z-50 w-full max-w-5xl bg-[#1a1b20]/50 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200" style={{ height: 'min(600px, 80vh)' }}>
                 <div className="flex flex-col md:flex-row h-full">
                     {/* Left Sidebar - Categories */}
                     <div className="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-white/5 bg-[#131418]/50 p-6 overflow-y-auto max-h-[40%] md:max-h-full">
@@ -109,7 +109,7 @@ export default function RichMenu({ isOpen, onClose }: RichMenuProps) {
                                     <p className="text-gray-400">Discover the best in {menuCategories.find(c => c.id === activeCategory)?.label.toLowerCase()}.</p>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-6">
+                                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                                     {menuCategories.find(c => c.id === activeCategory)?.content.map((item, index) => (
                                         <div key={index} className="group cursor-pointer">
                                             <div className="relative aspect-video rounded-xl overflow-hidden mb-3 border border-white/5">

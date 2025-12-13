@@ -9,6 +9,7 @@ import ServicesPage from '../pages/services/page';
 import ProductsPage from '../pages/products/page';
 import ProductDetailPage from '../pages/product-detail/page';
 import ProductReviewPage from '../pages/product-review/page';
+import TopProductsPage from '../pages/top-products/page';
 
 const routes: RouteObject[] = [
   {
@@ -35,9 +36,13 @@ const routes: RouteObject[] = [
     path: '/services',
     element: <ServicesPage />,
   },
+  // {
+  //   path: '/products',
+  //   element: <ProductsPage />,
+  // },
   {
     path: '/products',
-    element: <ProductsPage />,
+    element: <TopProductsPage />,
   },
   {
     path: '/products/:id',
