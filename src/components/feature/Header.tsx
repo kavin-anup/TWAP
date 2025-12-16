@@ -3,31 +3,41 @@ import { Link } from 'react-router-dom';
 import RichMenu from './RichMenu';
 
 const menuCategories = [
-    {
-        id: 'home',
-        label: 'Home',
-        link:"/"
-    },
-    {
-      id:'top-products',
-      label:'Top Products',
-      link:'/products'
-    },
-    {
-      id:'reviews',
-      label:'Reviews',
-      link:'/reviews'
-    },
-    {
-      id:'feedback',
-      label:'Feedback #1',
-      link:'/news'
-    },
-    {
-      id:'tools',
-      label:'Tools & Products Apps Agencies',
-      link:'/tools'
-    },
+  {
+    id: 'home',
+    label: 'Home',
+    link: "/"
+  },
+  {
+    id: 'top-products',
+    label: 'Top Products',
+    link: '/products'
+  },
+  {
+    id: 'services',
+    label: 'Services',
+    link: '/services'
+  },
+  {
+    id: 'showcase',
+    label: 'Promote',
+    link: '/showcase'
+  },
+  {
+    id: 'reviews',
+    label: 'Reviews',
+    link: '/reviews'
+  },
+  {
+    id: 'feedback',
+    label: 'Feedback #1',
+    link: '/news'
+  },
+  {
+    id: 'tools',
+    label: 'Tools & Products Apps Agencies',
+    link: '/tools'
+  },
 ]
 
 export default function Header() {
@@ -70,10 +80,10 @@ export default function Header() {
                     key={category.id}
                     to={category.link}
                     className="text-white hover:text-[#f25a1a] font-medium transition-colors text-sm lg:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                      {category.label}
-                    </Link>
+                    {category.label}
+                  </Link>
                 ))}
-                
+
               </nav>
 
               {/* CTA Button & Rich Menu */}
@@ -164,6 +174,13 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
+                </Link>
+                <Link
+                  to="/showcase"
+                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Promote
                 </Link>
                 <Link
                   to="/submit"

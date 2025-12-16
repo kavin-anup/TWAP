@@ -10,6 +10,7 @@ import ProductsPage from '../pages/products/page';
 import ProductDetailPage from '../pages/product-detail/page';
 import ProductReviewPage from '../pages/product-review/page';
 import TopProductsPage from '../pages/top-products/page';
+import ShowcasePage from '../pages/showcase/page';
 
 const routes: RouteObject[] = [
   {
@@ -51,6 +52,10 @@ const routes: RouteObject[] = [
   {
     path: '/product-review',
     element: <ProductReviewPage />,
+  },
+  {
+    path: '/showcase',
+    element: <ShowcasePage />,
   },
   {
     path: '*',
