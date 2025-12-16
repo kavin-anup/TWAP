@@ -261,35 +261,186 @@ export default function ShowcasePage() {
                 </div>
             </section>
 
-            {/* Packages / Services (MOVED) */}
-            <section id="packages" className="py-20 bg-gray-900 text-white">
+            {/* Pricing Section (New) */}
+            <section id="pricing" className="py-24 bg-white relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Premium Promotion Packages</h2>
-                        <p className="text-gray-400 max-w-2xl mx-auto text-lg">Choose the perfect way to present your product to the world.</p>
+                    <div className="text-center mb-20">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-[#0f172a] mb-6 tracking-tight">
+                            IT'S FREE TO GET STARTED!
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                            Join our global community and showcase your product in front of the end users, prospects and potential investors!
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {services.map((service, idx) => (
-                            <div key={idx} className="bg-gray-800 rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 border border-gray-700">
-                                <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center text-xl mb-6`}>
-                                    <i className={service.icon}></i>
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                                <p className="text-gray-400 mb-6 text-sm h-12 leading-relaxed">{service.description}</p>
-                                <ul className="space-y-3 mb-8">
-                                    {service.features.map((feature, fIdx) => (
-                                        <li key={fIdx} className="flex items-center text-sm text-gray-300">
-                                            <i className="ri-checkbox-circle-fill text-[#f25a1a] mr-2"></i>
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <Link to="/contact" className="block w-full text-center py-3 rounded-lg border border-[#f25a1a] text-[#f25a1a] font-semibold hover:bg-[#f25a1a] hover:text-white transition-colors">
-                                    Get Started
-                                </Link>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {/* Plan 1: Freemium */}
+                        <div className="bg-white rounded-3xl border-2 border-red-500 p-8 shadow-xl hover:shadow-2xl transition-shadow relative flex flex-col">
+                            <div className="text-center pb-8 border-b border-gray-100">
+                                <div className="text-2xl font-bold text-[#0f172a] mb-2">$0</div>
+                                <h3 className="text-xl font-bold text-[#0f172a]">Freemium</h3>
                             </div>
-                        ))}
+                            <div className="py-8 space-y-6 flex-grow">
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-red-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Permanent</div>
+                                        <p className="text-sm text-gray-500 mt-1">Textual App Review No-Follow Backlinks</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start opacity-50">
+                                    <i className="ri-close-line text-red-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">App of the Week</div>
+                                        <p className="text-sm text-gray-500 mt-1">Featured WAM Badge, App Ad</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start opacity-50">
+                                    <i className="ri-close-line text-red-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Carousel Post</div>
+                                    </div>
+                                </div>
+                                <div className="flex items-start opacity-50">
+                                    <i className="ri-close-line text-red-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Ranking boost</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-auto pt-6 text-center">
+                                <button className="w-full py-3 bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-700 transition-colors">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Plan 2: App of the Week */}
+                        <div className="bg-white rounded-3xl border-2 border-teal-500 p-8 shadow-xl hover:shadow-2xl transition-shadow relative flex flex-col">
+                            <div className="text-center pb-8 border-b border-gray-100">
+                                <div className="text-2xl font-bold text-[#0f172a] mb-2">$99</div>
+                                <h3 className="text-xl font-bold text-[#0f172a]">App of the Week</h3>
+                            </div>
+                            <div className="py-8 space-y-6 flex-grow">
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-teal-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Permanent</div>
+                                        <p className="text-sm text-gray-500 mt-1">Textual App Review No-Follow Backlinks</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-teal-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">App of the Week</div>
+                                        <p className="text-sm text-gray-500 mt-1">Featured WAM Badge, Email 5K, Homepage Ad 15 Days</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-teal-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Carousel Post</div>
+                                        <p className="text-sm text-gray-500 mt-1">2 Linkedin, 2 FB Groups</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-teal-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Top 5 Addition</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-auto pt-6 text-center">
+                                <button className="w-full py-3 bg-teal-500 text-white font-bold rounded-lg shadow-md hover:bg-teal-600 transition-colors">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Plan 3: Viral Video */}
+                        <div className="bg-white rounded-3xl border-2 border-orange-400 p-8 shadow-xl hover:shadow-2xl transition-shadow relative flex flex-col transform scale-105 z-10">
+                            {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-sm">Most Popular</div> */}
+                            <div className="text-center pb-8 border-b border-gray-100">
+                                <div className="text-2xl font-bold text-[#0f172a] mb-2">$149</div>
+                                <h3 className="text-xl font-bold text-[#0f172a] leading-tight">Viral Video<br />Campaign</h3>
+                            </div>
+                            <div className="py-8 space-y-6 flex-grow">
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-orange-400 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Permanent</div>
+                                        <p className="text-sm text-gray-500 mt-1">Textual Review, No-Follow Backlinks</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-orange-400 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">App of the Week</div>
+                                        <p className="text-sm text-gray-500 mt-1">Badge, Email 5K, Ad 25 Days</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-orange-400 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">45 Sec Video Post</div>
+                                        <p className="text-sm text-gray-500 mt-1">10 Linkedin, 10 FB Groups</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-orange-400 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Top 3 Addition</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-auto pt-6 text-center">
+                                <button className="w-full py-3 bg-orange-400 text-white font-bold rounded-lg shadow-md hover:bg-orange-500 transition-colors">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Plan 4: Ranking Booster */}
+                        <div className="bg-white rounded-3xl border-2 border-fuchsia-500 p-8 shadow-xl hover:shadow-2xl transition-shadow relative flex flex-col">
+                            <div className="text-center pb-8 border-b border-gray-100">
+                                <div className="text-2xl font-bold text-[#0f172a] mb-2">$199</div>
+                                <h3 className="text-xl font-bold text-[#0f172a]">Ranking Booster</h3>
+                            </div>
+                            <div className="py-8 space-y-6 flex-grow">
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-fuchsia-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Permanent</div>
+                                        <p className="text-sm text-gray-500 mt-1">Textual Review, No-Follow Backlinks</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-fuchsia-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">App of the Week</div>
+                                        <p className="text-sm text-gray-500 mt-1">Badge, Email 5K, Ad 35 Days</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-fuchsia-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">45 Sec Video Post</div>
+                                        <p className="text-sm text-gray-500 mt-1">15 Linkedin, 15 FB Groups</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start">
+                                    <i className="ri-check-line text-fuchsia-500 text-xl mr-3 font-bold"></i>
+                                    <div>
+                                        <div className="font-bold text-[#0f172a]">Top 3 Addition</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-auto pt-6 text-center">
+                                <button className="w-full py-3 bg-fuchsia-500 text-white font-bold rounded-lg shadow-md hover:bg-fuchsia-600 transition-colors">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
