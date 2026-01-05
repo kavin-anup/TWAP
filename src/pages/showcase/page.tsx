@@ -450,7 +450,7 @@ export default function ShowcasePage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-extrabold text-[#0f172a] mb-6">
-                            Trending Reviews Apps <span className="text-[#0f172a]">2024</span>
+                            Trending Reviews Apps <span className="text-[#0f172a]">2025</span>
                         </h2>
                     </div>
 

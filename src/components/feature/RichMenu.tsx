@@ -38,10 +38,10 @@ const menuCategories = [
         id: 'resource',
         label: 'Resource Centre',
         content: [
-            { title: 'Blogs', desc: 'Latest insights and trends in the tech world.', image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=400' },
-            { title: 'Opinion Pieces', desc: 'Expert perspectives on the future of AI and development.', image: 'https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?auto=format&fit=crop&q=80&w=400' },
-            { title: 'AI in Use', desc: 'Real-world applications and case studies of AI integration.', image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=400' },
-            { title: 'Opportunities', desc: 'Career growth, job openings, and partnership programs.', image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400' }
+            { title: 'Blogs', desc: 'Latest insights and trends in the tech world.', image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=400', link: '/resource-centre/blogs' },
+            { title: 'Opinion Pieces', desc: 'Expert perspectives on the future of AI and development.', image: 'https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?auto=format&fit=crop&q=80&w=400', link: '/resource-centre/opinion-pieces' },
+            { title: 'AI in Use', desc: 'Real-world applications and case studies of AI integration.', image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=400', link: '/resource-centre/ai-in-use' },
+            { title: 'Opportunities', desc: 'Career growth, job openings, and partnership programs.', image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400', link: '/resource-centre/opportunities' }
         ]
     }
 ];
@@ -110,20 +110,37 @@ export default function RichMenu({ isOpen, onClose }: RichMenuProps) {
                                 </div>
 
                                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {menuCategories.find(c => c.id === activeCategory)?.content.map((item, index) => (
-                                        <div key={index} className="group cursor-pointer">
-                                            <div className="relative aspect-video rounded-xl overflow-hidden mb-3 border border-white/5">
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.title}
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+                                    {menuCategories.find(c => c.id === activeCategory)?.content.map((item: any, index) => {
+                                        const CardContent = () => (
+                                            <>
+                                                <div className="relative aspect-video rounded-xl overflow-hidden mb-3 border border-white/5">
+                                                    <img
+                                                        src={item.image}
+                                                        alt={item.title}
+                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+                                                </div>
+                                                <h4 className="text-white font-semibold text-lg mb-1 group-hover:text-[#f25a1a] transition-colors">{item.title}</h4>
+                                                <p className="text-sm text-gray-400 line-clamp-2">{item.desc}</p>
+                                            </>
+                                        );
+
+                                        return item.link ? (
+                                            <Link
+                                                key={index}
+                                                to={item.link}
+                                                className="group cursor-pointer block"
+                                                onClick={onClose}
+                                            >
+                                                <CardContent />
+                                            </Link>
+                                        ) : (
+                                            <div key={index} className="group cursor-pointer">
+                                                <CardContent />
                                             </div>
-                                            <h4 className="text-white font-semibold text-lg mb-1 group-hover:text-[#f25a1a] transition-colors">{item.title}</h4>
-                                            <p className="text-sm text-gray-400 line-clamp-2">{item.desc}</p>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
 
                                 {activeCategory === 'stories' && (

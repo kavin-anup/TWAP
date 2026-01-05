@@ -6,11 +6,12 @@ import ReviewsPage from '../pages/reviews/page';
 import NewsPage from '../pages/news/page';
 import InsightsPage from '../pages/insights/page';
 import ServicesPage from '../pages/services/page';
-import ProductsPage from '../pages/products/page';
+// import ProductsPage from '../pages/products/page';
 import ProductDetailPage from '../pages/product-detail/page';
 import ProductReviewPage from '../pages/product-review/page';
 import TopProductsPage from '../pages/top-products/page';
 import ShowcasePage from '../pages/showcase/page';
+import ResourceCentrePage from '../pages/resource-centre/page';
 
 const routes: RouteObject[] = [
   {
@@ -56,6 +57,14 @@ const routes: RouteObject[] = [
   {
     path: '/showcase',
     element: <ShowcasePage />,
+  },
+  {
+    path: '/resource-centre',
+    element: <ResourceCentrePage />,
+  },
+  {
+    path: '/resource-centre/:tab',
+    element: <ResourceCentrePage />,
   },
   {
     path: '*',
