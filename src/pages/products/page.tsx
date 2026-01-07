@@ -148,21 +148,25 @@ export default function ProductsPage() {
           {/* Abstract Background Shapes */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             {/* Left Star/Shape */}
-            <svg
-              className="absolute -left-20 top-1/2 -translate-y-1/2 w-96 h-96 text-white/5"
-              viewBox="0 0 200 200"
-              fill="currentColor"
-            >
-              <path d="M100 0 L130 70 L200 80 L150 130 L160 200 L100 170 L40 200 L50 130 L0 80 L70 70 Z" />
-            </svg>
+            <div className="absolute -left-20 top-1/2 -translate-y-1/2">
+              <svg
+                className="animate-[spin_12s_linear_infinite] w-96 h-96 text-white/5"
+                viewBox="0 0 200 200"
+                fill="currentColor"
+              >
+                <path d="M100 0 L130 70 L200 80 L150 130 L160 200 L100 170 L40 200 L50 130 L0 80 L70 70 Z" />
+              </svg>
+            </div>
             {/* Right Star/Shape */}
-            <svg
-              className="absolute -right-20 top-0 w-80 h-80 text-white/5 rotate-45"
-              viewBox="0 0 200 200"
-              fill="currentColor"
-            >
-              <path d="M100 0 L130 70 L200 80 L150 130 L160 200 L100 170 L40 200 L50 130 L0 80 L70 70 Z" />
-            </svg>
+            <div className="absolute -right-20 top-0">
+              <svg
+                className="animate-[spin_8s_linear_infinite] w-80 h-80 text-white/5 rotate-45"
+                viewBox="0 0 200 200"
+                fill="currentColor"
+              >
+                <path d="M100 0 L130 70 L200 80 L150 130 L160 200 L100 170 L40 200 L50 130 L0 80 L70 70 Z" />
+              </svg>
+            </div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white pt-24">
@@ -281,9 +285,8 @@ export default function ProductsPage() {
                   ].map((product, index) => (
                     <div
                       key={index}
-                      className={`flex items-center justify-between p-4 hover:bg-gray-50 transition-colors rounded-xl ${
-                        index !== 3 ? "border-b border-gray-100" : ""
-                      }`}
+                      className={`flex items-center justify-between p-4 hover:bg-gray-50 transition-colors rounded-xl ${index !== 3 ? "border-b border-gray-100" : ""
+                        }`}
                     >
                       <div className="flex items-center gap-4">
                         <img
@@ -328,11 +331,10 @@ export default function ProductsPage() {
                         setActiveCategory(category.name);
                         setActiveSubCategory("All");
                       }}
-                      className={`px-4 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                        activeCategory === category.name
+                      className={`px-4 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${activeCategory === category.name
                           ? "border-[#f25a1a] text-white"
                           : "border-transparent text-gray-400 hover:text-white"
-                      }`}
+                        }`}
                     >
                       {category.name}
                     </button>
@@ -379,11 +381,10 @@ export default function ProductsPage() {
                 <button
                   key={sub}
                   onClick={() => setActiveSubCategory(sub)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
-                    activeSubCategory === sub
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${activeSubCategory === sub
                       ? "bg-[#f25a1a]/10 border-[#f25a1a] text-[#f25a1a]"
                       : "bg-white border-gray-200 text-gray-600 hover:border-gray-300"
-                  }`}
+                    }`}
                 >
                   {sub}
                 </button>
@@ -407,11 +408,10 @@ export default function ProductsPage() {
                       <button
                         key={platform}
                         onClick={() => setActivePlatform(platform)}
-                        className={`px-3 py-1 rounded transition-colors ${
-                          activePlatform === platform
+                        className={`px-3 py-1 rounded transition-colors ${activePlatform === platform
                             ? "text-[#f25a1a] font-bold underline decoration-2 underline-offset-4"
                             : "text-gray-500 hover:text-gray-900"
-                        }`}
+                          }`}
                       >
                         {platform}
                       </button>

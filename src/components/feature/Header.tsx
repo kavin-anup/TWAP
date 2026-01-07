@@ -14,30 +14,35 @@ const menuCategories = [
     link: '/products'
   },
   {
+    id: 'everything-ai',
+    label: 'Everything AI',
+    link: '/everything-ai'
+  },
+  {
     id: 'services',
     label: 'Services',
     link: '/services'
   },
-  {
-    id: 'showcase',
-    label: 'Promote',
-    link: '/showcase'
-  },
+  // {
+  //   id: 'showcase',
+  //   label: 'Promote',
+  //   link: '/showcase'
+  // },
   // {
   //   id: 'reviews',
   //   label: 'Reviews',
   //   link: '/reviews'
   // },
-  {
-    id: 'feedback',
-    label: 'Feedback #1',
-    link: '/news'
-  },
-  {
-    id: 'tools',
-    label: 'Tools & Products Apps Agencies',
-    link: '/tools'
-  },
+  // {
+  //   id: 'feedback',
+  //   label: 'Feedback #1',
+  //   link: '/news'
+  // },
+  // {
+  //   id: 'tools',
+  //   label: 'Tools & Products Apps Agencies',
+  //   link: '/tools'
+  // },
 ]
 
 export default function Header() {
@@ -69,7 +74,7 @@ export default function Header() {
                 <img
                   src="https://static.readdy.ai/image/19a52a0e7cd11d182286c46a940c9855/e182590b8be678e75f8d6849629e767f.png"
                   alt="The Web App Pro"
-                  className="h-8 lg:h-10 w-auto min-w-[100px] object-contain"
+                  className="h-8 lg:h-10 w-auto min-w-[120px] object-contain"
                 />
               </Link>
 

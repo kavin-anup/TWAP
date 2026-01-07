@@ -12,6 +12,8 @@ import ProductReviewPage from '../pages/product-review/page';
 import TopProductsPage from '../pages/top-products/page';
 import ShowcasePage from '../pages/showcase/page';
 import ResourceCentrePage from '../pages/resource-centre/page';
+import ProductsPage from '../pages/products/page';
+import AgenciesPage from '../pages/agencies/page';
 
 const routes: RouteObject[] = [
   {
@@ -38,10 +40,10 @@ const routes: RouteObject[] = [
     path: '/services',
     element: <ServicesPage />,
   },
-  // {
-  //   path: '/products',
-  //   element: <ProductsPage />,
-  // },
+  {
+    path: '/tools',
+    element: <ProductsPage />,
+  },
   {
     path: '/products',
     element: <TopProductsPage />,
@@ -59,12 +61,12 @@ const routes: RouteObject[] = [
     element: <ShowcasePage />,
   },
   {
-    path: '/resource-centre',
+    path: '/resource-centre/:tab',
     element: <ResourceCentrePage />,
   },
   {
-    path: '/resource-centre/:tab',
-    element: <ResourceCentrePage />,
+    path: '/agencies',
+    element: <AgenciesPage />,
   },
   {
     path: '*',

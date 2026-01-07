@@ -13,10 +13,8 @@ const menuCategories = [
     {
         id: 'top-ai',
         label: 'Top AI Tools & Apps',
-        content: [
-            { title: 'MidJourney Guide', desc: 'Master the art of AI image generation.', image: 'https://images.unsplash.com/photo-1617791160505-6f00504e3519?auto=format&fit=crop&q=80&w=400' },
-            { title: 'CodeAssistant', desc: 'Your personal AI pair programmer.', image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=400' }
-        ]
+        content: [{ title: 'MidJourney Guide', desc: 'Master the art of AI image generation.', image: 'https://images.unsplash.com/photo-1617791160505-6f00504e3519?auto=format&fit=crop&q=80&w=400' }],
+
     },
     {
         id: 'stories',
@@ -29,10 +27,8 @@ const menuCategories = [
     {
         id: 'agency',
         label: 'Agency Feature',
-        content: [
-            { title: 'Top Rated Agencies', desc: 'Find the best partners for your project.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400' },
-            { title: 'Case Studies', desc: 'Real results from top development firms.', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400' }
-        ]
+        link: '/agencies',
+        content: []
     },
     {
         id: 'resource',
@@ -66,19 +62,30 @@ export default function RichMenu({ isOpen, onClose }: RichMenuProps) {
                         <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 px-4">Menu</h3>
                         <div className="space-y-2">
                             {menuCategories.map((category) => (
-                                <button
-                                    key={category.id}
-                                    onClick={() => setActiveCategory(category.id)}
-                                    className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 font-['Manrope'] font-medium text-base flex items-center justify-between group ${activeCategory === category.id
-                                        ? 'bg-[#f25a1a]/10 text-white'
-                                        : 'text-gray-400 hover:text-white hover:bg-white/5'
-                                        }`}
-                                >
-                                    {category.label}
-                                    {activeCategory === category.id && (
-                                        <i className="ri-arrow-right-s-line text-[#f25a1a]"></i>
-                                    )}
-                                </button>
+                                (category as any).link ? (
+                                    <Link
+                                        key={category.id}
+                                        to={(category as any).link}
+                                        onClick={onClose}
+                                        className="w-full text-left px-4 py-3 rounded-xl transition-all duration-300 font-['Manrope'] font-medium text-base flex items-center justify-between group text-gray-400 hover:text-white hover:bg-white/5"
+                                    >
+                                        {category.label}
+                                    </Link>
+                                ) : (
+                                    <button
+                                        key={category.id}
+                                        onClick={() => setActiveCategory(category.id)}
+                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 font-['Manrope'] font-medium text-base flex items-center justify-between group ${activeCategory === category.id
+                                            ? 'bg-[#f25a1a]/10 text-white'
+                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                            }`}
+                                    >
+                                        {category.label}
+                                        {activeCategory === category.id && (
+                                            <i className="ri-arrow-right-s-line text-[#f25a1a]"></i>
+                                        )}
+                                    </button>
+                                )
                             ))}
                         </div>
                     </div>
@@ -96,9 +103,9 @@ export default function RichMenu({ isOpen, onClose }: RichMenuProps) {
                                     <div className="absolute bottom-0 left-0 p-8 w-full">
                                         <h4 className="text-white font-bold text-xl mb-2">{menuCategories.find(c => c.id === 'top-ai')?.content[0].title}</h4>
                                         <p className="text-gray-300 mb-6 text-sm leading-relaxed max-w-md">{menuCategories.find(c => c.id === 'top-ai')?.content[0].desc}</p>
-                                        <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all">
+                                        <Link to='/tools' className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all">
                                             Learn more
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
