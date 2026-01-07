@@ -14,6 +14,7 @@ import ShowcasePage from '../pages/showcase/page';
 import ResourceCentrePage from '../pages/resource-centre/page';
 import ProductsPage from '../pages/products/page';
 import AgenciesPage from '../pages/agencies/page';
+import EverythingAIPage from '../pages/everything-ai/page';
 
 const routes: RouteObject[] = [
   {
@@ -67,6 +68,10 @@ const routes: RouteObject[] = [
   {
     path: '/agencies',
     element: <AgenciesPage />,
+  },
+  {
+    path: '/everything-ai',
+    element: <EverythingAIPage />,
   },
   {
     path: '*',

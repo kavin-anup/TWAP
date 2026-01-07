@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Search, Twitter, Youtube, ArrowRight, Layout, MessageSquare, cpu, Briefcase, Cpu } from 'lucide-react';
+import { useState } from 'react';
+import { Search, ArrowRight, Layout, MessageSquare, Briefcase, Cpu } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BlogCard from '../../components/feature/BlogCard';
 import Header from '../../components/feature/Header';
@@ -29,25 +29,24 @@ const ResourceCentrePage = () => {
             image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
             title: "Breaking Into Product Design: Advice from Untitled Founder",
             description: "Let's get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping.",
-            buttonText: "Read More"
         },
         'opinion-pieces': {
             image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop",
             title: "Ethics in AI Development",
             description: "Why we need stricter guidelines for AI deployment in public sectors.",
-            buttonText: "Read Full Opinion"
+
         },
         'ai-in-use': {
             image: "https://images.unsplash.com/photo-1535378437327-b7128063da5f?q=80&w=2070&auto=format&fit=crop",
             title: "AI in Modern Agriculture",
             description: "Smart farming solutions powered by machine learning algorithms.",
-            buttonText: "View Case Study"
+
         },
         'opportunities': {
             image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
             title: "We Are Hiring!",
             description: "Join our team of innovators and builders. Open positions available.",
-            buttonText: "See Careers"
+
         }
     };
 
@@ -409,9 +408,6 @@ const ResourceCentrePage = () => {
                                 <span className="uppercase tracking-widest text-sm font-semibold mb-3 block opacity-80">Featured</span>
                                 <h3 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">{currentMidPageContent.title}</h3>
                                 <p className="text-base md:text-lg opacity-90 mb-8 max-w-xl leading-relaxed">{currentMidPageContent.description}</p>
-                                <button className="group inline-flex items-center text-white font-semibold text-lg hover:text-orange-200 transition-colors">
-                                    {currentMidPageContent.buttonText} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </button>
                             </div>
                             {/* Right Arrow (Visual cue) */}
                             <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden md:block">
