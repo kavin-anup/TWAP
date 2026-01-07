@@ -19,3 +19,47 @@
     transform: translateX(-33.33%); /* Move by 1/3 since we have 3 sets of data */
   }
 }
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  25% { transform: translate(30vw, -20vh) scale(1.1); }
+  50% { transform: translate(-20vw, 20vh) scale(0.9); }
+  75% { transform: translate(10vw, 30vh) scale(1.05); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes blob-reverse {
+  0% { transform: translate(0px, 0px) scale(1); }
+  25% { transform: translate(-20vw, 20vh) scale(1.1); }
+  50% { transform: translate(20vw, -10vh) scale(0.9); }
+  75% { transform: translate(-10vw, -20vh) scale(1.05); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float-large {
+  0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  25% { transform: translate(25vw, 15vh) scale(1.2) rotate(10deg); }
+  50% { transform: translate(0px, 30vh) scale(0.8) rotate(-10deg); }
+  75% { transform: translate(-25vw, 10vh) scale(1.1) rotate(5deg); }
+  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+}
+
+.animate-blob {
+  animation: blob 25s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.animate-blob-reverse {
+  animation: blob-reverse 30s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.animate-float-large {
+  animation: float-large 35s infinite alternate ease-in-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 5s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 10s;
+}

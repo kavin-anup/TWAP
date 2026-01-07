@@ -16,9 +16,7 @@ const AIHero = () => {
         let particles: Particle[] = [];
         const particleCount = 100; // Adjust for density
         const connectionDistance = 150;
-        const mouseDistance = 200;
 
-        let mouse = { x: 0, y: 0 };
 
         class Particle {
             x: number;
@@ -140,9 +138,9 @@ const AIHero = () => {
 
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full z-0">
-                <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-burgundy/30 rounded-full blur-[120px] animate-pulse"></div>
-                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-dark/40 rounded-full blur-[120px] animate-pulse delay-1000"></div>
-                <div className="absolute top-[40%] left-[60%] w-[300px] h-[300px] bg-brand-orange/20 rounded-full blur-[80px] animate-bounce duration-[10000ms]"></div>
+                <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-burgundy/30 rounded-full blur-[120px] animate-blob"></div>
+                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-dark/40 rounded-full blur-[120px] animate-blob-reverse animation-delay-2000"></div>
+                <div className="absolute top-[40%] left-[60%] w-[300px] h-[300px] bg-brand-orange/20 rounded-full blur-[80px] animate-float-large animation-delay-4000"></div>
             </div>
 
             {/* Content */}
@@ -171,10 +169,6 @@ const AIHero = () => {
 
                     {/* Central Glow */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-brand-burgundy/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
-
-                    {/* Orbiting Particles */}
-                    <div className="absolute top-0 left-1/2 w-3 h-3 bg-brand-orange rounded-full blur-[2px] shadow-[0_0_15px_#f25a1a] animate-bounce delay-75"></div>
-                    <div className="absolute bottom-0 right-1/2 w-3 h-3 bg-brand-lime rounded-full blur-[2px] shadow-[0_0_15px_#B9ED2A] animate-bounce delay-150"></div>
                 </div>
             </div>
 
