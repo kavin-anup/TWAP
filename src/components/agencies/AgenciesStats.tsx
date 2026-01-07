@@ -161,20 +161,10 @@ export default function AgenciesStats() {
 
                                 {/* Animated Blobs */}
                                 <svg viewBox="0 0 200 200" className="relative w-full h-full overflow-visible mix-blend-multiply">
-                                    {/* Blob 1: Brand Dark */}
-                                    <path fill="#1A1B20" fillOpacity="0.7">
-                                        <animate
-                                            attributeName="d"
-                                            dur="5s"
-                                            repeatCount="indefinite"
-                                            values="M100,30 Q140,40 160,80 T150,150 T80,160 T40,100 T100,30;
-                                                    M100,20 Q150,30 170,90 T140,160 T70,150 T30,90 T100,20;
-                                                    M100,30 Q140,40 160,80 T150,150 T80,160 T40,100 T100,30"
-                                        />
-                                    </path>
+                                   
 
-                                    {/* Blob 2: Brand Orange */}
-                                    <path fill="#f25a1a" fillOpacity="0.8">
+                                    {/* Blob 2: Brand Burgundy */}
+                                    <path fill="#56122D" fillOpacity="0.9">
                                         <animate
                                             attributeName="d"
                                             dur="7s"
@@ -182,6 +172,18 @@ export default function AgenciesStats() {
                                             values="M100,25 Q130,50 150,100 T120,170 T50,140 T30,80 T100,25;
                                                     M100,15 Q145,45 155,110 T110,160 T60,150 T35,70 T100,15;
                                                     M100,25 Q130,50 150,100 T120,170 T50,140 T30,80 T100,25"
+                                        />
+                                    </path>
+
+                                    {/* Blob 3: Mixed Lime */}
+                                    <path fill="#B9ED2A" fillOpacity="0.9">
+                                        <animate
+                                            attributeName="d"
+                                            dur="9s"
+                                            repeatCount="indefinite"
+                                            values="M100,40 Q130,60 140,90 T130,160 T60,130 T40,70 T100,40;
+                                                    M100,30 Q145,55 160,100 T120,150 T50,140 T35,80 T100,30;
+                                                    M100,40 Q130,60 140,90 T130,160 T60,130 T40,70 T100,40"
                                         />
                                     </path>
                                 </svg>

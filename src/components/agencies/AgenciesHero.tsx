@@ -11,7 +11,7 @@ export default function AgenciesHero() {
                     className="w-full h-full object-cover"
                 />
                 {/* Home Page Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1B1B36]/90 to-[#56122D]/80 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/70 via-brand-dark/70 to-brand-orange mix-blend-multiply"></div>
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 h-full flex flex-col justify-center">
@@ -25,7 +25,7 @@ export default function AgenciesHero() {
                     </h1>
 
                     <div className="flex items-center gap-4">
-                        <button className="bg-[#f25a1a] hover:bg-[#d14815] text-white px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-[#f25a1a]/30">
+                        <button className="bg-[#f25a1a] hover:bg-[#d14815] text-white px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-[#56122D]/20 border border-[#f25a1a]">
                             Free Consultation
                             <div className="bg-white/20 rounded-full w-6 h-6 flex items-center justify-center">
                                 <i className="ri-arrow-right-up-line text-sm"></i>

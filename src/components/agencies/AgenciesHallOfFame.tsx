@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const agencies = [
     {
@@ -30,13 +30,6 @@ const agencies = [
         tag: 'Mobile App Development'
     },
     {
-        name: 'TechFlow',
-        verified: true,
-        logo: 'https://images.unsplash.com/photo-1572044162444-ad6021194360?auto=format&fit=crop&q=80&w=200',
-        description: 'TechFlow provides cutting-edge digital solutions for modern businesses looking to scale efficiently.',
-        tag: 'Cloud Computing'
-    },
-    {
         name: 'BrainStorm',
         verified: true,
         logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=200',
@@ -47,7 +40,7 @@ const agencies = [
 
 export default function AgenciesHallOfFame() {
     const scrollRef = useRef<HTMLDivElement>(null);
-    const [isPaused, setIsPaused] = useState(false);
+    const lastInteractionTime = useRef(0);
 
     // Auto-scroll logic
     useEffect(() => {
@@ -57,12 +50,24 @@ export default function AgenciesHallOfFame() {
         let animationFrameId: number;
 
         const scroll = () => {
-            if (!isPaused && scrollContainer) {
-                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 3) {
-                    // Reset to start (seamless loop point)
-                    scrollContainer.scrollLeft = 0;
+            const now = Date.now();
+            const timeSinceInteraction = now - lastInteractionTime.current;
+            const isInteracting = timeSinceInteraction < 1000;
+
+            if (!isInteracting && scrollContainer) {
+                // Handle Infinite Loop Wrapping
+                const maxScroll = scrollContainer.scrollWidth;
+                const oneThird = maxScroll / 3;
+
+                if (scrollContainer.scrollLeft >= oneThird * 2) {
+                    // Too far right? Snap back to middle set
+                    scrollContainer.scrollLeft = scrollContainer.scrollLeft - oneThird;
+                } else if (scrollContainer.scrollLeft <= 0) {
+                    // Too far left? Snap forward to middle set
+                    scrollContainer.scrollLeft = oneThird;
                 } else {
-                    scrollContainer.scrollLeft += 1; // Adjust speed here
+                    // Normal scroll
+                    scrollContainer.scrollLeft += 1;
                 }
             }
             animationFrameId = requestAnimationFrame(scroll);
@@ -71,26 +76,26 @@ export default function AgenciesHallOfFame() {
         animationFrameId = requestAnimationFrame(scroll);
 
         return () => cancelAnimationFrame(animationFrameId);
-    }, [isPaused]);
+    }, []);
 
 
     const scrollLeft = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: -380, behavior: 'smooth' });
+            lastInteractionTime.current = Date.now();
+            scrollRef.current.scrollBy({ left: -350, behavior: 'smooth' });
         }
     };
 
     const scrollRight = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: 380, behavior: 'smooth' });
+            lastInteractionTime.current = Date.now();
+            scrollRef.current.scrollBy({ left: 350, behavior: 'smooth' });
         }
     };
 
     return (
         <section
             className="bg-white py-24 overflow-hidden"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12 text-center">
                 <div className="flex items-center justify-center gap-6">
@@ -139,7 +144,7 @@ export default function AgenciesHallOfFame() {
                                     <span className="inline-block px-3 py-1 rounded-md border border-gray-200 text-xs text-gray-500 mb-4">
                                         {agency.tag}
                                     </span>
-                                    <button className="w-full bg-[#f25a1a] hover:bg-[#d14815] text-white py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 group-hover:scale-[1.02] transform duration-300">
+                                    <button className="w-full bg-brand-lime hover:bg-brand-orange text-black py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 group-hover:scale-[1.02] transform duration-300">
                                         <i className="ri-global-line"></i>
                                         Visit Profile
                                     </button>

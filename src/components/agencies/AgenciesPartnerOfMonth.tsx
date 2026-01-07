@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AgenciesPartnerOfMonth() {
     return (
-        <section className="py-16 bg-white">
+        <section className="pb-16 bg-white">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <span className="inline-block px-4 py-1.5 rounded-full bg-[#f25a1a]/10 border border-[#f25a1a]/20 text-sm font-bold text-[#f25a1a] mb-4 uppercase tracking-wider">
@@ -62,21 +62,6 @@ export default function AgenciesPartnerOfMonth() {
                         </div>
                     </div>
                 </div>
-
-                {/* Feature Request CTA Section */}
-                {/* <div className="w-full lg:w-[400px] bg-[#f25a1a]/5 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#f25a1a]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-[#f25a1a]/20 transition-all duration-500"></div>
-
-                        <div className="relative z-10">
-                            <h4 className="text-[#f25a1a] font-bold text-sm uppercase tracking-widest mb-4">Want To Get Featured?</h4>
-                            <h3 className="text-2xl font-bold text-[#1A1B20] mb-6 leading-tight">
-                                Submit your business profile to bag global visibility!
-                            </h3>
-                            <button className="w-full py-4 rounded-xl bg-[#1A1B20] text-white font-bold hover:bg-[#f25a1a] transition-all duration-300 shadow-lg cursor-pointer">
-                                Get In Touch
-                            </button>
-                        </div>
-                    </div> */}
             </div>
         </section>
     );

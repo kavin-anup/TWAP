@@ -40,7 +40,7 @@ export default function AgenciesInsights() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     {insights.map((item, index) => (
-                        <div key={index} className={`rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 items-start ${index === 1 ? 'bg-[#1A1B20]' : 'bg-white'}`}>
+                        <div key={index} className={`rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 items-start ${index === 1 ? 'bg-[#56122D]' : 'bg-white'}`}>
                             <div className="w-full sm:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden">
                                 <img
                                     src={item.image}
