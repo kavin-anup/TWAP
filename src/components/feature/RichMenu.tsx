@@ -153,7 +153,7 @@ export default function RichMenu({ isOpen, onClose }: RichMenuProps) {
                                 {activeCategory === 'stories' && (
                                     <div className="mt-8 pt-8 border-t border-white/5 flex justify-end">
                                         <Link
-                                            to="/reviews"
+                                            to="/interviews-success-stories"
                                             className="flex items-center space-x-2 text-sm text-[#f25a1a] hover:text-[#ff7043] font-medium transition-colors"
                                             onClick={onClose}
                                         >

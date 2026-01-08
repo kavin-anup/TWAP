@@ -130,15 +130,23 @@ export default function Header() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="lg:hidden mt-3 py-4 bg-gray-800/40 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg">
-              <nav className="flex flex-col space-y-2 sm:space-y-3 px-4">
-                <Link
+              <nav className="flex flex-col space-y-6 sm:space-y-7 px-4">
+                {menuCategories.map((category) => (
+                  <Link
+                    key={category.id}
+                    to={category.link}
+                    className="text-white hover:text-[#f25a1a] font-medium transition-colors text-sm lg:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    {category.label}
+                  </Link>
+                ))}
+                {/* <Link
                   to="/"
                   className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
-                </Link>
-                <Link
+                </Link>}
+                {/* <Link
                   to="/products"
                   className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
@@ -186,7 +194,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Promote
-                </Link>
+                </Link> */}
                 <Link
                   to="/submit"
                   className="bg-gradient-to-r from-[#f25a1a] to-[#ff7043] text-white px-6 py-3 rounded-full font-['Manrope'] font-semibold hover:shadow-lg transition-all duration-300 text-center mt-2 whitespace-nowrap"

@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 
 const tools = [
     {
@@ -68,6 +68,16 @@ const tools = [
 ];
 
 const AITools = () => {
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.currentTarget;
+        const rect = target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        target.style.setProperty('--mouse-x', `${x}px`);
+        target.style.setProperty('--mouse-y', `${y}px`);
+    };
+
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -88,16 +98,24 @@ const AITools = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {tools.map((tool, index) => (
-                        <div key={index} className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-transparent overflow-hidden">
-                            {/* Hover Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div
+                            key={index}
+                            onMouseMove={handleMouseMove}
+                            className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl border border-gray-100 overflow-hidden"
+                        >
+                            {/* Spotlight Effect Layer */}
+                            <div
+                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                                style={{
+                                    background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(242, 90, 26, 0.08), transparent 40%)`
+                                }}
+                            ></div>
 
-                            {/* Decorative Background Blob */}
-                            <div className={`absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-500 blur-2xl ${tool.color.split(' ')[0]}`}></div>
+                            {/* Border Glow via pseudo-element or separate div if needed, but simple spotlight is cleaner for now */}
 
                             <div className="relative z-10 flex gap-5">
                                 {/* Logo with sophisticated shadow effect */}
-                                <div className={`w-20 h-20 rounded-2xl flex-shrink-0 overflow-hidden shadow-sm transition-shadow duration-500 ${tool.shadow} ${tool.color} flex items-center justify-center`}>
+                                <div className={`w-20 h-20 rounded-2xl flex-shrink-0 overflow-hidden shadow-sm transition-shadow duration-500 ${tool.shadow} ${tool.color} flex items-center justify-center group-hover:scale-105 transform`}>
                                     <img src={tool.logo} alt={tool.name} className="w-full h-full object-cover p-0" />
                                 </div>
 
@@ -107,18 +125,18 @@ const AITools = () => {
                                             <h3 className="font-bold text-xl text-brand-dark group-hover:text-brand-orange transition-colors">
                                                 {tool.name}
                                             </h3>
-                                            <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-lg">
+                                            <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-lg border border-gray-100">
                                                 <i className="ri-star-fill text-[#FDCB58] text-[10px]"></i>
                                                 <span className="text-xs font-bold text-brand-dark">{tool.rating}</span>
                                             </div>
                                         </div>
 
-                                        <div className="text-xs text-gray-400 font-medium tracking-wide text-left mb-3">
-                                            {tool.category.toUpperCase()}
+                                        <div className="text-xs text-gray-400 font-bold tracking-wide text-left mb-3 uppercase">
+                                            {tool.category}
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center text-xs font-semibold text-gray-400 group-hover:text-brand-dark transition-colors cursor-pointer w-max">
+                                    <div className="flex items-center text-xs font-bold text-gray-400 group-hover:text-brand-dark transition-colors cursor-pointer w-max">
                                         View Details
                                         <i className="ri-arrow-right-line ml-1 transition-transform group-hover:translate-x-1"></i>
                                     </div>

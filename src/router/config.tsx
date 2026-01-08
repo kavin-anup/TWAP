@@ -15,6 +15,8 @@ import ResourceCentrePage from '../pages/resource-centre/page';
 import ProductsPage from '../pages/products/page';
 import AgenciesPage from '../pages/agencies/page';
 import EverythingAIPage from '../pages/everything-ai/page';
+import SuccessStoriesPage from '../pages/interviews-success-stories/page';
+import PromotePage from '../pages/promote/page';
 
 const routes: RouteObject[] = [
   {
@@ -72,6 +74,14 @@ const routes: RouteObject[] = [
   {
     path: '/everything-ai',
     element: <EverythingAIPage />,
+  },
+  {
+    path: '/interviews-success-stories',
+    element: <SuccessStoriesPage />,
+  },
+  {
+    path: '/promote',
+    element: <PromotePage />,
   },
   {
     path: '*',

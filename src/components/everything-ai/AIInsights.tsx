@@ -1,4 +1,4 @@
-
+import { useRef, useEffect, useState } from 'react';
 
 const insights = [
     {
@@ -59,13 +59,31 @@ const insights = [
 ];
 
 const AIInsights = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.disconnect();
+            }
+        }, { threshold: 0.15 });
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="py-24 bg-white relative">
+        <section className="py-24 bg-white relative" ref={sectionRef}>
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                    <div>
+                    <div className={`transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="flex items-center gap-2 mb-2">
                             <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
                             <span className="text-brand-orange font-bold text-xs tracking-widest uppercase">Latest Intel</span>
@@ -78,7 +96,7 @@ const AIInsights = () => {
                         </p>
                     </div>
 
-                    <button className="px-8 py-3 rounded-full bg-gray-100 hover:bg-brand-dark hover:text-white transition-all font-bold text-brand-dark flex items-center gap-2 group">
+                    <button className={`px-8 py-3 rounded-full bg-gray-100 hover:bg-brand-dark hover:text-white transition-all font-bold text-brand-dark flex items-center gap-2 group transform duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         View All Articles
                         <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
                     </button>
@@ -88,14 +106,22 @@ const AIInsights = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
 
                     {insights.map((item, index) => (
-                        <div key={index} className={`group relative rounded-[2rem] overflow-hidden bg-gray-100 cursor-pointer ${item.colSpan} ${item.rowSpan}`}>
+                        <div
+                            key={index}
+                            className={`group relative rounded-[2rem] overflow-hidden bg-gray-100 cursor-pointer ${item.colSpan} ${item.rowSpan} transform transition-all duration-700 ease-out`}
+                            style={{
+                                transitionDelay: `${index * 100}ms`,
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible ? 'translateY(0)' : 'translateY(40px)'
+                            }}
+                        >
 
                             {/* Image Background with Scale Effect */}
                             <div className="absolute inset-0 w-full h-full">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-90"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80"></div>
                             </div>

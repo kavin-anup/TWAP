@@ -12,11 +12,11 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl bg-white rounded-3xl mx-auto">
         {/* White Card Container */}
-        <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
+        <div className="">
           {/* Newsletter Section - Top Half */}
-          <div className="bg-gradient-to-br from-[#1F2853] to-[#162040] px-6 sm:px-8 lg:px-12 py-10 lg:py-12">
+          <div className="bg-gradient-to-br from-brand-dark via-brand-dark to-brand-dark px-6 sm:px-8 lg:px-12 py-10 lg:py-12 rounded-t-3xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Side - Newsletter Info */}
               <div>
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
 
           {/* Footer Links Section - Bottom Half */}
-          <div className="px-6 sm:px-8 lg:px-12 py-8 lg:py-10">
+          <div className="px-6 sm:px-8 lg:px-12 py-8 lg:py-10 rounded-b-3xl">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
               {/* Brand Section - Left */}
               <div className="lg:col-span-1">

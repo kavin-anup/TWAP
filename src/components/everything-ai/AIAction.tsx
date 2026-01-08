@@ -5,7 +5,7 @@ const videos = [
     {
         title: "AI Agents",
         subtitle: "The Future of Work",
-        youtubeId: "v3UBlTErZQ0", // Example ID (OpenAI Sora)
+        youtubeId: "HK6y8DAPN_0", // OpenAI Sora
         overlayText: "AI AGENTS"
     },
     {
@@ -29,7 +29,7 @@ const videos = [
 ];
 
 const AIAction = () => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(0); // Default open first on desktop
     const [isMuted, setIsMuted] = useState(true);
 
     return (
@@ -57,46 +57,50 @@ const AIAction = () => {
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Horizontal Accordion Layout */}
+                <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[600px]">
                     {videos.map((video, index) => {
                         const isHovered = hoveredIndex === index;
                         return (
                             <div
                                 key={index}
-                                className="group relative aspect-[9/16] rounded-3xl overflow-hidden cursor-pointer bg-white border border-gray-200 hover:border-brand-orange/50 transition-all duration-300 hover:shadow-xl"
+                                className={`relative rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-gray-200 transition-all duration-500 ease-out 
+                                    ${isHovered ? 'lg:flex-[3.5] bg-gray-900 border-none' : 'lg:flex-[1] hover:flex-[1.2]'} 
+                                    h-[400px] lg:h-full group shadow-md hover:shadow-2xl`}
                                 onMouseEnter={() => setHoveredIndex(index)}
-                                onMouseLeave={() => setHoveredIndex(null)}
+                                onClick={() => setHoveredIndex(index)} // Touch support
                             >
-                                {/* Static Thumbnail / Overlay when NOT hovered */}
-                                {!isHovered && (
-                                    <>
-                                        <img
-                                            src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-                                            alt={video.title}
-                                            className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500 hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-black/10"></div>
+                                {/* Background Image */}
+                                <img
+                                    src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                                    alt={video.title}
+                                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 
+                                        ${isHovered ? 'scale-105 opacity-40' : 'scale-100 opacity-80 filter grayscale'}`}
+                                />
 
-                                        {/* Play Icon */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-14 h-14 rounded-full bg-white/30 backdrop-blur-md border border-white/40 flex items-center justify-center transition-all duration-300 shadow-lg group-hover:scale-110">
-                                                <i className="ri-play-fill text-2xl text-white"></i>
-                                            </div>
-                                        </div>
+                                {/* Overlay Gradient */}
+                                <div className={`absolute inset-0 transition-colors duration-500 ${isHovered ? 'bg-black/20' : 'bg-black/50'}`}></div>
 
-                                        {/* Text Overlay */}
-                                        <div className="absolute top-8 left-0 w-full text-center">
-                                            <span className={`text-4xl font-black text-white drop-shadow-md uppercase tracking-wider ${index % 2 === 0 ? 'text-brand-lime' : 'text-white'}`}
-                                                style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-                                                {video.overlayText}
-                                            </span>
-                                        </div>
-                                    </>
-                                )}
+                                {/* Text Overlay - Vertical when closed, normal when open */}
+                                <div className={`absolute top-8 left-1/2 -translate-x-1/2 w-full text-center transition-all duration-500
+                                    ${isHovered ? 'opacity-100 translate-y-0' : 'lg:opacity-100 lg:rotate-90 lg:top-24 lg:tracking-[0.2em] font-black'}`}>
+                                    <span className={`text-3xl lg:text-4xl font-black text-white drop-shadow-md uppercase tracking-wider whitespace-nowrap
+                                        ${index % 2 === 0 ? 'text-brand-lime' : 'text-white'}`}
+                                        style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+                                        {video.overlayText}
+                                    </span>
+                                </div>
 
-                                {/* YouTube Iframe on Hover */}
+                                {/* Play Button - Only visible when ACTIVE */}
+                                <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+                                    <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center animate-pulse">
+                                        <i className="ri-play-fill text-3xl text-white"></i>
+                                    </div>
+                                </div>
+
+                                {/* YouTube Iframe - Only renders when Hovered/Active */}
                                 {isHovered && (
-                                    <div className="absolute inset-0 w-full h-full bg-black">
+                                    <div className="absolute inset-0 w-full h-full bg-black z-10 transition-opacity duration-1000 animate-in fade-in">
                                         <iframe
                                             width="100%"
                                             height="100%"
@@ -104,30 +108,32 @@ const AIAction = () => {
                                             title={video.title}
                                             frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            style={{ pointerEvents: 'none' }} // Prevent interaction stealing hover
+                                            style={{ pointerEvents: 'none' }}
+                                            className="w-full h-full object-cover"
                                         ></iframe>
                                     </div>
                                 )}
 
-                                {/* Bottom Info (Always Visible but styled differently on hover) */}
-                                <div className={`absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-                                    <h3 className="text-2xl font-bold text-white leading-tight drop-shadow-md">
+                                {/* Bottom Info */}
+                                <div className={`absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none transition-all duration-500 z-20 
+                                    ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-full lg:opacity-0'}`}>
+                                    <h3 className="text-3xl font-bold text-white leading-tight drop-shadow-md">
                                         {video.title} <br />
-                                        <span className="font-normal opacity-90 text-lg">{video.subtitle}</span>
+                                        <span className="font-normal opacity-90 text-xl text-brand-orange">{video.subtitle}</span>
                                     </h3>
                                 </div>
 
-                                {/* Controls on Hover */}
+                                {/* Controls */}
                                 {isHovered && (
-                                    <div className="absolute bottom-4 right-4 z-20 flex gap-2">
+                                    <div className="absolute bottom-6 right-6 z-30 flex gap-2">
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setIsMuted(!isMuted);
                                             }}
-                                            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-orange transition-colors"
+                                            className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-brand-orange transition-colors"
                                         >
-                                            {isMuted ? <i className="ri-volume-mute-fill"></i> : <i className="ri-volume-up-fill"></i>}
+                                            {isMuted ? <i className="ri-volume-mute-fill text-xl"></i> : <i className="ri-volume-up-fill text-xl"></i>}
                                         </button>
                                     </div>
                                 )}
