@@ -68,10 +68,10 @@ const AIExperts = () => {
                     Some genius brains and brawns that are helping businesses leverage AI
                 </p>
 
-                <button className="px-6 py-2 rounded-lg border border-red-200 text-red-500 font-medium hover:bg-red-50 transition-colors inline-flex items-center gap-2 mb-8">
+                {/* <button className="px-6 py-2 rounded-lg border border-red-200 text-red-500 font-medium hover:bg-red-50 transition-colors inline-flex items-center gap-2 mb-8">
                     Explore More
                     <i className="ri-arrow-right-up-line"></i>
-                </button>
+                </button> */}
             </div>
 
             <div className="relative w-full">
@@ -109,10 +109,10 @@ const AIExperts = () => {
                                         ))}
                                     </div>
 
-                                    <button className="w-full py-3 rounded-xl bg-[#E63946] text-white font-bold hover:bg-[#d62839] transition-all shadow-lg shadow-red-200 flex items-center justify-center gap-2">
+                                    {/* <button className="w-full py-3 rounded-xl bg-[#E63946] text-white font-bold hover:bg-[#d62839] transition-all shadow-lg shadow-red-200 flex items-center justify-center gap-2">
                                         <i className="ri-user-follow-line"></i>
                                         Visit Profile
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </div>

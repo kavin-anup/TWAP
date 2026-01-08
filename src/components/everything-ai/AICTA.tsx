@@ -23,8 +23,8 @@ const AICTA = () => {
                     </div>
 
                     {/* Decorative Rings */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full animate-[spin_20s_linear_infinite]"></div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/15 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/15 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
 
                     {/* Content */}
                     <div className="relative z-10 max-w-4xl mx-auto">
