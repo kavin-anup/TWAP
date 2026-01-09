@@ -86,9 +86,8 @@ const AIExperts = () => {
                     {/* Double the list for infinite loop */}
                     {[...experts, ...experts, ...experts].map((expert, index) => (
                         <div key={index} className="w-[350px] mx-4 flex-shrink-0">
-                            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-500 h-full flex flex-col items-start text-left 
-                                group-hover/track:opacity-40 group-hover/track:scale-95 
-                                hover:!opacity-100 hover:!scale-110 hover:!blur-none hover:!shadow-2xl hover:z-10 hover:border-brand-orange/30 relative">
+                            <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-500 h-full flex flex-col items-start text-left group-hover/track:scale-95 
+                                hover:!opacity-100 hover:!blur-none hover:!shadow-2xl hover:z-10 hover:border-brand-orange/30 relative">
 
                                 <div className="w-12 h-12 mb-4 rounded-lg bg-gray-50 flex items-center justify-center overflow-hidden">
                                     <img src={expert.logo} alt={expert.name} className="w-full h-full object-cover" />
