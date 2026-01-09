@@ -1,19 +1,22 @@
 import React from 'react';
 import Header from '../../components/feature/Header';
+import ServicesBentoGrid from './components/ServicesBentoGrid';
+import TestimonialsSection from '../../components/feature/TestimonialsSection';
+import ServiceBenefits from './components/ServiceBenefits';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
+import TailoredServicesGrid from './components/TailoredServicesGrid';
 import Footer from '../../components/feature/Footer';
-import ServicesHero from './components/ServicesHero';
-import AppPromotionSection from './components/AppPromotionSection';
-import AIAutomationSection from './components/AIAutomationSection';
-import ServicesBenefits from './components/ServicesBenefits';
 
 const ServicesPage: React.FC = () => {
+  const revealRef = useScrollReveal();
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={revealRef} className="min-h-screen bg-white font-sans text-gray-900 overflow-x-hidden">
       <Header />
-      <ServicesHero />
-      <ServicesBenefits />
-      <AppPromotionSection />
-      <AIAutomationSection />
+      <ServicesBentoGrid />
+      <TestimonialsSection />
+      <ServiceBenefits />
+      <TailoredServicesGrid />
       <Footer />
     </div>
   );

@@ -1,4 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 interface Testimonial {
   id: number;
@@ -13,7 +18,57 @@ interface Testimonial {
   serviceType: 'App Submission' | 'Automation Services' | 'Reviews';
 }
 
+const AvatarWithFallback = ({ src, name, borderClass }: { src: string, name: string, borderClass: string }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError || !src) {
+    return (
+      <div className={`w-12 h-12 rounded-full border-2 ${borderClass} mr-4 shrink-0 flex items-center justify-center bg-gray-100 text-[#1F2853] font-bold text-lg`} style={{ fontFamily: 'Manrope, sans-serif' }}>
+        {name.charAt(0)}
+      </div>
+    );
+  }
+
+  return (
+    <div className={`w-12 h-12 rounded-full overflow-hidden border-2 ${borderClass} mr-4 shrink-0`}>
+      <img
+        src={src}
+        alt={name}
+        className="w-full h-full object-cover"
+        onError={() => setHasError(true)}
+      />
+    </div>
+  );
+};
+
+const CompanyLogoWithFallback = ({ src, companyName }: { src: string, companyName: string }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError || !src) {
+    return (
+      <div className="w-16 h-16 rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0">
+        <span className="text-[#1F2853] font-bold text-xl" style={{ fontFamily: 'Manrope, sans-serif' }}>
+          {companyName.charAt(0)}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-16 h-16 rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0">
+      <img
+        src={src}
+        alt={`${companyName} logo`}
+        className="w-12 h-12 object-contain"
+        onError={() => setHasError(true)}
+      />
+    </div>
+  );
+};
+
 export default function TestimonialsSection() {
+  const swiperRef = useRef<SwiperType | null>(null);
+
   // Color mapping based on service type
   const getServiceColors = (serviceType: string) => {
     switch (serviceType) {
@@ -46,11 +101,12 @@ export default function TestimonialsSection() {
           resultsBg: 'bg-orange-50',
           resultsBorder: 'border-orange-200',
           resultsText: 'text-[#f25a1a]',
-          avatarBorder: 'border-[#f25a1a]'
+          avatarBorder: 'border-orange-200'
         };
     }
   };
 
+  // Duplicate testimonials to ensure smooth infinite loop
   const [testimonials] = useState<Testimonial[]>([
     {
       id: 1,
@@ -87,7 +143,7 @@ export default function TestimonialsSection() {
       companyLogo: "https://readdy.ai/api/search-image?query=Modern%20fintech%20company%20logo%20design%20for%20FinanceAI%2C%20financial%20technology%20logo%2C%20AI%20and%20money%20elements%2C%20blue%20and%20gold%20color%20scheme%2C%20professional%20finance%20brand%2C%20clean%20sophisticated%20design&width=120&height=120&seq=logo-financeai&orientation=squarish",
       rating: 5,
       serviceType: 'App Submission'
-    }
+    },
   ]);
 
   const renderStars = (rating: number) => {
@@ -110,101 +166,122 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => {
-            const colors = getServiceColors(testimonial.serviceType);
-            return (
-              <div key={testimonial.id} className="bg-gradient-to-br from-[#f7f5ef] to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
-                <div className="p-8">
-                  {/* Service Type Badge */}
-                  <div className="flex justify-between items-start mb-6">
-                    <span className={`${colors.badge} ${colors.badgeText} px-3 py-1 rounded-full text-sm font-medium`}>
-                      {testimonial.serviceType}
-                    </span>
-                    <div className="flex space-x-1">
-                      {renderStars(testimonial.rating)}
-                    </div>
-                  </div>
-
-                  {/* Testimonial Text */}
-                  <div className="mb-6">
-                    <div className={`w-8 h-8 flex items-center justify-center ${colors.quotes} mb-4`}>
-                      <i className="ri-double-quotes-l text-2xl"></i>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      {testimonial.testimonial}
-                    </p>
-                  </div>
-
-                  {/* Outcome */}
-                  <div className={`${colors.resultsBg} rounded-lg p-4 mb-6 border ${colors.resultsBorder}`}>
-                    <h4 className="text-sm font-semibold text-[#1F2853] mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                      Key Results:
-                    </h4>
-                    <p className={`${colors.resultsText} font-medium text-sm`} style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      {testimonial.outcome}
-                    </p>
-                  </div>
-
-                  {/* Client Info */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 rounded-full overflow-hidden border-2 ${colors.avatarBorder} mr-4`}>
-                        <img 
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover"
-                        />
+        <div className="relative px-4">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={32}
+            slidesPerView={1}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            loop={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            className="pb-12"
+          >
+            {testimonials.concat(testimonials).map((testimonial) => {
+              const colors = getServiceColors(testimonial.serviceType);
+              return (
+                <SwiperSlide key={testimonial.id} className="pb-2 h-auto">
+                  <div className="bg-gradient-to-br from-[#f7f5ef] to-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 h-full flex flex-col min-h-[630px]">
+                    <div className="p-8 flex flex-col h-full">
+                      {/* Service Type Badge */}
+                      <div className="flex justify-between items-start mb-6">
+                        <span className={`${colors.badge} ${colors.badgeText} px-3 py-1 rounded-full text-sm font-medium`}>
+                          {testimonial.serviceType}
+                        </span>
+                        <div className="flex space-x-1">
+                          {renderStars(testimonial.rating)}
+                        </div>
                       </div>
-                    <div>
-                      <h3 className="text-[#1F2853] font-bold text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-gray-600 text-xs" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                        {testimonial.title}
-                      </p>
+
+                      {/* Testimonial Text */}
+                      <div className="mb-6 flex-grow">
+                        <div className={`w-8 h-8 flex items-center justify-center ${colors.quotes} mb-4`}>
+                          <i className="ri-double-quotes-l text-2xl"></i>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                          "{testimonial.testimonial}"
+                        </p>
+                      </div>
+
+                      {/* Outcome */}
+                      <div className={`${colors.resultsBg} rounded-lg p-4 mb-6 border ${colors.resultsBorder}`}>
+                        <h4 className="text-sm font-semibold text-[#1F2853] mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                          Key Results:
+                        </h4>
+                        <p className={`${colors.resultsText} font-medium text-sm`} style={{ fontFamily: 'Poppins, sans-serif' }}>
+                          {testimonial.outcome}
+                        </p>
+                      </div>
+
+                      {/* Client Info */}
+                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
+                        <div className="flex items-center">
+                          <AvatarWithFallback
+                            src={testimonial.avatar}
+                            name={testimonial.name}
+                            borderClass={colors.avatarBorder}
+                          />
+                          <div>
+                            <h3 className="text-[#1F2853] font-bold text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                              {testimonial.name}
+                            </h3>
+                            <p className="text-gray-600 text-xs" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                              {testimonial.title}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Company Logo */}
+                        <CompanyLogoWithFallback src={testimonial.companyLogo} companyName={testimonial.company} />
+                      </div>
+
+                      {/* Company Name */}
+                      <div className="mt-3 text-center">
+                        <span className="text-gray-500 text-xs font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                          {testimonial.company}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Company Logo */}
-                  <div className="w-16 h-16 rounded-lg overflow-hidden bg-white shadow-sm border border-gray-100 flex items-center justify-center">
-                    <img 
-                      src={testimonial.companyLogo}
-                      alt={`${testimonial.company} logo`}
-                      className="w-12 h-12 object-contain"
-                    />
-                  </div>
-                </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
 
-                {/* Company Name */}
-                <div className="mt-3 text-center">
-                  <span className="text-gray-500 text-xs font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                    {testimonial.company}
-                  </span>
-                </div>
-              </div>
-            </div>
-            );
-          })}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-[#1F2853] to-[#2a3a6b] rounded-xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>
-              Ready to Join Our Success Stories?
-            </h3>
-            <p className="text-lg mb-6 opacity-90" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Let us help you achieve similar results with your app or automation project
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#f25a1a] hover:bg-[#d14815] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Submit Your App
-              </button>
-              <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 whitespace-nowrap" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Get Automation Quote
-              </button>
-            </div>
+          {/* Custom Navigation Buttons */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <button
+              className="swiper-button-prev-custom w-12 h-12 rounded-full border border-gray-200 bg-white text-[#1F2853] hover:bg-[#1F2853] hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm hover:shadow-md active:scale-95 group cursor-pointer z-10"
+              aria-label="Previous testimonial"
+            >
+              <i className="ri-arrow-left-line text-xl group-hover:scale-110 transition-transform"></i>
+            </button>
+            <button
+              className="swiper-button-next-custom w-12 h-12 rounded-full border border-gray-200 bg-white text-[#1F2853] hover:bg-[#1F2853] hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm hover:shadow-md active:scale-95 group cursor-pointer z-10"
+              aria-label="Next testimonial"
+            >
+              <i className="ri-arrow-right-line text-xl group-hover:scale-110 transition-transform"></i>
+            </button>
           </div>
         </div>
       </div>
