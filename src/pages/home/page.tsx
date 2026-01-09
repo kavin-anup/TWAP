@@ -11,9 +11,13 @@ import FounderStories from '../../components/feature/FounderStories';
 import MostLovedApps from '../../components/feature/MostLovedApps';
 import TestimonialsSection from '../../components/feature/TestimonialsSection';
 
+import { useScrollReveal } from '../../hooks/useScrollReveal';
+
 export default function HomePage() {
+  const revealRef = useScrollReveal();
+
   return (
-    <div className="min-h-screen bg-white">
+    <div ref={revealRef} className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       <main>
         <HeroSection />

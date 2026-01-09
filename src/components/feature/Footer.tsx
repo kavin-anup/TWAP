@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-gray-50 py-12">
       <div className="max-w-7xl bg-white rounded-3xl mx-auto">
         {/* White Card Container */}
-        <div className="">
+        <div className="p-2">
           {/* Newsletter Section - Top Half */}
           <div className="bg-gradient-to-br from-brand-dark via-brand-dark to-brand-dark px-6 sm:px-8 lg:px-12 py-10 lg:py-12 rounded-t-3xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

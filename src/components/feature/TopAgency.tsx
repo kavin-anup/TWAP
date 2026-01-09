@@ -111,13 +111,13 @@ export default function TopAgency() {
         }
       `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="mb-10">
+        <div className="mb-10 reveal-fade-up">
           <h2 className="text-3xl font-bold text-[#1F2853] text-left font-['Manrope']">
             Top Agencies Of The Month
           </h2>
         </div>
 
-        <div className="rounded-[52px] bg-[#252c52] text-white px-6 py-10 sm:px-10 lg:px-16 lg:py-12 shadow-2xl">
+        <div className="rounded-[52px] bg-[#252c52] text-white px-6 py-10 sm:px-10 lg:px-16 lg:py-12 shadow-2xl reveal-fade-up">
           <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-stretch">
             {/* Slider Section */}
             <div className="w-full lg:w-1/2 overflow-hidden">

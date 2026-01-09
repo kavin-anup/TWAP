@@ -8,7 +8,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section 
+    <section
       className="relative py-14 md:py-20 lg:py-32 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#1B1B36_45%] to-[#56122D]"
       style={{
         // backgroundImage: `url('https://static.readdy.ai/image/19a52a0e7cd11d182286c46a940c9855/d888d3e6c6140bd2ef82a28fa63739fe.jpeg')`,
@@ -18,18 +18,18 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-10">
-        <div className="text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium text-white mb-4 md:mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
+        <div className="text-center reveal-stagger">
+          <h1 className="reveal-child text-3xl sm:text-4xl md:text-6xl font-medium text-white mb-4 md:mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
             Discover the Best AI Tools & Apps –<br />
             <span className="text-white">Curated, Reviewed & Ranked</span>
           </h1>
-          
-          <p className="text-base sm:text-lg md:text-xl text-white/70 mb-8 md:mb-12 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+
+          <p className="reveal-child text-base sm:text-lg md:text-xl text-white/70 mb-8 md:mb-12 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
             We review the best AI Apps so you dont have to.
           </p>
 
           {/* Search Bar */}
-          <div className="max-w-3xl mx-auto mb-6 md:mb-8 rounded-full" style={{ boxShadow: '0 20px 90px 15px rgba(86, 18, 45, 0.8)' }}>
+          <div className="reveal-child max-w-3xl mx-auto mb-6 md:mb-8 rounded-full" style={{ boxShadow: '0 20px 90px 15px rgba(86, 18, 45, 0.8)' }}>
             <div className="relative">
               <input
                 type="text"
@@ -51,7 +51,7 @@ export default function HeroSection() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8">
+          <div className="reveal-child flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8">
             <button className="bg-[#f25a1a] hover:bg-[#d14815] text-white px-5 sm:px-6 py-3 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">
               Browse Apps
             </button>
@@ -64,7 +64,7 @@ export default function HeroSection() {
           </div>
 
           {/* Moved text below buttons */}
-          <p className="text-lg text-white/80 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <p className="reveal-child text-lg text-white/80 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
             Compare, explore, and promote AI-powered tools that matter
           </p>
         </div>

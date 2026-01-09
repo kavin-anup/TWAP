@@ -223,10 +223,10 @@ const getAllApps = (): AppRating[] => {
     ...allApps.finance,
     ...allApps.design
   ];
-  
+
   // Sort by rating (highest first)
   const sortedApps = allAppsArray.sort((a, b) => b.rating - a.rating);
-  
+
   // Add rank to each app
   return sortedApps.map((app, index) => ({
     rank: index + 1,
@@ -269,29 +269,29 @@ export default function RatingsLeaderboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Leaderboard */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 reveal-slide-right">
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 h-full">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 font-manrope">
                 The Web App Pro Ratings Leaderboard
               </h2>
-              
+
               <div className="space-y-4 sm:space-y-6">
                 {displayedRatings.slice(0, 6).map((app) => (
                   <div key={app.rank} className="flex items-start gap-3 sm:gap-4 lg:gap-6 p-3 sm:p-4 rounded-lg sm:rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
                     <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
-                      <img 
-                        src={app.logo} 
+                      <img
+                        src={app.logo}
                         alt={`${app.name} logo`}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    
+
                     <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-base sm:text-lg text-gray-900 font-manrope truncate">{app.name}</h3>
                         <p className="text-gray-600 text-xs sm:text-sm font-poppins line-clamp-2 mt-0.5 sm:mt-1">{app.shortDescription}</p>
                       </div>
-                      
+
                       <div className="text-left sm:text-right flex-shrink-0">
                         {renderStars(app.rating)}
                         <span className="text-xs text-gray-500 font-poppins block mt-0.5 sm:mt-1">{app.category}</span>
@@ -300,9 +300,9 @@ export default function RatingsLeaderboard() {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-6 sm:mt-8 text-center">
-                <button 
+                <button
                   onClick={() => setShowAll(!showAll)}
                   className="px-5 sm:px-6 py-2.5 sm:py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors whitespace-nowrap font-poppins text-sm sm:text-base"
                 >
@@ -313,8 +313,8 @@ export default function RatingsLeaderboard() {
           </div>
 
           {/* Promote Your App */}
-          <div className="mt-6 lg:mt-0 lg:aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden">
-            <div 
+          <div className="mt-6 lg:mt-0 lg:aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden reveal-slide-left">
+            <div
               className="rounded-xl sm:rounded-2xl border border-white/20 hover:border-white/30 transition-all duration-300 lg:h-full flex flex-col relative p-4 sm:p-5"
               style={{
                 background: 'linear-gradient(135deg, rgba(31, 40, 83, 0.95) 0%, rgba(31, 40, 83, 0.85) 100%)',
@@ -329,18 +329,18 @@ export default function RatingsLeaderboard() {
               <p className="text-white/80 text-sm sm:text-base mb-4 sm:mb-6 font-poppins">
                 Get featured on the homepage, in our newsletter, and at the top of your category.
               </p>
-              
+
               {/* 16:9 Image Placeholder */}
               <div className="flex-1 min-h-[180px] sm:min-h-[200px] lg:min-h-[250px] mb-4 sm:mb-3">
-                <img 
+                <img
                   src="https://static.readdy.ai/image/19a52a0e7cd11d182286c46a940c9855/3a498c2854159ba8aef56ee2066bbcd2.jpeg"
                   alt="Promote your app"
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
-              
+
               <div className="mt-auto w-full">
-                <button 
+                <button
                   className="w-full text-[#1F2853] py-3 sm:py-4 px-5 sm:px-6 rounded-full font-semibold transition-all duration-300 whitespace-nowrap font-poppins hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base"
                   style={{
                     background: 'linear-gradient(135deg, #b9ed2a 0%, #a5d426 50%, #91bb22 100%)',

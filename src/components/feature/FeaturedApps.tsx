@@ -204,7 +204,7 @@ export default function FeaturedApps() {
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
-  
+
   const currentApps = allApps[activeCategory as keyof typeof allApps];
   const totalSlides = Math.ceil(currentApps.length / cardsPerView);
 
@@ -228,7 +228,7 @@ export default function FeaturedApps() {
   return (
     <div className="bg-[#f7f5ef] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1F2853] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
             Top App Reviews – Handpicked for You
           </h2>
@@ -238,16 +238,15 @@ export default function FeaturedApps() {
         </div>
 
         {/* Category Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 reveal-fade-up">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => handleCategoryChange(category.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all cursor-pointer whitespace-nowrap ${
-                activeCategory === category.id
+              className={`px-6 py-3 rounded-lg font-medium transition-all cursor-pointer whitespace-nowrap ${activeCategory === category.id
                   ? 'bg-[#f25a1a] text-white shadow-md'
                   : 'bg-[#f7f5ef] text-[#1F2853] hover:bg-[#f25a1a] hover:text-white'
-              }`}
+                }`}
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
               {category.name}
@@ -256,7 +255,7 @@ export default function FeaturedApps() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
+        <div className="relative reveal-fade">
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
@@ -266,7 +265,7 @@ export default function FeaturedApps() {
               <i className="ri-arrow-left-line text-xl"></i>
             </div>
           </button>
-          
+
           <button
             onClick={nextSlide}
             className="hidden md:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-[#1F2853]/80 backdrop-blur-sm text-white p-3 rounded-full hover:bg-[#1F2853] transition-all cursor-pointer"
@@ -278,7 +277,7 @@ export default function FeaturedApps() {
 
           {/* Cards Container */}
           <div className="overflow-hidden">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
@@ -351,16 +350,15 @@ export default function FeaturedApps() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
-                  index === currentIndex 
-                    ? 'bg-[#1F2853] scale-125' 
+                className={`w-3 h-3 rounded-full transition-all cursor-pointer ${index === currentIndex
+                    ? 'bg-[#1F2853] scale-125'
                     : 'bg-gray-400 hover:bg-gray-500'
-                }`}
+                  }`}
               />
             ))}
           </div>
         </div>
-        
+
         <div className="text-center mt-12">
           <button className="bg-[#f25a1a] hover:bg-[#d14815] text-white px-8 py-3 rounded-lg font-medium transition-colors cursor-pointer whitespace-nowrap">
             View All Apps

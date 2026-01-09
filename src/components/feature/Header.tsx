@@ -23,11 +23,11 @@ const menuCategories = [
     label: 'Services',
     link: '/services'
   },
-  // {
-  //   id: 'showcase',
-  //   label: 'Promote',
-  //   link: '/showcase'
-  // },
+  {
+    id: 'promote',
+    label: 'Promote',
+    link: '/promote'
+  },
   // {
   //   id: 'reviews',
   //   label: 'Reviews',

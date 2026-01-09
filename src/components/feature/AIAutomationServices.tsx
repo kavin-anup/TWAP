@@ -56,7 +56,7 @@ export default function AIAutomationServices() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px]">
           {/* Left Column - Light Background */}
-          <div className="bg-gray-100 rounded-3xl lg:rounded-l-3xl lg:rounded-r-none sm:p-8 lg:p-12 flex flex-col justify-between">
+          <div className="bg-gray-100 rounded-3xl lg:rounded-l-3xl lg:rounded-r-none sm:p-8 lg:p-12 flex flex-col justify-between reveal-fade-up">
             <div>
               <h2
                 className="text-3xl lg:text-4xl font-bold mb-6"
@@ -150,11 +150,10 @@ export default function AIAutomationServices() {
 
                 {submitStatus && (
                   <div
-                    className={`p-3 rounded-lg text-sm ${
-                      submitStatus.includes("Thank you")
+                    className={`p-3 rounded-lg text-sm ${submitStatus.includes("Thank you")
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
-                    }`}
+                      }`}
                   >
                     {submitStatus}
                   </div>
@@ -217,28 +216,25 @@ export default function AIAutomationServices() {
                         <button
                           key={concept}
                           onMouseOver={() => setSelectedConcept(concept)}
-                          className={`relative group flex flex-col items-center gap-2 transition-all duration-300 ${
-                            selectedConcept === concept
+                          className={`relative group flex flex-col items-center gap-2 transition-all duration-300 ${selectedConcept === concept
                               ? "scale-110"
                               : "scale-100"
-                          }`}
+                            }`}
                         >
                           <div
-                            className={`w-16 h-16 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-300 ${
-                              selectedConcept === concept
+                            className={`w-16 h-16 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-300 ${selectedConcept === concept
                                 ? "bg-[#f25a1a] text-white shadow-lg shadow-[#f25a1a]/50 border-2 border-[#f25a1a]"
                                 : "bg-white/10 text-white/60 border-2 border-white/20 hover:border-white/40"
-                            }`}
+                              }`}
                             style={{ fontFamily: "Poppins, sans-serif" }}
                           >
                             {concept.charAt(0)}
                           </div>
                           <span
-                            className={`text-xs font-medium transition-colors ${
-                              selectedConcept === concept
+                            className={`text-xs font-medium transition-colors ${selectedConcept === concept
                                 ? "text-[#f25a1a]"
                                 : "text-white/60"
-                            }`}
+                              }`}
                             style={{ fontFamily: "Poppins, sans-serif" }}
                           >
                             {concept}

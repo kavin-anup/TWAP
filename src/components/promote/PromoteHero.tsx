@@ -1,166 +1,203 @@
-import { useEffect, useState } from 'react';
+import { useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
 
 const PromoteHero = () => {
-    const [mounted, setMounted] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const coreRef = useRef<HTMLDivElement>(null);
+    const ringsRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        setMounted(true);
+    useLayoutEffect(() => {
+        const ctx = gsap.context((self) => {
+            if (!self.selector) return;
+
+            // 1. Initial Reveal
+            const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+
+            tl.set(".hero-ring", { scale: 0, opacity: 0, rotationX: 90 })
+                .set(".hero-core", { scale: 0, opacity: 0 })
+                .set(".satellite-item", { scale: 0, opacity: 0 })
+                .set(".glitch-text", { y: 20, opacity: 0 });
+
+            tl.to(".hero-core", { duration: 1.5, scale: 1, opacity: 1, ease: "back.out(1.2)" })
+                .to(".hero-ring", { duration: 2, scale: 1, opacity: 0.6, rotationX: 0, stagger: 0.1 }, "-=1.2")
+                .to(".glitch-text", { duration: 1, y: 0, opacity: 1, stagger: 0.1 }, "-=1.5")
+                .to(".satellite-item", { duration: 0.8, scale: 1, opacity: 1, stagger: 0.1 }, "-=1");
+
+            // 2. Idle Animations (The "Singularity")
+            // Rings Rotating constantly
+            gsap.to(".ring-1", { duration: 20, rotationZ: 360, repeat: -1, ease: "none" });
+            gsap.to(".ring-2", { duration: 25, rotationZ: -360, repeat: -1, ease: "none" });
+            gsap.to(".ring-3", { duration: 30, rotationX: 360, rotationY: 360, repeat: -1, ease: "none" });
+
+            // Satellites Floating
+            gsap.to(".satellite-item", {
+                y: "random(-20, 20)",
+                x: "random(-20, 20)",
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                stagger: { from: "random", amount: 2 }
+            });
+
+            // "Digital Rain" opacity pulse
+            gsap.to(".matrix-line", {
+                opacity: "random(0.1, 0.5)",
+                height: "random(100, 300)",
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                stagger: 0.1
+            });
+
+        }, containerRef);
+
+        return () => ctx.revert();
     }, []);
 
-    return (
-        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-t from-brand-dark to-brand-burgundy/10 overflow-hidden pt-20">
-            {/* Cyber Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f29372e_1px,transparent_1px),linear-gradient(to_bottom,#1f29372e_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!containerRef.current) return;
 
-            {/* Floating Cyber Particles */}
-            <div className="absolute z-[2] inset-0 overflow-hidden pointer-events-none">
-                {[...Array(50)].map((_, i) => (
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+
+        const xPos = (clientX / innerWidth - 0.5) * 2;
+        const yPos = (clientY / innerHeight - 0.5) * 2;
+
+        gsap.to(ringsRef.current, {
+            rotationY: xPos * 20,
+            rotationX: -yPos * 20,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        gsap.to(coreRef.current, {
+            x: xPos * 30,
+            y: yPos * 30,
+            duration: 1,
+            ease: "power2.out"
+        });
+    };
+
+    return (
+        <section
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            className="relative min-h-screen flex items-center justify-center bg-[#030014] overflow-hidden pt-20 perspective-[1000px]"
+        >
+            {/* Background Nebula & Grid */}
+            <div className="absolute inset-0 bg-[#030014]">
+                <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-brand-orange/10 rounded-full blur-[120px]"></div>
+                <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] bg-[#6d28d9]/10 rounded-full blur-[120px]"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)]"></div>
+            </div>
+
+            {/* Matrix Data Rain (Abstract) */}
+            <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+                {[...Array(12)].map((_, i) => (
                     <div
                         key={i}
-                        className="absolute bg-brand-lime rounded-full opacity-0 animate-particle-float"
+                        className="matrix-line absolute w-px bg-gradient-to-b from-transparent via-brand-orange to-transparent"
                         style={{
-                            width: Math.random() * 4 + 2 + 'px',
-                            height: Math.random() * 4 + 2 + 'px',
-                            top: Math.random() * 100 + '%',
-                            left: Math.random() * 100 + '%',
-                            animationDelay: Math.random() * 5 + 's',
-                            animationDuration: Math.random() * 10 + 10 + 's'
+                            left: `${(i + 1) * 8}%`,
+                            top: '-20%',
+                            height: '20%',
+                            animation: `fall ${Math.random() * 3 + 2}s linear infinite`,
+                            animationDelay: `${Math.random() * 2}s`
                         }}
                     ></div>
                 ))}
             </div>
 
-            {/* Scanning Radar Effect */}
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505] opacity-80 pointer-events-none"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-brand-orange/20 shadow-[0_0_20px_rgba(242,90,26,0.3)] animate-scan-line pointer-events-none"></div> */}
+            {/* Main 3D Container */}
+            <div ref={ringsRef} className="relative w-full max-w-[800px] aspect-square flex items-center justify-center transform-style-3d">
 
-            {/* Central Neural Hub */}
-            <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 w-full h-[800px] flex items-center justify-center">
+                {/* Ring 1 - Outer Dotted */}
+                <div className="hero-ring ring-1 absolute w-[90%] h-[90%] border-2 border-brand-orange/20 rounded-full border-dashed"></div>
 
-                {/* Connection Lines (SVG Layer) */}
-                <div className="absolute inset-0 pointer-events-none z-10">
-                    <svg className="w-full h-full">
-                        <defs>
-                            <linearGradient id="grad-orange" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="#f25a1a" stopOpacity="0" />
-                                <stop offset="50%" stopColor="#f25a1a" stopOpacity="0.5" />
-                                <stop offset="100%" stopColor="#f25a1a" stopOpacity="0" />
-                            </linearGradient>
-                        </defs>
-                        {/* Lines connecting center to nodes - dynamically drawn in CSS or simple SVG paths */}
-                        {/* These paths assume a fixed layout relative to the center 800x800 container. 
-                             Adjust coordinates based on node positions. 
-                             Center is roughly 50% 50% */}
-                    </svg>
+                {/* Ring 2 - Middle Solid */}
+                <div className="hero-ring ring-2 absolute w-[70%] h-[70%] border border-brand-lime/30 rounded-full">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-brand-lime rounded-full shadow-[0_0_10px_#84cc16]"></div>
                 </div>
 
-                {/* Main Core Processor */}
-                <div className={`relative z-30 flex flex-col items-center justify-center transition-all duration-1000 transform ${mounted ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
-                    {/* Ring Animations */}
-                    <div className="absolute w-[500px] h-[500px] border-2 border-brand-lime rounded-full animate-[spin_30s_linear_infinite] opacity-30 border-dashed"></div>
-                    <div className="absolute w-[450px] h-[450px] border border-brand-lime rounded-full animate-[spin_15s_linear_infinite_reverse] opacity-30"></div>
-                    <div className="absolute w-[600px] h-[600px] border border-gray-900 rounded-full opacity-20"></div>
+                {/* Ring 3 - Inner Gyroscope */}
+                <div className="hero-ring ring-3 absolute w-[50%] h-[50%] border-4 border-white/5 rounded-full border-t-white/30 border-r-brand-orange/50"></div>
 
-                    {/* Core Content */}
-                    <div className="bg-[#0a0a0b]/80 backdrop-blur-xl border border-gray-800 p-12 rounded-3xl text-center relative shadow-[0_0_60px_rgba(0,0,0,0.5)] group hover:border-brand-orange/30 transition-colors">
+                {/* Orbiting Tech Satellites */}
+                {/* Top: AI Analysis */}
+                <div className="satellite-item absolute top-[10%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+                    <div className="w-12 h-12 bg-[#0a0a0b] border border-red-500/50 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+                        <i className="ri-brain-line text-red-500 text-xl"></i>
+                    </div>
+                    <span className="text-[10px] text-red-400 font-mono tracking-widest uppercase bg-black/50 px-2 py-1 rounded backdrop-blur-sm">AI Analysis</span>
+                </div>
 
-                        {/* Card Background Image */}
-                        <div className="absolute rounded-3xl overflow-hidden inset-0 z-0 pointer-events-none">
-                            <img
-                                src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1000"
-                                alt="AI Pattern"
-                                className="w-full h-full object-cover opacity-80"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0b]/90 via-[#0a0a0b]/50 to-[#0a0a0b]/90"></div>
+                {/* Right: Security */}
+                <div className="satellite-item absolute top-1/2 right-[5%] -translate-y-1/2 flex flex-col items-center gap-2 z-20">
+                    <div className="w-12 h-12 bg-[#0a0a0b] border border-brand-lime/50 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(132,204,22,0.3)]">
+                        <i className="ri-shield-keyhole-line text-brand-lime text-xl"></i>
+                    </div>
+                    <span className="text-[10px] text-brand-lime/80 font-mono tracking-widest uppercase bg-black/50 px-2 py-1 rounded backdrop-blur-sm">Security</span>
+                </div>
+
+                {/* Bottom: Velocity */}
+                <div className="satellite-item absolute bottom-[10%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+                    <span className="text-[10px] text-brand-orange/80 font-mono tracking-widest uppercase bg-black/50 px-2 py-1 rounded backdrop-blur-sm">Velocity</span>
+                    <div className="w-12 h-12 bg-[#0a0a0b] border border-brand-orange/50 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(242,90,26,0.3)]">
+                        <i className="ri-flashlight-line text-brand-orange text-xl"></i>
+                    </div>
+                </div>
+
+                {/* Left: Scalability */}
+                <div className="satellite-item absolute top-1/2 left-[5%] -translate-y-1/2 flex flex-col items-center gap-2 z-20">
+                    <div className="w-12 h-12 bg-[#0a0a0b] border border-cyan-500/50 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                        <i className="ri-stack-line text-cyan-500 text-xl"></i>
+                    </div>
+                    <span className="text-[10px] text-cyan-400 font-mono tracking-widest uppercase bg-black/50 px-2 py-1 rounded backdrop-blur-sm">Scale</span>
+                </div>
+
+                {/* CORE CONTENT */}
+                <div ref={coreRef} className="hero-core absolute z-30 flex flex-col items-center justify-center text-center">
+                    <div className="relative mb-6">
+                        <div className="absolute inset-0 bg-brand-orange blur-[40px] opacity-20 animate-pulse"></div>
+                        <div className="glitch-text text-sm md:text-base font-bold text-brand-orange tracking-[0.3em] uppercase border border-brand-orange/30 px-6 py-2 rounded-full bg-black/40 backdrop-blur-md">
+                            System: Online
                         </div>
+                    </div>
 
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gray-900 border border-gray-700 rounded-full text-[10px] text-brand-orange tracking-widest uppercase mb-4 font-mono z-20">
-                            System Active
-                        </div>
+                    <h1 className="glitch-text text-6xl md:text-9xl font-bold text-white tracking-tighter mb-4 drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">
+                        THE <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-500">METHOD</span>
+                    </h1>
 
-                        <h1 className="text-6xl md:text-8xl mb-2 tracking-tighter !leading-tight relative z-10 capitalize text-white/70">
-                            The <br />
-                            <span className="">Method</span>
-                        </h1>
-                        <div className="h-1 w-24 bg-brand-orange mx-auto my-6 rounded-full shadow-[0_0_15px_rgba(242,90,26,0.5)] relative z-10"></div>
-                        <p className="text-gray-500 font-mono text-sm tracking-widest uppercase relative z-10">
-                            &lt; Neural Optimization /&gt;
+                    <div className="glitch-text flex items-center gap-4 mt-4">
+                        <div className="h-px w-12 bg-gray-700"></div>
+                        <p className="text-gray-400 font-mono text-xs md:text-sm tracking-widest">
+                            &lt; OPTIMIZING_DIGITAL_REALITY /&gt;
                         </p>
+                        <div className="h-px w-12 bg-gray-700"></div>
                     </div>
-                </div>
 
-                {/* Neural Nodes (Icons) */}
-                {/* Positions are relative to the Container */}
-
-                {/* Node 1: Top Center - Intelligence */}
-                <div className={`absolute z-[30] top-5 md:-top-8 left-1/2 -translate-x-1/2 transition-all duration-500 delay-100 ${mounted ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'}`}>
-                    <div className="flex flex-col items-center group">
-                        <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-red-500/50 to-red-500 mb-2 opacity-50 grou-hover:opacity-100 transition-opacity"></div>
-                        <div className="relative p-6 bg-[#0a0a0b] border border-gray-800 rounded-2xl hover:border-red-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.2)] transition-all group-hover:-translate-y-2 cursor-pointer">
-                            <i className="ri-brain-line text-3xl text-red-500"></i>
-                            <div className="absolute md:block hidden -right-16 top-0 text-[10px] text-red-500 font-mono opacity-0 group-hover:opacity-100 transition-opacity">
-                                SCANNING...
-                            </div>
-                        </div>
-                        <div className="mt-2 md:block hidden text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-red-500 transition-colors">Verification</div>
-                    </div>
-                </div>
-
-                {/* Node 2: Top Right - Speed */}
-                <div className={`absolute top-1/3 -right-4 lg:right-20 transition-all duration-500 delay-200 ${mounted ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-                    <div className="flex flex-row items-center group">
-                        <div className="relative p-6 bg-[#0a0a0b] border border-gray-800 rounded-2xl hover:border-yellow-500 hover:shadow-[0_0_30px_rgba(234,179,8,0.2)] transition-all group-hover:translate-x-2 cursor-pointer">
-                            <i className="ri-rocket-2-line text-3xl text-yellow-500"></i>
-                            <div className="absolute md:block hidden -top-6 left-0 text-[10px] text-yellow-500 font-mono opacity-0 group-hover:opacity-100 transition-opacity">
-                                VELOCITY: MAX
-                            </div>
-                        </div>
-                        <div className="w-20 h-[1px] bg-gradient-to-l from-transparent via-yellow-500/50 to-yellow-500 ml-2 opacity-50"></div>
-                        <div className="ml-4 md:block hidden text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-yellow-500 transition-colors -rotate-90 origin-left">Ratings</div>
-                    </div>
-                </div>
-
-                {/* Node 3: Bottom Right - Analysis */}
-                <div className={`absolute bottom-32 right-10 lg:right-40 transition-all duration-500 delay-300 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                    <div className="flex flex-col items-center group">
-                        <div className="relative p-6 bg-[#0a0a0b] border border-gray-800 rounded-2xl hover:border-teal-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.2)] transition-all group-hover:translate-y-2 cursor-pointer">
-                            <i className="ri-microscope-line text-3xl text-teal-500"></i>
-                        </div>
-                        <div className="w-[1px] h-20 bg-gradient-to-t from-transparent via-teal-500/50 to-teal-500 mt-2 opacity-50"></div>
-                        <div className="absolute md:block hidden -left-20 top-1/2 -translate-y-1/2 text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-teal-500 transition-colors text-right">
-                            Deep<br />Analysis
-                        </div>
-                    </div>
-                </div>
-
-                {/* Node 4: Bottom Left - Discovery */}
-                <div className={`absolute bottom-32 left-10 lg:left-40 transition-all duration-500 delay-400 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                    <div className="flex flex-col items-center group">
-                        <div className="relative p-6 bg-[#0a0a0b] border border-gray-800 rounded-2xl hover:border-brand-lime hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all group-hover:translate-y-2 cursor-pointer">
-                            <i className="ri-flashlight-line text-3xl text-brand-lime"></i>
-                            <div className="absolute md:block hidden -bottom-8 left-0 w-full text-center text-[10px] text-brand-lime font-mono opacity-0 group-hover:opacity-100 transition-opacity">
-                                101001
-                            </div>
-                        </div>
-                        <div className="w-[1px] h-20 bg-gradient-to-t from-transparent via-brand-lime/50 to-brand-lime mt-2 opacity-50"></div>
-                        <div className="absolute md:block hidden -right-20 top-1/2 -translate-y-1/2 text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-brand-lime transition-colors text-left">
-                            Pro<br />Insights
-                        </div>
-                    </div>
-                </div>
-
-                {/* Node 5: Top Left - Featured */}
-                <div className={`absolute top-1/3 -left-4 lg:left-20 transition-all duration-500 delay-500 ${mounted ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-                    <div className="flex flex-row-reverse items-center group">
-                        <div className="relative p-6 bg-[#0a0a0b] border border-gray-800 rounded-2xl hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all group-hover:-translate-x-2 cursor-pointer">
-                            <i className="ri-star-line text-3xl text-purple-500"></i>
-                        </div>
-                        <div className="w-20 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-purple-500 mr-2 opacity-50"></div>
-                        <div className="mr-4 md:block hidden text-xs font-mono text-gray-500 uppercase tracking-widest group-hover:text-purple-500 transition-colors rotate-90 origin-right">Featured</div>
-                    </div>
+                    {/* CTA Button */}
+                    {/* <button className="glitch-text mt-12 group relative px-8 py-3 bg-brand-orange text-white font-bold tracking-widest uppercase text-sm overflow-hidden rounded-sm transition-all hover:shadow-[0_0_40px_rgba(242,90,26,0.6)]">
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
+                        Explore Logic
+                    </button> */}
                 </div>
 
             </div>
+
+            {/* CSS for specific animations not in Tailwind config yet */}
+            <style>{`
+                @keyframes fall {
+                    0% { transform: translateY(-100%); }
+                    100% { transform: translateY(1000%); }
+                }
+                .transform-style-3d {
+                    transform-style: preserve-3d;
+                }
+            `}</style>
+
         </section>
     );
 };

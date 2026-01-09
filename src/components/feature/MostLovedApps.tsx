@@ -89,7 +89,7 @@ export default function MostLovedApps() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/80 h-full w-full py-6 z-[1]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[2]">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal-fade-up">
           <h2
             className="text-4xl font-bold mb-4"
             style={{ color: "#1F2853", fontFamily: "Manrope, sans-serif" }}
@@ -105,7 +105,7 @@ export default function MostLovedApps() {
         </div>
 
         {/* Leaderboard */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto reveal-fade-up">
           <div
             className="rounded-2xl p-8 relative overflow-hidden group"
             style={{
@@ -131,11 +131,11 @@ export default function MostLovedApps() {
             ></div>
 
             <div className="relative z-10">
-              <div className="space-y-6">
+              <div className="space-y-6 reveal-stagger">
                 {displayedApps.map((app, index) => (
                   <div
                     key={app.rank}
-                    className="flex flex-col gap-5 md:gap-6 md:flex-row md:items-center p-5 sm:p-6 rounded-2xl transition-all duration-300 cursor-pointer hover:scale-[1.02] relative group/item overflow-hidden"
+                    className="flex flex-col gap-5 md:gap-6 md:flex-row md:items-center p-5 sm:p-6 rounded-2xl transition-all duration-300 cursor-pointer hover:scale-[1.02] relative group/item overflow-hidden reveal-child"
                     style={{
                       background: "rgba(13, 16, 32, 0.55)",
                       backdropFilter: "blur(18px)",
@@ -144,12 +144,12 @@ export default function MostLovedApps() {
                         "0 8px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
                     }}
                   >
-                      {/* Hover glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#ffcee0]/10 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ffcee0]/10 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
 
-                      {/* Rank */}
-                      <div
-                        className="relative z-10 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full font-bold text-lg sm:text-xl flex-shrink-0"
+                    {/* Rank */}
+                    <div
+                      className="relative z-10 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full font-bold text-lg sm:text-xl flex-shrink-0"
                       style={{
                         background:
                           index < 3
@@ -166,84 +166,84 @@ export default function MostLovedApps() {
                             ? "0 4px 20px rgba(255, 206, 224, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)"
                             : "0 2px 10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
                       }}
-                      >
-                        #{app.rank}
-                        {index < 3 && (
-                          <div
-                            className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[10px] sm:text-xs backdrop-blur-sm"
-                            style={{
-                              background: "rgba(255, 206, 224, 0.9)",
-                              border: "1px solid rgba(255, 255, 255, 0.3)",
-                              boxShadow: "0 2px 8px rgba(255, 206, 224, 0.5)",
-                            }}
+                    >
+                      #{app.rank}
+                      {index < 3 && (
+                        <div
+                          className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-[10px] sm:text-xs backdrop-blur-sm"
+                          style={{
+                            background: "rgba(255, 206, 224, 0.9)",
+                            border: "1px solid rgba(255, 255, 255, 0.3)",
+                            boxShadow: "0 2px 8px rgba(255, 206, 224, 0.5)",
+                          }}
+                        >
+                          {index === 0 ? "👑" : index === 1 ? "🥈" : "🥉"}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Content blocks */}
+                    <div className="flex-1 w-full flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+                      {/* App Info */}
+                      <div className="flex-1 relative z-10">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+                          <h3
+                            className="font-semibold text-lg sm:text-xl text-white"
+                            style={{ fontFamily: "Manrope, sans-serif" }}
                           >
-                            {index === 0 ? "👑" : index === 1 ? "🥈" : "🥉"}
-                          </div>
-                        )}
+                            {app.name}
+                          </h3>
+                          {app.badge && (
+                            <span
+                              className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm"
+                              style={{
+                                background: "rgba(255, 206, 224, 0.9)",
+                                color: "#1F2853",
+                                border: "1px solid rgba(255, 255, 255, 0.3)",
+                                boxShadow: "0 2px 8px rgba(255, 206, 224, 0.3)",
+                              }}
+                            >
+                              {app.badge}
+                            </span>
+                          )}
+                        </div>
+                        <p
+                          className="text-white/80 text-sm mb-2"
+                          style={{ fontFamily: "Poppins, sans-serif" }}
+                        >
+                          {app.description}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[11px] sm:text-xs text-white/60">
+                          <span style={{ fontFamily: "Poppins, sans-serif" }}>
+                            {app.category}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <i className="ri-arrow-up-line text-green-400"></i>+
+                            {app.weeklyGrowth}% this week
+                          </span>
+                        </div>
                       </div>
 
-                      {/* Content blocks */}
-                      <div className="flex-1 w-full flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-                        {/* App Info */}
-                        <div className="flex-1 relative z-10">
-                          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                            <h3
-                              className="font-semibold text-lg sm:text-xl text-white"
-                              style={{ fontFamily: "Manrope, sans-serif" }}
-                            >
-                              {app.name}
-                            </h3>
-                            {app.badge && (
-                              <span
-                                className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm"
-                                style={{
-                                  background: "rgba(255, 206, 224, 0.9)",
-                                  color: "#1F2853",
-                                  border: "1px solid rgba(255, 255, 255, 0.3)",
-                                  boxShadow: "0 2px 8px rgba(255, 206, 224, 0.3)",
-                                }}
-                              >
-                                {app.badge}
-                              </span>
-                            )}
-                          </div>
-                          <p
-                            className="text-white/80 text-sm mb-2"
-                            style={{ fontFamily: "Poppins, sans-serif" }}
+                      {/* Votes */}
+                      <div className="text-left md:text-right relative z-10 md:min-w-[140px]">
+                        <div className="flex items-center gap-2 mb-1">
+                          <i className="ri-heart-fill text-red-400 text-base sm:text-lg"></i>
+                          <span
+                            className="text-2xl font-bold text-white leading-none"
+                            style={{ fontFamily: "Manrope, sans-serif" }}
                           >
-                            {app.description}
-                          </p>
-                          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[11px] sm:text-xs text-white/60">
-                            <span style={{ fontFamily: "Poppins, sans-serif" }}>
-                              {app.category}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <i className="ri-arrow-up-line text-green-400"></i>+
-                              {app.weeklyGrowth}% this week
-                            </span>
-                          </div>
+                            {formatVotes(app.votes)}
+                          </span>
                         </div>
-
-                        {/* Votes */}
-                        <div className="text-left md:text-right relative z-10 md:min-w-[140px]">
-                          <div className="flex items-center gap-2 mb-1">
-                            <i className="ri-heart-fill text-red-400 text-base sm:text-lg"></i>
-                            <span
-                              className="text-2xl font-bold text-white leading-none"
-                              style={{ fontFamily: "Manrope, sans-serif" }}
-                            >
-                              {formatVotes(app.votes)}
-                            </span>
-                          </div>
-                          <p
-                            className="text-white/60 text-xs"
-                            style={{ fontFamily: "Poppins, sans-serif" }}
-                          >
-                            votes
-                          </p>
-                        </div>
+                        <p
+                          className="text-white/60 text-xs"
+                          style={{ fontFamily: "Poppins, sans-serif" }}
+                        >
+                          votes
+                        </p>
                       </div>
                     </div>
+                  </div>
                 ))}
               </div>
 

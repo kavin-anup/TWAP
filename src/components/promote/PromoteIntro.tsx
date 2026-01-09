@@ -80,7 +80,7 @@ const PromoteIntro = () => {
     };
 
     return (
-        <section ref={sectionRef} className="bg-white py-24 lg:py-40 relative overflow-hidden">
+        <section ref={sectionRef} className="bg-white py-24 lg:pt-40 relative overflow-hidden">
             {/* Parallax Background Element */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-orange/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
@@ -115,9 +115,9 @@ const PromoteIntro = () => {
                         </span>
                     </button>
 
-                    <div className="w-full h-px bg-gray-200 mt-16 relative overflow-hidden">
+                    {/* <div className="w-full h-px bg-gray-200 mt-16 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-full bg-brand-orange transform -translate-x-full animate-[shimmer_3s_infinite]"></div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
