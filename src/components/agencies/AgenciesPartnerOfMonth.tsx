@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AgenciesPartnerOfMonth() {
     return (
@@ -50,10 +50,10 @@ export default function AgenciesPartnerOfMonth() {
                             </div>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="px-8 py-3 rounded-xl border border-[#f25a1a]/30 text-[#f25a1a] font-bold hover:bg-[#f25a1a] hover:text-white transition-all duration-300 flex items-center gap-2 hover:shadow-lg hover:shadow-orange-500/20 bg-white/50 backdrop-blur-sm">
+                                <Link to="/agencies/profile" className="px-8 py-3 rounded-xl border border-[#f25a1a]/30 text-[#f25a1a] font-bold hover:bg-[#f25a1a] hover:text-white transition-all duration-300 flex items-center gap-2 hover:shadow-lg hover:shadow-orange-500/20 bg-white/50 backdrop-blur-sm">
                                     <i className="ri-user-smile-line"></i>
                                     View Profile
-                                </button>
+                                </Link>
                                 <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-[#f25a1a] to-[#d14815] text-white font-bold hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 flex items-center gap-2">
                                     <i className="ri-global-line"></i>
                                     Visit Website

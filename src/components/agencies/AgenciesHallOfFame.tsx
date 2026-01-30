@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const agencies = [
     {
@@ -144,10 +145,10 @@ export default function AgenciesHallOfFame() {
                                     <span className="inline-block px-3 py-1 rounded-md border border-gray-200 text-xs text-gray-500 mb-4">
                                         {agency.tag}
                                     </span>
-                                    <button className="w-full bg-brand-lime hover:bg-brand-orange text-black py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 group-hover:scale-[1.02] transform duration-300">
+                                    <Link to="/agencies/profile" className="w-full bg-brand-lime hover:bg-brand-orange text-black py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 group-hover:scale-[1.02] transform duration-300">
                                         <i className="ri-global-line"></i>
                                         Visit Profile
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

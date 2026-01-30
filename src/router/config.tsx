@@ -17,6 +17,7 @@ import AgenciesPage from '../pages/agencies/page';
 import EverythingAIPage from '../pages/everything-ai/page';
 import SuccessStoriesPage from '../pages/interviews-success-stories/page';
 import PromotePage from '../pages/promote/page';
+import AgencyProfilePage from '../pages/agencies/profile/page';
 
 const routes: RouteObject[] = [
   {
@@ -70,6 +71,10 @@ const routes: RouteObject[] = [
   {
     path: '/agencies',
     element: <AgenciesPage />,
+  },
+  {
+    path: '/agencies/profile',
+    element: <AgencyProfilePage />,
   },
   {
     path: '/everything-ai',
