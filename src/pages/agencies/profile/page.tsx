@@ -138,7 +138,7 @@ const AgencyProfilePage: React.FC = () => {
 
                             {/* Avatar */}
                             <div className="w-32 h-32 rounded-full p-1 bg-white/10 backdrop-blur-sm border border-white/20 mb-6 relative z-10">
-                                <img src={agencyData.avatar} alt={agencyData.name} className="w-full h-full rounded-full object-cover" />
+                                <img src={agencyData.avatar} alt={agencyData.name} className="w-fukll h-full rounded-full object-cover" />
                             </div>
 
                             <h1 className="text-3xl font-bold font-manrope mb-2">{agencyData.name}</h1>
