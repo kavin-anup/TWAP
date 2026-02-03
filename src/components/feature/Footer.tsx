@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-50 py-12">
+    <footer className="bg-gray-50 py-12 border-t">
       <div className="max-w-7xl bg-white rounded-3xl mx-auto">
         {/* White Card Container */}
         <div className="p-2">

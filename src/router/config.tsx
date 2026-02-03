@@ -18,6 +18,7 @@ import EverythingAIPage from '../pages/everything-ai/page';
 import SuccessStoriesPage from '../pages/interviews-success-stories/page';
 import PromotePage from '../pages/promote/page';
 import AgencyProfilePage from '../pages/agencies/profile/page';
+import BestProjectManagementSoftwarePage from '../pages/best-project-management-software/page';
 
 const routes: RouteObject[] = [
   {
@@ -87,6 +88,10 @@ const routes: RouteObject[] = [
   {
     path: '/promote',
     element: <PromotePage />,
+  },
+  {
+    path: '/top-10-project-management-software-2026',
+    element: <BestProjectManagementSoftwarePage />,
   },
   {
     path: '*',
