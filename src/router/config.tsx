@@ -19,6 +19,7 @@ import SuccessStoriesPage from '../pages/interviews-success-stories/page';
 import PromotePage from '../pages/promote/page';
 import AgencyProfilePage from '../pages/agencies/profile/page';
 import BestProjectManagementSoftwarePage from '../pages/best-project-management-software/page';
+import BlogDetailPage from '../pages/blog-detail/page';
 
 const routes: RouteObject[] = [
   {
@@ -92,6 +93,10 @@ const routes: RouteObject[] = [
   {
     path: '/top-10-project-management-software-2026',
     element: <BestProjectManagementSoftwarePage />,
+  },
+  {
+    path: '/blog/:slug',
+    element: <BlogDetailPage />,
   },
   {
     path: '*',

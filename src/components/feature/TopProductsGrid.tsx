@@ -199,7 +199,7 @@ export default function TopProductsGrid() {
                                 <h3 className="font-bold text-lg text-[#1F2853] mb-2">{product.name}</h3>
                                 <p className="text-sm text-gray-500 mb-6 min-h-[40px] line-clamp-2">{product.description}</p>
 
-                                <Link to="#" className="block w-full py-3 bg-black text-white text-center rounded-lg text-sm font-bold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl translate-y-0 hover:-translate-y-0.5 active:translate-y-0">
+                                <Link to="/top-10-project-management-software-2026" className="block w-full py-3 bg-black text-white text-center rounded-lg text-sm font-bold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl translate-y-0 hover:-translate-y-0.5 active:translate-y-0">
                                     {product.buttonText}
                                 </Link>
                             </div>
