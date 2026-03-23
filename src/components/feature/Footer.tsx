@@ -67,13 +67,7 @@ export default function Footer() {
                     className="text-white/70 text-sm"
                     style={{ fontFamily: "Poppins, sans-serif" }}
                   >
-                    By subscribing you agree to our{" "}
-                    <a
-                      href="/privacy"
-                      className="text-white underline hover:text-[#b9ed2a] transition-colors"
-                    >
-                      Privacy Policy
-                    </a>
+                    By subscribing you agree to receive updates and insights.
                   </p>
                 </form>
               </div>
@@ -150,6 +144,15 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li>
                     <a
+                      href="/"
+                      className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
+                      style={{ fontFamily: "Poppins, sans-serif" }}
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href="/directory"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
@@ -159,98 +162,98 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="/reviews"
+                      href="/tools"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      Reviews
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/submit"
-                      className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                    >
-                      Submit App
+                      Top AI Tools & Apps
                     </a>
                   </li>
                 </ul>
               </div>
 
-              {/* Support Column */}
+              {/* Explore Column */}
               <div>
                 <h4
                   className="text-lg font-semibold text-[#1F2853] mb-4"
                   style={{ fontFamily: "Manrope, sans-serif" }}
                 >
-                  Support
+                  Explore
                 </h4>
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="/help"
+                      href="/everything-ai"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      Help
+                      Everything AI
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/faq"
+                      href="/services"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      FAQ
+                      Services
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/contact"
+                      href="/agencies"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      Contact
+                      Agency Feature
                     </a>
                   </li>
                 </ul>
               </div>
 
-              {/* Legal Column */}
+              {/* Company Column */}
               <div>
                 <h4
                   className="text-lg font-semibold text-[#1F2853] mb-4"
                   style={{ fontFamily: "Manrope, sans-serif" }}
                 >
-                  Legal
+                  Company
                 </h4>
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="/privacy"
+                      href="/methodology"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      Privacy Policy
+                      Methodology
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/terms"
+                      href="/promote"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      Terms of Service
+                      Promote
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/cookies"
+                      href="/resource-centre/blogs"
                       className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
                       style={{ fontFamily: "Poppins, sans-serif" }}
                     >
-                      Cookies
+                      Resource Centre
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/interviews-success-stories"
+                      className="text-gray-600 hover:text-[#f25a1a] transition-colors text-sm cursor-pointer"
+                      style={{ fontFamily: "Poppins, sans-serif" }}
+                    >
+                      Success Stories
                     </a>
                   </li>
                 </ul>

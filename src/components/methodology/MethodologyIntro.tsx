@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PromoteIntro = () => {
+const MethodologyIntro = () => {
     const sectionRef = useRef(null);
     const textRefs = useRef([]);
     const buttonRef = useRef(null);
@@ -125,4 +125,4 @@ const PromoteIntro = () => {
     );
 };
 
-export default PromoteIntro;
+export default MethodologyIntro;

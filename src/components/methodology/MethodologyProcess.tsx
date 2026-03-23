@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -48,7 +47,7 @@ const rankingSteps = [
     }
 ];
 
-const PromoteProcess = () => {
+const MethodologyProcess = () => {
     const [activeRankIndex, setActiveRankIndex] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const prevRef = useRef<HTMLDivElement>(null);
@@ -691,4 +690,4 @@ const PromoteProcess = () => {
     );
 };
 
-export default PromoteProcess;
+export default MethodologyProcess;

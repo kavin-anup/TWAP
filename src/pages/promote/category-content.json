@@ -1,0 +1,733 @@
+{
+  "categoryThemes": {
+    "web-mobile-apps": {
+      "key": "web-mobile-apps",
+      "viewingLabel": "Web & Mobile Apps",
+      "topBarBg": "#ef4d0a",
+      "accent": "#ff6a3d",
+      "accentSoft": "rgba(255, 106, 61, 0.14)",
+      "badgeText": "Web & Mobile App Promotion",
+      "title": "Get Your App In Front Of <span class=\"text-[#ef4d0a]\">Millions</span> Who Actually Download",
+      "description": "Expert reviews. Editorial coverage. Social amplification. Newsletter blasts. Ranking placement. The complete visibility stack for your app launch."
+    },
+    "ai-tools": {
+      "key": "ai-tools",
+      "viewingLabel": "AI Tools",
+      "topBarBg": "#5d39f6",
+      "accent": "#8d75ff",
+      "accentSoft": "rgba(141, 117, 255, 0.16)",
+      "badgeText": "AI Tool Promotion",
+      "title": "Get Your AI Tool Discovered By <span class=\"text-[#5d39f6]\">Millions</span> Ready to Adopt",
+      "description": "Expert reviews. AI directory listing. Founder interviews. Comparison content. Social amplification. The full-stack promotion platform built for AI products."
+    },
+    "agencies-service-providers": {
+      "key": "agencies-service-providers",
+      "viewingLabel": "Agencies & Service Providers",
+      "topBarBg": "#0f8d5f",
+      "accent": "#2fcf95",
+      "accentSoft": "rgba(47, 207, 149, 0.15)",
+      "badgeText": "Agency & Service Provider Promotion",
+      "title": "Get Your Agency Found By <span class=\"text-[#0f8d5f]\">Clients</span> Who Are Ready to Hire",
+      "description": "Verified agency profile. Expert showcase. Client interviews. Thought leadership content. The only platform that combines directory authority with editorial depth for service businesses."
+    }
+  },
+  "metrics": [
+    { "value": "50K+", "label": "Monthly Visitors" },
+    { "value": "5K+", "label": "Newsletter Subscribers" },
+    { "value": "1,000+", "label": "Products Featured" },
+    { "value": "30K+", "label": "Monthly Impressions" }
+  ],
+  "directoryBenefits": [
+    {
+      "title": "Appeared in directory within 48 hours, no queue",
+      "description": "Your listing goes live fast, categorised by platform type and use case so the right users find you organically."
+    },
+    {
+      "title": "Border highlight so users spot you instantly",
+      "description": "Paid listings get a highlighted border in category pages — increasing click-through rates significantly compared to standard listings."
+    },
+    {
+      "title": "Dofollow backlink to boost your SEO",
+      "description": "Your listing includes a quality dofollow link from The Web App Pro to your website — a direct authority signal for search engines."
+    },
+    {
+      "title": "Listing and traffic — forever",
+      "description": "Unlike time-limited promotions, your product stays permanently listed and continues attracting organic discovery indefinitely."
+    }
+  ],
+  "reviewBenefits": [
+    {
+      "title": "In-depth written review published on our platform",
+      "description": "Not a paid advertorial — a genuine editorial review covering your app's strengths, limitations, and who it's best for."
+    },
+    {
+      "title": "TWAP Certified badge you can embed on your site",
+      "description": "Verified third-party social proof that increases conversion rates when placed on your landing page or app store listing."
+    },
+    {
+      "title": "Structured rating across UX, performance, and features",
+      "description": "Scored out of 5 stars across four dimensions — giving users a fast, trustworthy signal before they click through to your product."
+    },
+    {
+      "title": "Evergreen SEO content that keeps driving traffic",
+      "description": "Review articles rank in search engines for your product name and category keywords — bringing in organic traffic for years after publication."
+    }
+  ],
+  "benefitSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "What happens when you list with us",
+      "headingHtml": "Here&apos;s Exactly <span class=\"text-[#ef4d0a]\">What</span><br /><span class=\"text-[#ef4d0a]\">You Get</span>",
+      "introText": "No vague promises. Here's a concrete breakdown of what getting listed on The Web App Pro actually delivers for your mobile or web app.",
+      "firstCardTitle": "Listed in Our App Directory — Permanently",
+      "firstCardDescription": "Your app appears in our searchable, categorised directory the moment it's approved. Discoverable by users actively looking for apps like yours.",
+      "secondCardTitle": "A Real Expert Review — Not Just a Listing",
+      "secondCardDescription": "Our editorial team writes a thorough, unbiased review covering UX, functionality, pricing, and platform support. Fact-checked before publishing.",
+      "previewCard": {
+        "icon": "ri-smartphone-line",
+        "iconBg": "#efe9e4",
+        "iconColor": "#8b6b4a",
+        "name": "YourApp Pro",
+        "meta": "Productivity · iOS & Android",
+        "badge": "✓ TWAP Certified",
+        "badgeColor": "#ef4d0a"
+      }
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "What happens when you list with us",
+      "headingHtml": "Exactly What Happens<br />When You <span class=\"text-[#5d39f6]\">List Your AI</span><br /><span class=\"text-[#5d39f6]\">Tool</span>",
+      "introText": "The AI space is crowded. Here's how listing on The Web App Pro gives your tool a genuine edge — with concrete deliverables, not vague promises.",
+      "firstCardTitle": "Listed in Our Verified AI Tools Directory",
+      "firstCardDescription": "Your AI tool appears in our searchable, verified AI directory under the right use-case category — discoverable by professionals actively seeking tools like yours.",
+      "secondCardTitle": "An Expert AI Tool Review — Rigorous & Unbiased",
+      "secondCardDescription": "Our editors evaluate your AI tool on capability, use-case fit, output quality, and pricing. Written for both technical and non-technical buyers.",
+      "previewCard": {
+        "icon": "ri-robot-2-line",
+        "iconBg": "#ebe6ff",
+        "iconColor": "#5d39f6",
+        "name": "YourAI Tool",
+        "meta": "AI Writing · Productivity",
+        "badge": "✓ TWAP Certified",
+        "badgeColor": "#5d39f6"
+      }
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "What happens when you list with us",
+      "headingHtml": "Here&apos;s Exactly <span class=\"text-[#0f8d5f]\">What</span><br /><span class=\"text-[#0f8d5f]\">Your Agency Gets</span>",
+      "introText": "The services market is fragmented. Here's how listing on The Web App Pro positions your agency as the credible, go-to choice in your niche.",
+      "firstCardTitle": "Listed in Our Verified Agency Directory",
+      "firstCardDescription": "Your agency appears in our curated directory under the right specialisation — discoverable by business owners actively seeking development, design, or AI consultancy services.",
+      "secondCardTitle": "An Expert Agency Showcase — Not Just a Profile",
+      "secondCardDescription": "Our editorial team writes a thorough agency showcase covering your service lines, team, portfolio highlights, and specialisations. Positioned as a trusted resource, not an ad.",
+      "previewCard": {
+        "icon": "ri-building-2-line",
+        "iconBg": "#e4f4ef",
+        "iconColor": "#0f8d5f",
+        "name": "Your Agency",
+        "meta": "AI Development · Web & Mobile",
+        "badge": "✓ TWAP Certified",
+        "badgeColor": "#0f8d5f"
+      }
+    }
+  },
+  "distributionSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "Distribution Channels",
+      "headingHtml": "Six Ways We Put Your<br /><span class=\"text-[#ef4d0a]\">Product on the Map</span>",
+      "introText": "Most platforms give you a listing. We give you a full distribution stack — every channel working in parallel the moment your product is featured.",
+      "cards": [
+        {
+          "number": "01",
+          "icon": "ri-file-list-3-line",
+          "title": "App Directory Listing",
+          "description": "Permanently listed in our curated directory under the right category. Searchable by platform, pricing model, and use case.",
+          "tags": ["Permanent", "Searchable", "Categorised"],
+          "metricLabel": "Discovery Reach",
+          "metricValue": "85%"
+        },
+        {
+          "number": "02",
+          "icon": "ri-star-fill",
+          "title": "Expert App Review",
+          "description": "A rigorous written review covering UX, functionality, performance, and value. Scored on our 5-star system with a TWAP Certified badge.",
+          "tags": ["Editorial", "Unbiased", "5-Star Rating"],
+          "metricLabel": "Trust Signal",
+          "metricValue": "92%",
+          "featured": true
+        },
+        {
+          "number": "03",
+          "icon": "ri-mail-open-line",
+          "title": "Newsletter Feature",
+          "description": "\"App of the Week\" blast to 5,000+ opted-in subscribers who actively seek new apps to download and use.",
+          "tags": ["5K+ Subscribers", "App of the Week"],
+          "metricLabel": "Direct Reach",
+          "metricValue": "78%"
+        },
+        {
+          "number": "04",
+          "icon": "ri-megaphone-line",
+          "title": "Social Media Campaign",
+          "description": "Multi-platform posts across LinkedIn, Twitter/X, Instagram, and Facebook — including carousel posts and community group sharing.",
+          "tags": ["LinkedIn", "Twitter", "Instagram"],
+          "metricLabel": "Social Reach",
+          "metricValue": "88%"
+        },
+        {
+          "number": "05",
+          "icon": "ri-movie-2-line",
+          "title": "Video Short Review",
+          "description": "45-second video review of your app distributed to YouTube Shorts, Instagram Reels, and Facebook — the highest-engagement format for app discovery.",
+          "tags": ["YouTube Shorts", "Instagram Reels"],
+          "metricLabel": "Video Reach",
+          "metricValue": "94%"
+        },
+        {
+          "number": "06",
+          "icon": "ri-trophy-line",
+          "title": "Top Lists & Rankings",
+          "description": "Inclusion in our Best iOS/Android App reports and Top Product leaderboards — evergreen SEO content that compounds over time.",
+          "tags": ["Top Lists", "Best Apps Report", "Leaderboard"],
+          "metricLabel": "SEO + Rankings",
+          "metricValue": "80%"
+        }
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "Distribution Channels",
+      "headingHtml": "Six Ways We Put Your<br /><span class=\"text-[#5d39f6]\">Product on the Map</span>",
+      "introText": "Most platforms give you a listing. We give you a full distribution stack — every channel working in parallel the moment your product is featured.",
+      "cards": [
+        {
+          "number": "01",
+          "icon": "ri-folder-2-line",
+          "title": "Verified AI Directory Listing",
+          "description": "Listed in our \"Everything AI\" section — categorised by use case, model type, and pricing. Verified badge signals credibility to users evaluating tools.",
+          "tags": ["Verified Listing", "AI Category", "Use-Case Tags"],
+          "metricLabel": "Discovery",
+          "metricValue": "85%"
+        },
+        {
+          "number": "02",
+          "icon": "ri-star-fill",
+          "title": "Expert AI Tool Review",
+          "description": "A rigorous editorial review evaluating capability, output quality, pricing fairness, and data privacy. Scored and certified — trust signals that convert.",
+          "tags": ["Editorial", "Unbiased", "Certified"],
+          "metricLabel": "Credibility",
+          "metricValue": "95%",
+          "featured": true
+        },
+        {
+          "number": "03",
+          "icon": "ri-mail-open-line",
+          "title": "AI Newsletter Feature",
+          "description": "\"AI Tool of the Week\" feature in our newsletter — reaching subscribers who are actively evaluating and adopting AI tools for their workflows.",
+          "tags": ["AI Newsletter", "5K+ Subscribers"],
+          "metricLabel": "Direct Reach",
+          "metricValue": "80%"
+        },
+        {
+          "number": "04",
+          "icon": "ri-megaphone-line",
+          "title": "Social Media Blast",
+          "description": "Multi-platform posts across LinkedIn, Twitter/X, and Instagram — targeting AI practitioners, founders, and early adopters in our community.",
+          "tags": ["LinkedIn", "Twitter/X", "AI Community"],
+          "metricLabel": "Social Reach",
+          "metricValue": "88%"
+        },
+        {
+          "number": "05",
+          "icon": "ri-mic-line",
+          "title": "Founder / CEO Interview",
+          "description": "In-depth founder interview published on our \"Interviews & Success Stories\" hub — positioning you as a thought leader, not just a tool vendor.",
+          "tags": ["Founder Story", "Thought Leadership"],
+          "metricLabel": "Authority Building",
+          "metricValue": "90%"
+        },
+        {
+          "number": "06",
+          "icon": "ri-bar-chart-box-line",
+          "title": "AI Comparison & Rankings",
+          "description": "Inclusion in our \"Best AI Tools\" comparison articles and rankings — the content type with highest purchase intent in the AI category.",
+          "tags": ["Best AI Tools", "Comparison Content", "Rankings"],
+          "metricLabel": "Comparison Traffic",
+          "metricValue": "82%"
+        }
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "Distribution Channels",
+      "headingHtml": "Six Ways We Put Your<br /><span class=\"text-[#0f8d5f]\">Product on the Map</span>",
+      "introText": "Most platforms give you a listing. We give you a full distribution stack — every channel working in parallel the moment your product is featured.",
+      "cards": [
+        {
+          "number": "01",
+          "icon": "ri-folder-2-line",
+          "title": "Verified Agency Directory",
+          "description": "Listed in our verified agency directory, categorised by specialisation (AI, mobile, web, design, marketing). Verified badge builds immediate trust with potential clients.",
+          "tags": ["Verified Profile", "Specialisation Tags", "Portfolio Link"],
+          "metricLabel": "Client Discovery",
+          "metricValue": "82%"
+        },
+        {
+          "number": "02",
+          "icon": "ri-star-fill",
+          "title": "Expert Agency Showcase",
+          "description": "A detailed editorial showcase covering your services, methodology, team credentials, and portfolio. Written to convert — not just inform.",
+          "tags": ["Editorial", "Portfolio", "Expert Showcase"],
+          "metricLabel": "Trust Signal",
+          "metricValue": "92%",
+          "featured": true
+        },
+        {
+          "number": "03",
+          "icon": "ri-mic-line",
+          "title": "Founder / CEO Interview",
+          "description": "In-depth CEO interview published on our interviews hub — establishing your agency leader as a thought leader in your space, not just a vendor.",
+          "tags": ["CEO Interview", "Thought Leadership"],
+          "metricLabel": "Authority",
+          "metricValue": "90%"
+        },
+        {
+          "number": "04",
+          "icon": "ri-mail-open-line",
+          "title": "Newsletter Feature",
+          "description": "\"Agency of the Month\" feature in our newsletter — reaching business owners, founders, and decision-makers who are actively evaluating service partners.",
+          "tags": ["Agency of Month", "5K+ Subscribers"],
+          "metricLabel": "Direct Reach",
+          "metricValue": "76%"
+        },
+        {
+          "number": "05",
+          "icon": "ri-megaphone-line",
+          "title": "Social Media Campaign",
+          "description": "Multi-platform promotion across LinkedIn (primary), Twitter/X, and Instagram — targeting business decision-makers with carousel posts and case study content.",
+          "tags": ["LinkedIn (Primary)", "Case Study Posts"],
+          "metricLabel": "B2B Reach",
+          "metricValue": "85%"
+        },
+        {
+          "number": "06",
+          "icon": "ri-article-line",
+          "title": "Case Study & Success Stories",
+          "description": "A published case study featuring one of your client success stories — the most persuasive format for converting prospective agency clients.",
+          "tags": ["Client Case Study", "Published Story"],
+          "metricLabel": "Conversion Content",
+          "metricValue": "88%"
+        }
+      ]
+    }
+  },
+  "howItWorksSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "How It Works",
+      "headingHtml": "From Submission <span class=\"text-[#ef4d0a]\">to Spotlight</span>",
+      "introText": "Five clear steps. Zero friction. You focus on building — we handle the visibility.",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Submit",
+          "description": "Fill out the product form with your app details, store URL, and promotion goals."
+        },
+        {
+          "number": "2",
+          "title": "Review",
+          "description": "Our editors test your app and write a thorough, unbiased review."
+        },
+        {
+          "number": "3",
+          "title": "Go Live",
+          "description": "Your listing, review article, and TWAP badge go live on the platform."
+        },
+        {
+          "number": "4",
+          "title": "Amplify",
+          "description": "Newsletter blast, social campaign, and video review launch simultaneously."
+        },
+        {
+          "number": "5",
+          "title": "Compound",
+          "description": "Organic search, directory traffic, and referral links keep driving long-term users."
+        }
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "How It Works",
+      "headingHtml": "From Submission <span class=\"text-[#5d39f6]\">to Spotlight</span>",
+      "introText": "Five clear steps. Zero friction. You focus on building — we handle the visibility.",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Submit Tool",
+          "description": "Share your AI tool’s details, positioning, use cases, and target audience."
+        },
+        {
+          "number": "2",
+          "title": "Editorial Review",
+          "description": "Our AI-experienced editors test your tool and write a thorough unbiased evaluation."
+        },
+        {
+          "number": "3",
+          "title": "Go Live",
+          "description": "Your listing, review, and AI Certified badge go live in the Everything AI hub."
+        },
+        {
+          "number": "4",
+          "title": "Amplify",
+          "description": "Newsletter feature, social campaign, and founder interview launch in sequence."
+        },
+        {
+          "number": "5",
+          "title": "Compound",
+          "description": "Comparison content, rankings, and evergreen search traffic keep growing your reach."
+        }
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "How It Works",
+      "headingHtml": "From Submission <span class=\"text-[#0f8d5f]\">to Spotlight</span>",
+      "introText": "Five clear steps. Zero friction. You focus on building — we handle the visibility.",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Submit Agency",
+          "description": "Share your agency profile, specialisations, team details, and portfolio highlights."
+        },
+        {
+          "number": "2",
+          "title": "Editorial Review",
+          "description": "Our team researches your agency and writes a comprehensive showcase article."
+        },
+        {
+          "number": "3",
+          "title": "Go Live",
+          "description": "Your agency profile, showcase, and verified badge go live in our directory."
+        },
+        {
+          "number": "4",
+          "title": "Amplify",
+          "description": "Newsletter feature, LinkedIn campaign, and CEO interview are published in sequence."
+        },
+        {
+          "number": "5",
+          "title": "Generate Leads",
+          "description": "Inbound enquiries arrive from clients who already read your showcase and trust your credentials."
+        }
+      ]
+    }
+  },
+  "pricingSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "Promotion Plans",
+      "headingHtml": "Pick the Exposure <span class=\"text-[#ef4d0a]\">You Need</span>",
+      "introText": "Every plan includes a permanent listing and real editorial coverage. No hidden fees. No time-limited gimmicks.",
+      "plans": [
+        {
+          "name": "Free Listing",
+          "subtitle": "Get discovered in our directory at no cost.",
+          "price": "0",
+          "features": [
+            "Permanent app directory listing",
+            "Basic product profile page",
+            "No-follow SEO backlink",
+            "Expert editorial review",
+            "TWAP Certified badge",
+            "Newsletter feature",
+            "Social media promotion"
+          ],
+          "ctaText": "Get Listed Free"
+        },
+        {
+          "name": "Launch Ready",
+          "subtitle": "Editorial review + community spotlight for your app launch.",
+          "price": "99",
+          "features": [
+            "Permanent directory listing",
+            "Full expert review article",
+            "TWAP Certified badge (embeddable)",
+            "Dofollow SEO backlink",
+            "Newsletter feature — 15 days",
+            "Carousel social post (5 platforms)",
+            "Video short review",
+            "Top 3 report placement"
+          ],
+          "ctaText": "Get Started"
+        },
+        {
+          "name": "Growth Blast",
+          "subtitle": "Full-scale launch with video, social blast & top placement.",
+          "price": "149",
+          "features": [
+            "Everything in Launch Ready",
+            "45-sec video short — 10 platforms",
+            "Newsletter feature — 25 days",
+            "Top 3 Best Apps inclusion",
+            "Founder interview article",
+            "Priority 48h turnaround",
+            "Instagram Reels + YouTube Short",
+            "Partner of the Month"
+          ],
+          "ctaText": "Launch Now",
+          "highlighted": true,
+          "badgeText": "Most Popular"
+        },
+        {
+          "name": "Full Visibility",
+          "subtitle": "Maximum exposure. The complete stack for ambitious products.",
+          "price": "199",
+          "features": [
+            "Everything in Growth Blast",
+            "Video short — 15 platforms",
+            "Newsletter feature — 35 days",
+            "Partner of the Month spotlight",
+            "Exclusive CEO interview",
+            "Dedicated Quora strategy",
+            "Lifetime coverage commitment",
+            "Personalised app store guidance"
+          ],
+          "ctaText": "Go Premium"
+        }
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "Promotion Plans",
+      "headingHtml": "Pick the Exposure <span class=\"text-[#5d39f6]\">You Need</span>",
+      "introText": "Every plan includes a permanent listing and real editorial coverage. No hidden fees. No time-limited gimmicks.",
+      "plans": [
+        {
+          "name": "AI Discovery",
+          "subtitle": "Get your AI tool listed in our verified directory free.",
+          "price": "0",
+          "features": [
+            "Permanent AI directory listing",
+            "Basic tool profile page",
+            "Use-case category tags",
+            "No-follow SEO backlink",
+            "Expert AI tool review",
+            "AI Certified badge",
+            "Newsletter feature",
+            "Comparison article inclusion"
+          ],
+          "ctaText": "List for Free"
+        },
+        {
+          "name": "AI Launch",
+          "subtitle": "Editorial review + AI newsletter feature for your tool launch.",
+          "price": "99",
+          "features": [
+            "Permanent AI directory listing",
+            "Full expert AI tool review",
+            "AI Certified badge (embeddable)",
+            "Dofollow SEO backlink",
+            "AI Newsletter feature — 15 days",
+            "LinkedIn & Twitter social posts",
+            "Founder interview",
+            "Best AI Tools comparison inclusion"
+          ],
+          "ctaText": "Get Started"
+        },
+        {
+          "name": "AI Authority",
+          "subtitle": "Maximum AI tool credibility — review, comparison coverage, and founder story.",
+          "price": "149",
+          "features": [
+            "Everything in AI Launch",
+            "Best AI Tools comparison inclusion",
+            "AI Newsletter feature — 25 days",
+            "Founder interview article",
+            "Multi-platform social blast",
+            "Priority 48h turnaround",
+            "Border highlight in directory",
+            "CEO spotlight coverage"
+          ],
+          "ctaText": "Launch Now",
+          "highlighted": true,
+          "badgeText": "Most Popular"
+        },
+        {
+          "name": "AI Domination",
+          "subtitle": "Total AI market presence. Every channel. Maximum reach.",
+          "price": "199",
+          "features": [
+            "Everything in AI Authority",
+            "CEO / Founder spotlight feature",
+            "AI Newsletter — 35 days",
+            "Dedicated Quora AI strategy",
+            "Partner of the Month (AI)",
+            "Lifetime AI directory coverage",
+            "Video short review — 10 platforms",
+            "Custom AI use-case content piece"
+          ],
+          "ctaText": "Go Premium"
+        }
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "Promotion Plans",
+      "headingHtml": "Pick the Exposure <span class=\"text-[#0f8d5f]\">You Need</span>",
+      "introText": "Every plan includes a permanent listing and real editorial coverage. No hidden fees. No time-limited gimmicks.",
+      "plans": [
+        {
+          "name": "Agency Profile",
+          "subtitle": "Get your agency visible in our verified directory free.",
+          "price": "0",
+          "features": [
+            "Verified agency directory listing",
+            "Basic agency profile page",
+            "Specialisation tags & portfolio link",
+            "No-follow SEO backlink",
+            "Expert agency showcase article",
+            "Verified Agency badge",
+            "Newsletter feature",
+            "CEO interview"
+          ],
+          "ctaText": "List Your Agency"
+        },
+        {
+          "name": "Agency Spotlight",
+          "subtitle": "Editorial showcase + newsletter feature for lead generation.",
+          "price": "99",
+          "features": [
+            "Verified agency directory listing",
+            "Full expert agency showcase",
+            "Verified Agency badge (embeddable)",
+            "Dofollow SEO backlink",
+            "Newsletter feature — 15 days",
+            "LinkedIn + Twitter social posts",
+            "CEO / Founder interview",
+            "Client case study article"
+          ],
+          "ctaText": "Get Started"
+        },
+        {
+          "name": "Agency Authority",
+          "subtitle": "Full editorial + CEO interview + case study for serious lead generation.",
+          "price": "149",
+          "features": [
+            "Everything in Agency Spotlight",
+            "CEO / Founder interview article",
+            "Newsletter feature — 25 days",
+            "Published client case study",
+            "Multi-platform social campaign",
+            "Priority 48h turnaround",
+            "Partner of the Month consideration",
+            "Dedicated lead gen content"
+          ],
+          "ctaText": "Get Featured",
+          "highlighted": true,
+          "badgeText": "Most Popular"
+        },
+        {
+          "name": "Market Leader",
+          "subtitle": "Total market presence. Maximum authority for your agency.",
+          "price": "199",
+          "features": [
+            "Everything in Agency Authority",
+            "Partner of the Month spotlight",
+            "Newsletter — 35 days",
+            "Dedicated Quora strategy",
+            "Two client case study articles",
+            "Lifetime agency coverage",
+            "Video agency showcase short",
+            "Custom thought leadership piece"
+          ],
+          "ctaText": "Dominate Your Niche"
+        }
+      ]
+    }
+  },
+  "comparisonSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "Platform Comparison",
+      "headingHtml": "Why <span class=\"text-[#ef4d0a]\">The Web App Pro</span> Wins",
+      "introText": "See how our offer stacks up against other promotion channels in the market.",
+      "columns": {
+        "feature": "Feature",
+        "twap": "The Web App Pro",
+        "directory": "App Directories",
+        "editorial": "Editorial Review Platforms",
+        "social": "Social Launch Platforms",
+        "ceo": "CEO Interview Platforms"
+      },
+      "rows": [
+        { "feature": "Permanent directory listing", "twap": "yes", "directory": "yes", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Expert editorial review", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "no" },
+        { "feature": "TWAP/platform certified badge", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "no" },
+        { "feature": "Social media campaign", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Video review (Reels / Shorts)", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Founder / CEO interview", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "yes" },
+        { "feature": "Newsletter blast", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Top lists & Best App reports", "twap": "yes", "directory": "yes", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Quora / SEO intent strategy", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Free tier available", "twap": "yes", "directory": "yes", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Starting price", "twap": "$0 Free", "directory": "$49+", "editorial": "Custom", "social": "$99+", "ceo": "Custom" }
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "Platform Comparison",
+      "headingHtml": "Why <span class=\"text-[#5d39f6]\">The Web App Pro</span> Wins",
+      "introText": "See how our offer stacks up against other promotion channels in the market.",
+      "columns": {
+        "feature": "Feature",
+        "twap": "The Web App Pro",
+        "directory": "AI Tool Directories",
+        "editorial": "Editorial Review Platforms",
+        "social": "Social Launch Platforms",
+        "ceo": "CEO Interview Platforms"
+      },
+      "rows": [
+        { "feature": "Verified AI directory listing", "twap": "yes", "directory": "yes", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Expert AI tool review", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "no" },
+        { "feature": "AI Certified badge", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "no" },
+        { "feature": "Best AI Tools comparison content", "twap": "yes", "directory": "yes", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Founder / CEO interview", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "yes" },
+        { "feature": "AI newsletter blast", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Social media campaign", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Quora / SEO intent strategy", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Video review content", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Free tier available", "twap": "yes", "directory": "yes", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Starting price", "twap": "$0 Free", "directory": "$49+", "editorial": "Custom", "social": "$99+", "ceo": "Custom" }
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "Platform Comparison",
+      "headingHtml": "Why <span class=\"text-[#0f8d5f]\">The Web App Pro</span> Wins",
+      "introText": "See how our offer stacks up against other promotion channels in the market.",
+      "columns": {
+        "feature": "Feature",
+        "twap": "The Web App Pro",
+        "directory": "Agency Directories",
+        "editorial": "Editorial Review Platforms",
+        "social": "B2B Social Platforms",
+        "ceo": "CEO Interview Platforms"
+      },
+      "rows": [
+        { "feature": "Verified agency directory listing", "twap": "yes", "directory": "yes", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Expert editorial agency showcase", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "no" },
+        { "feature": "Verified Agency badge", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "no" },
+        { "feature": "CEO / Founder interview", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "yes" },
+        { "feature": "Client case study publishing", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Newsletter blast to decision-makers", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "LinkedIn-focused social campaign", "twap": "yes", "directory": "no", "editorial": "no", "social": "yes", "ceo": "no" },
+        { "feature": "Quora / SEO intent strategy", "twap": "yes", "directory": "no", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Thought leadership content", "twap": "yes", "directory": "no", "editorial": "yes", "social": "no", "ceo": "yes" },
+        { "feature": "Free tier available", "twap": "yes", "directory": "yes", "editorial": "no", "social": "no", "ceo": "no" },
+        { "feature": "Starting price", "twap": "$0 Free", "directory": "$49+", "editorial": "Custom", "social": "$99+", "ceo": "Custom" }
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 
-const PromoteHero = () => {
+const MethodologyHero = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const coreRef = useRef<HTMLDivElement>(null);
     const ringsRef = useRef<HTMLDivElement>(null);
@@ -202,4 +202,4 @@ const PromoteHero = () => {
     );
 };
 
-export default PromoteHero;
+export default MethodologyHero;

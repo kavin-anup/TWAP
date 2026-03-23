@@ -9,9 +9,9 @@ const menuCategories = [
     link: "/"
   },
   {
-    id: 'top-products',
-    label: 'Top Products',
-    link: '/products'
+    id: 'directory',
+    label: 'Directory',
+    link: '/directory'
   },
   {
     id: 'everything-ai',
@@ -24,10 +24,15 @@ const menuCategories = [
     link: '/services'
   },
   {
-    id: 'promote',
-    label: 'Promote',
-    link: '/promote'
+    id: 'methodology',
+    label: 'Methodology',
+    link: '/methodology'
   },
+  // {
+  //   id: 'promote',
+  //   label: 'Promote',
+  //   link: '/promote'
+  // },
   // {
   //   id: 'reviews',
   //   label: 'Reviews',
@@ -104,10 +109,10 @@ export default function Header() {
 
                 {/* CTA - Hidden on mobile */}
                 <Link
-                  to="/submit"
+                  to="/promote"
                   className="hidden lg:block bg-gradient-to-r from-[#f25a1a] to-[#ff7043] text-white px-5 py-2.5 rounded-full font-['Manrope'] font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap text-sm lg:text-base"
                 >
-                  Submit Your App
+                  Promote Now
                 </Link>
               </div>
 
@@ -139,68 +144,12 @@ export default function Header() {
                     {category.label}
                   </Link>
                 ))}
-                {/* <Link
-                  to="/"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>}
-                {/* <Link
-                  to="/products"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Products
-                </Link>
                 <Link
-                  to="/directory"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Directory
-                </Link>
-                <Link
-                  to="/reviews"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Reviews
-                </Link>
-                <Link
-                  to="/news"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  News
-                </Link>
-                <Link
-                  to="/insights"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Insights
-                </Link>
-                <Link
-                  to="/services"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/showcase"
-                  className="text-white font-['Manrope'] font-medium hover:text-[#f25a1a] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Promote
-                </Link> */}
-                <Link
-                  to="/submit"
+                  to="/promote"
                   className="bg-gradient-to-r from-[#f25a1a] to-[#ff7043] text-white px-6 py-3 rounded-full font-['Manrope'] font-semibold hover:shadow-lg transition-all duration-300 text-center mt-2 whitespace-nowrap"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Submit Your App
+                  Promote Now
                 </Link>
               </nav>
             </div>

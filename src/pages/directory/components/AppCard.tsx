@@ -41,7 +41,7 @@ export default function AppCard({ app, viewMode }: AppCardProps) {
   if (viewMode === 'list') {
     return (
       <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 border border-gray-100 hover:border-gray-200 cursor-pointer">
-        <div className="flex items-start gap-6">
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
           {/* App Logo */}
           <div className="flex-shrink-0">
             <img
@@ -53,31 +53,31 @@ export default function AppCard({ app, viewMode }: AppCardProps) {
 
           {/* App Info */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between mb-2">
-              <div className="flex items-center gap-3">
-                <h3 className="text-xl font-bold text-gray-900 font-manrope">{app.name}</h3>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-manrope">{app.name}</h3>
                 {app.featured && (
                   <span className="bg-gradient-to-r from-[#ffcee0] to-[#ff9ec7] text-[#8b1538] px-2 py-1 rounded-full text-xs font-semibold font-poppins">
                     Featured
                   </span>
                 )}
               </div>
-              <span className={`px-3 py-1 rounded-full text-xs font-semibold font-poppins ${getPricingColor(app.pricing)}`}>
+              <span className={`px-3 py-1 rounded-full text-xs font-semibold font-poppins w-fit ${getPricingColor(app.pricing)}`}>
                 {app.pricing}
               </span>
             </div>
 
             <p className="text-gray-600 mb-3 line-clamp-2 font-poppins">{app.description}</p>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-3 sm:gap-2">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 {renderStars(app.rating)}
                 <span className="text-sm text-gray-500 font-poppins">({app.reviews.toLocaleString()} reviews)</span>
               </div>
               
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <span className="text-sm text-gray-500 font-poppins">{app.category}</span>
-                <button className="bg-[#1F2853] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#2a3a6b] transition-colors whitespace-nowrap font-poppins">
+                <button className="w-full sm:w-auto bg-[#1F2853] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#2a3a6b] transition-colors whitespace-nowrap font-poppins">
                   View Details
                 </button>
               </div>
