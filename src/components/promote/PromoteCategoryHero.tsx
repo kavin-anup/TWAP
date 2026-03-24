@@ -21,7 +21,7 @@ interface PromoteCategoryHeroProps {
 
 export default function PromoteCategoryHero({ theme, metrics }: PromoteCategoryHeroProps) {
   return (
-    <main className="pt-[5.2rem] sm:pt-[5.5rem] min-h-screen flex flex-col justify-center relative">
+    <main className="pt-[6.5rem] sm:pt-[5.5rem] min-h-screen flex flex-col justify-center relative">
       <div
         className="absolute inset-0 opacity-30 w-1/2 h-1/2 rounded-full blur-[120px] z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{ backgroundColor: theme.topBarBg }}

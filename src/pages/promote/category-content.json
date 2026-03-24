@@ -729,5 +729,587 @@
         { "feature": "Starting price", "twap": "$0 Free", "directory": "$49+", "editorial": "Custom", "social": "$99+", "ceo": "Custom" }
       ]
     }
+  },
+  "successStoriesSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "Real Founders. Real Results.",
+      "headingHtml": "Success Stories That <span class=\"text-[#ef4d0a]\">Inspire Growth</span>",
+      "introText": "See how founders like you used The Web App Pro to reach their audience and hit growth milestones.",
+      "slides": [
+        {
+          "appName": "FinanceAI",
+          "appType": "Finance App",
+          "quote": "Our goal was to get into the top 10 finance apps — and The Web App Pro's Growth Blast plan got us there within 3 months. The combination of editorial review and newsletter reach created a trust signal we couldn't buy elsewhere.",
+          "metrics": [
+            { "value": "Top 10", "label": "Finance app ranking within 3 months" },
+            { "value": "500k+", "label": "Downloads in the first month post-feature" }
+          ],
+          "mockBg": "#dcefe8",
+          "mockCard": "#1f4f78",
+          "icon": "ri-money-dollar-circle-line"
+        },
+        {
+          "appName": "TaskFlow Pro",
+          "appType": "Productivity App",
+          "quote": "We'd tried paid social before and it never converted. The TWAP review created genuine credibility — users trusted it. Within 2 weeks we were featured on multiple platforms and downloads increased by 300%.",
+          "metrics": [
+            { "value": "300%", "label": "Increase in downloads within 2 weeks" },
+            { "value": "2.1x", "label": "Better conversion than paid social channels" }
+          ],
+          "mockBg": "#f1e6de",
+          "mockCard": "#3b2375",
+          "icon": "ri-checkbox-circle-line"
+        },
+        {
+          "appName": "MindFlow AI",
+          "appType": "AI-Powered App",
+          "quote": "The founder interview feature gave our story real depth. Users arrived already knowing what we were about — the quality of our sign-ups improved dramatically. This is founder visibility done right.",
+          "metrics": [
+            { "value": "45%", "label": "Improvement in sign-up quality score" },
+            { "value": "80%", "label": "Faster onboarding — users pre-educated on value" }
+          ],
+          "mockBg": "#e9e4f5",
+          "mockCard": "#1e3a7b",
+          "icon": "ri-brain-line"
+        }
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "Real Founders. Real Results.",
+      "headingHtml": "Success Stories That <span class=\"text-[#5d39f6]\">Inspire Growth</span>",
+      "introText": "See how founders like you used The Web App Pro to reach their audience and hit growth milestones.",
+      "slides": [
+        {
+          "appName": "DataSync AI",
+          "appType": "Business Analytics AI",
+          "quote": "Being listed in TWAP's AI directory immediately positioned us alongside credible tools. The editorial review gave us the unbiased social proof that our own marketing couldn't provide. Comparison traffic alone covered our investment in the first week.",
+          "metrics": [
+            { "value": "300% ROI", "label": "Return on promotion investment in 30 days" },
+            { "value": "3x", "label": "More organic sign-ups vs paid acquisition channels" }
+          ],
+          "mockBg": "#e9e4f5",
+          "mockCard": "#3b2375",
+          "icon": "ri-bar-chart-box-line"
+        },
+        {
+          "appName": "MindFlow AI",
+          "appType": "AI Writing Tool",
+          "quote": "The founder interview transformed how people perceived us — we went from 'another AI writing tool' to the team behind a vision. The editorial depth of TWAP's review drove trust we couldn't manufacture ourselves.",
+          "metrics": [
+            { "value": "5M Users", "label": "Reached within 6 months of feature" },
+            { "value": "1.8x", "label": "Better trial-to-paid conversion post-review" }
+          ],
+          "mockBg": "#f1e6de",
+          "mockCard": "#123466",
+          "icon": "ri-brain-line"
+        }
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "Real Founders. Real Results.",
+      "headingHtml": "Success Stories That <span class=\"text-[#0f8d5f]\">Inspire Growth</span>",
+      "introText": "See how founders like you used The Web App Pro to reach their audience and hit growth milestones.",
+      "slides": [
+        {
+          "appName": "Crebos International",
+          "appType": "UK/UAE AI Development",
+          "quote": "Within a month of being featured as Partner of the Month, we received 12 qualified inbound enquiries — clients who had already read our showcase and were pre-sold on our methodology. The quality of leads from TWAP is completely different from directory listings.",
+          "metrics": [
+            { "value": "12", "label": "Qualified inbound leads in 30 days" },
+            { "value": "1.6x", "label": "Net synergies realised above initial target" }
+          ],
+          "mockBg": "#dcefe8",
+          "mockCard": "#0a4b34",
+          "icon": "ri-community-line"
+        },
+        {
+          "appName": "NextGen Digital",
+          "appType": "AI Consultancy",
+          "quote": "The CEO interview was the piece that made the biggest difference. Prospects came in already knowing our philosophy and approach — the sales cycle shortened dramatically. This isn't advertising, it's positioning.",
+          "metrics": [
+            { "value": "21%", "label": "Increase in qualified sales leads" },
+            { "value": "2.1x", "label": "Better conversion vs. other B2B channels" }
+          ],
+          "mockBg": "#f1e6de",
+          "mockCard": "#3b1f0f",
+          "icon": "ri-lightbulb-flash-line"
+        }
+      ]
+    }
+  },
+  "addOnsSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "À la carte",
+      "headingHtml": "Power-Up With <span class=\"text-[#ef4d0a]\">Add-Ons</span>",
+      "introText": "Stack additional services on top of any plan. Each add-on is available standalone or as a bundle upgrade.",
+      "items": [
+        {
+          "icon": "ri-focus-2-line",
+          "title": "Homepage Spotlight",
+          "description": "Featured placement on the TWAP homepage for maximum first-impression exposure.",
+          "price": "$49",
+          "unit": "/ 7 days"
+        },
+        {
+          "icon": "ri-movie-2-line",
+          "title": "Extended Video Review",
+          "description": "90-second professional video review posted to YouTube, Instagram and LinkedIn.",
+          "price": "$79",
+          "unit": "/ one-time"
+        },
+        {
+          "icon": "ri-medal-line",
+          "title": "Partner of the Month",
+          "description": "Full newsletter spotlight + featured partner badge for the entire month.",
+          "price": "$129",
+          "unit": "/ month"
+        },
+        {
+          "icon": "ri-article-line",
+          "title": "Success Story Article",
+          "description": "Full-length written case study of your product's growth journey on our hub.",
+          "price": "$89",
+          "unit": "/ article"
+        },
+        {
+          "icon": "ri-links-line",
+          "title": "Dofollow Backlink Upgrade",
+          "description": "Upgrade any listing to a dofollow backlink for direct domain authority transfer.",
+          "price": "$29",
+          "unit": "/ one-time"
+        },
+        {
+          "icon": "ri-chat-quote-line",
+          "title": "CEO / Founder Interview",
+          "description": "Scheduled video or written interview, distributed across all TWAP channels.",
+          "price": "$69",
+          "unit": "/ interview"
+        },
+        {
+          "icon": "ri-infinity-line",
+          "title": "Lifetime Coverage",
+          "description": "Permanent listing, re-reviews on major updates, and evergreen feature placement.",
+          "price": "$249",
+          "unit": "/ lifetime"
+        }
+      ],
+      "ctaTitle": "App Store Optimisation (ASO) — Custom Engagement",
+      "ctaDescription": "Looking for a comprehensive App Store Optimisation audit, keyword strategy, or Play Store listing review? Our ASO services are scoped individually based on your app's needs and market. Get in touch with our team for a tailored quote.",
+      "ctaButtonText": "Get in Touch →"
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "À la carte",
+      "headingHtml": "Power-Up With <span class=\"text-[#5d39f6]\">Add-Ons</span>",
+      "introText": "Stack additional services on top of any plan. Each add-on is available standalone or as a bundle upgrade.",
+      "items": [
+        {
+          "icon": "ri-focus-2-line",
+          "title": "Homepage AI Spotlight",
+          "description": "Featured placement in TWAP AI sections for maximum first-impression exposure.",
+          "price": "$49",
+          "unit": "/ 7 days"
+        },
+        {
+          "icon": "ri-movie-2-line",
+          "title": "Extended Video Review",
+          "description": "90-second professional AI tool review posted to YouTube, Instagram and LinkedIn.",
+          "price": "$79",
+          "unit": "/ one-time"
+        },
+        {
+          "icon": "ri-medal-line",
+          "title": "AI Partner of the Month",
+          "description": "Full newsletter spotlight + AI partner badge for the entire month.",
+          "price": "$129",
+          "unit": "/ month"
+        },
+        {
+          "icon": "ri-article-line",
+          "title": "AI Success Story Article",
+          "description": "Full-length written case study of your AI product's growth journey on our hub.",
+          "price": "$89",
+          "unit": "/ article"
+        },
+        {
+          "icon": "ri-links-line",
+          "title": "Dofollow Backlink Upgrade",
+          "description": "Upgrade any listing to a dofollow backlink for direct domain authority transfer.",
+          "price": "$29",
+          "unit": "/ one-time"
+        },
+        {
+          "icon": "ri-chat-quote-line",
+          "title": "CEO / Founder Interview",
+          "description": "Scheduled video or written interview, distributed across all TWAP channels.",
+          "price": "$69",
+          "unit": "/ interview"
+        },
+        {
+          "icon": "ri-infinity-line",
+          "title": "Lifetime Coverage",
+          "description": "Permanent listing, re-reviews on major updates, and evergreen feature placement.",
+          "price": "$249",
+          "unit": "/ lifetime"
+        }
+      ],
+      "ctaTitle": "Model Positioning Strategy — Custom Engagement",
+      "ctaDescription": "Need help with AI category positioning, use-case messaging, and conversion-ready content? We scope each engagement around your model, audience, and growth goals.",
+      "ctaButtonText": "Get in Touch →"
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "À la carte",
+      "headingHtml": "Power-Up With <span class=\"text-[#0f8d5f]\">Add-Ons</span>",
+      "introText": "Stack additional services on top of any plan. Each add-on is available standalone or as a bundle upgrade.",
+      "items": [
+        {
+          "icon": "ri-focus-2-line",
+          "title": "Homepage Agency Feature",
+          "description": "Featured placement in the Agencies section homepage for maximum client discovery.",
+          "price": "$49",
+          "unit": "/ 7 days"
+        },
+        {
+          "icon": "ri-file-list-3-line",
+          "title": "Client Case Study",
+          "description": "Published case study featuring one of your best client results and methodology.",
+          "price": "$99",
+          "unit": "/ article"
+        },
+        {
+          "icon": "ri-medal-line",
+          "title": "Agency of the Month",
+          "description": "Full newsletter spotlight as the featured agency with dedicated showcase coverage.",
+          "price": "$129",
+          "unit": "/ month"
+        },
+        {
+          "icon": "ri-chat-quote-line",
+          "title": "CEO / Founder Interview",
+          "description": "In-depth founder interview distributed across all TWAP media channels.",
+          "price": "$69",
+          "unit": "/ interview"
+        },
+        {
+          "icon": "ri-bar-chart-box-line",
+          "title": "Thought Leadership Piece",
+          "description": "Custom 800-word editorial article positioning your agency on a key industry topic.",
+          "price": "$89",
+          "unit": "/ article"
+        },
+        {
+          "icon": "ri-links-line",
+          "title": "Dofollow Backlink Upgrade",
+          "description": "Upgrade your agency listing to a dofollow backlink for direct SEO authority.",
+          "price": "$29",
+          "unit": "/ one-time"
+        },
+        {
+          "icon": "ri-infinity-line",
+          "title": "Lifetime Agency Coverage",
+          "description": "Permanent listing, updated showcases as your agency evolves, evergreen placement.",
+          "price": "$249",
+          "unit": "/ lifetime"
+        }
+      ],
+      "ctaTitle": "App Store Optimisation (ASO) — Custom Engagement",
+      "ctaDescription": "Looking for a comprehensive App Store Optimisation audit, keyword strategy, or Play Store listing review? Our ASO services are scoped individually based on your app's needs and market. Get in touch with our team for a tailored quote.",
+      "ctaButtonText": "Get in Touch →"
+    }
+  },
+  "formSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "Submit your product",
+      "headingHtml": "Ready to Get <span class=\"text-[#ef4d0a]\">Discovered?</span>",
+      "introText": "Fill in the details. Our team reviews every submission personally within 1 business day.",
+      "plans": [
+        { "name": "Free Listing", "price": "$0" },
+        { "name": "Launch Ready", "price": "$99" },
+        { "name": "Growth Blast", "price": "$149" },
+        { "name": "Full Visibility", "price": "$199" }
+      ],
+      "defaultPlan": "Growth Blast",
+      "leftColumnFields": [
+        { "label": "Your Name", "placeholder": "John Smith", "required": true },
+        { "label": "App Name", "placeholder": "e.g. TaskFlow Pro", "required": true },
+        { "label": "App Category", "placeholder": "Select a category...", "required": true },
+        { "label": "Pricing Model", "placeholder": "Select pricing..." }
+      ],
+      "rightColumnFields": [
+        { "label": "Email Address", "placeholder": "john@yourcompany.com", "required": true, "type": "email" },
+        { "label": "Product URL", "placeholder": "https://yourproduct.com", "required": true },
+        { "label": "Platform", "placeholder": "Select platform...", "required": true },
+        { "label": "App Store / Play Store URL", "placeholder": "https://apps.apple.com/... (optional)" }
+      ],
+      "textAreaLabel": "Tell Us About Your Product",
+      "textAreaPlaceholder": "What does your app do, who is it for, and what makes it different from existing apps?",
+      "bottomLeftField": { "label": "Founder / CEO Name", "placeholder": "For interview feature (optional)" },
+      "bottomRightField": { "label": "LinkedIn Profile URL", "placeholder": "https://linkedin.com/in/..." },
+      "submitButtonText": "Submit for Review →",
+      "disclaimer": "By submitting you agree to our Terms of Service. Real human review within 1 business day. No bots. No spam."
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "Submit your product",
+      "headingHtml": "Ready to Get <span class=\"text-[#5d39f6]\">Discovered?</span>",
+      "introText": "Fill in the details. Our team reviews every submission personally within 1 business day.",
+      "plans": [
+        { "name": "AI Discovery", "price": "$0" },
+        { "name": "AI Launch", "price": "$99" },
+        { "name": "AI Authority", "price": "$149" },
+        { "name": "AI Domination", "price": "$199" }
+      ],
+      "defaultPlan": "AI Discovery",
+      "leftColumnFields": [
+        { "label": "Your Name", "placeholder": "John Smith", "required": true },
+        { "label": "AI Tool Name", "placeholder": "e.g. DataSync AI", "required": true },
+        { "label": "AI Tool Category", "placeholder": "Select a category...", "required": true },
+        { "label": "Pricing Model", "placeholder": "Select pricing..." }
+      ],
+      "rightColumnFields": [
+        { "label": "Email Address", "placeholder": "john@yourcompany.com", "required": true, "type": "email" },
+        { "label": "Product URL", "placeholder": "https://yourproduct.com", "required": true },
+        { "label": "Access Type", "placeholder": "Select platform...", "required": true },
+        { "label": "GitHub / Demo URL (optional)", "placeholder": "https://github.com/... or demo URL" }
+      ],
+      "textAreaLabel": "Tell Us About Your Product",
+      "textAreaPlaceholder": "What does your AI tool do, what model does it use, who is it built for, and what makes it different from existing AI tools?",
+      "bottomLeftField": { "label": "Founder / CEO Name", "placeholder": "For interview feature (optional)" },
+      "bottomRightField": { "label": "LinkedIn Profile URL", "placeholder": "https://linkedin.com/in/..." },
+      "submitButtonText": "Submit for Review →",
+      "disclaimer": "By submitting you agree to our Terms of Service. Real human review within 1 business day. No bots. No spam."
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "Submit your product",
+      "headingHtml": "Ready to Get <span class=\"text-[#0f8d5f]\">Discovered?</span>",
+      "introText": "Fill in the details. Our team reviews every submission personally within 1 business day.",
+      "plans": [
+        { "name": "Agency Profile", "price": "$0" },
+        { "name": "Agency Spotlight", "price": "$99" },
+        { "name": "Agency Authority", "price": "$149" },
+        { "name": "Market Leader", "price": "$199" }
+      ],
+      "defaultPlan": "Agency Authority",
+      "leftColumnFields": [
+        { "label": "Your Name", "placeholder": "John Smith", "required": true },
+        { "label": "Agency / Company Name", "placeholder": "e.g. Crebos International", "required": true },
+        {
+          "label": "Primary Specialisation",
+          "placeholder": "Select a category...",
+          "required": true,
+          "options": [
+            "Custom Software Development",
+            "Mobile App Development",
+            "AI Agent & Systems Development",
+            "UX/UI Design",
+            "Branding & Identity",
+            "Digital Marketing",
+            "E-Commerce Development",
+            "Enterprise Solutions",
+            "AI Consultancy",
+            "Cloud & DevOps"
+          ]
+        },
+        {
+          "label": "Pricing Model",
+          "placeholder": "Select pricing...",
+          "options": [
+            "Free",
+            "Freemium",
+            "Paid / One-time",
+            "Subscription / SaaS",
+            "Usage-based"
+          ]
+        }
+      ],
+      "rightColumnFields": [
+        { "label": "Email Address", "placeholder": "john@yourcompany.com", "required": true, "type": "email" },
+        { "label": "Product URL", "placeholder": "https://yourproduct.com", "required": true },
+        {
+          "label": "Service Type",
+          "placeholder": "Select service type...",
+          "required": true,
+          "options": [
+            "End-to-End Development",
+            "Design Only",
+            "Marketing Services",
+            "Consulting / Advisory",
+            "Full-Service Agency",
+            "Boutique Specialist"
+          ]
+        },
+        { "label": "Portfolio / Case Study URL", "placeholder": "https://yoursite.com/portfolio" }
+      ],
+      "textAreaLabel": "Tell Us About Your Product",
+      "textAreaPlaceholder": "What does your agency do, who do you typically work with, what's your team size, and what makes your approach different?",
+      "bottomLeftField": { "label": "Founder / CEO Name", "placeholder": "For interview feature (optional)" },
+      "bottomRightField": { "label": "LinkedIn Profile URL", "placeholder": "https://linkedin.com/in/..." },
+      "submitButtonText": "Submit for Review →",
+      "disclaimer": "By submitting you agree to our Terms of Service. Real human review within 1 business day. No bots. No spam."
+    }
+  },
+  "faqSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "FAQ",
+      "headingPrefix": "Questions",
+      "headingHighlight": "Answered",
+      "items": [
+        {
+          "question": "How does TWAP select which apps to review?",
+          "answer": "Every submission is reviewed personally by our editorial team. We evaluate UX, functionality, market fit, and value. For paid plans, your app is guaranteed to be reviewed and published within the agreed timeframe - typically 48-72 hours for Growth Blast and Full Visibility plans."
+        },
+        {
+          "question": "Do I need an App Store listing to be featured?",
+          "answer": "No - web apps, SaaS products, and browser extensions are all welcome. An App Store link is optional and only needed if you want us to reference it in your review."
+        },
+        {
+          "question": "Is there a free option to get listed?",
+          "answer": "Yes. Our Free Listing tier gives your app a permanent directory listing with a product profile page at no cost. No credit card required - simply submit and we'll review within 3-5 business days."
+        },
+        {
+          "question": "Are TWAP reviews editorially independent?",
+          "answer": "Absolutely. Our editorial standards are strict - no advertiser influences our ratings or verdicts. If we identify weaknesses in your app, we'll mention them honestly. This independence is what makes our reviews valuable as social proof."
+        },
+        {
+          "question": "What does \"personalised app store guidance\" mean on Full Visibility?",
+          "answer": "This refers to our team reviewing your App Store or Play Store listing copy, screenshots, and keyword strategy and providing written recommendations. For a full ASO engagement, please get in touch with our team directly - we can scope a dedicated programme."
+        },
+        {
+          "question": "Can I upgrade my plan after submitting?",
+          "answer": "Yes. You can upgrade at any point or add individual add-ons to your existing plan. Contact our team and we'll pro-rate the difference and integrate the additional services."
+        },
+        {
+          "question": "How do I receive the TWAP Certified badge?",
+          "answer": "Once your review is published (Launch Ready plan and above), we send you an embeddable HTML badge you can add to your website, app landing page, or marketing materials."
+        }
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "FAQ",
+      "headingPrefix": "Questions",
+      "headingHighlight": "Answered",
+      "items": [
+        {
+          "question": "How do you evaluate AI tools - what criteria do you use?",
+          "answer": "We test AI tools across four dimensions: capability (does it do what it claims?), output quality (is the output genuinely useful?), pricing fairness (does the value justify the cost?), and data privacy (how is user data handled?). Our AI-experienced editors use the tool in real workflows before writing any review."
+        },
+        {
+          "question": "My AI tool is still in beta - can I still be listed?",
+          "answer": "Yes. We regularly feature early-stage and beta AI tools, particularly on our Free Discovery and AI Launch plans. Being listed early helps you build an audience before your full launch. We'll note the beta status in the review transparently."
+        },
+        {
+          "question": "Do you cover open-source AI tools?",
+          "answer": "Absolutely. Open-source tools are welcome across all plans. We include GitHub links, deployment instructions, and use-case context in open-source reviews."
+        },
+        {
+          "question": "What's the difference between a listing and a review?",
+          "answer": "A listing is a directory entry - your tool's name, description, category, and link. A review is a 600-1,200 word editorial article written by our team after actually using your tool. Reviews include star ratings, pros/cons, a verdict, and the embeddable AI Certified badge. Reviews are included in AI Launch plan and above."
+        },
+        {
+          "question": "How do I get into the \"Best AI Tools\" comparison articles?",
+          "answer": "Inclusion in comparison and ranking articles begins with the AI Authority plan ($149). Our editors then evaluate whether your tool fits relevant comparison pieces based on category and capability. We don't guarantee placement in every comparison article - only ones where your tool is genuinely a strong fit."
+        },
+        {
+          "question": "Do you cover AI APIs and developer tools - not just end-user products?",
+          "answer": "Yes. We have a specific category for AI APIs, developer tools, and infrastructure products. Our editorial team includes technically literate editors who understand developer audiences and write accordingly."
+        },
+        {
+          "question": "What does \"Dedicated Quora AI Strategy\" in the AI Domination plan mean?",
+          "answer": "Our team identifies the most-viewed Quora questions in your AI tool's category and writes or contributes answers that reference your tool authentically. This targets high-intent users who are actively researching solutions - directing them to your listing."
+        }
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "FAQ",
+      "headingPrefix": "Questions",
+      "headingHighlight": "Answered",
+      "items": [
+        {
+          "question": "What types of agencies and service providers do you accept?",
+          "answer": "We welcome development studios, design agencies, AI consultancies, digital marketing firms, branding agencies, and any specialised tech service provider. We cover both boutique specialists and full-service agencies."
+        },
+        {
+          "question": "Is there a minimum team size or revenue threshold?",
+          "answer": "No. We feature agencies of all sizes - from solo consultants to 200+ person studios. What matters is the quality and specificity of your offer, not your headcount."
+        },
+        {
+          "question": "How is an agency showcase different from a paid advertisement?",
+          "answer": "Our showcase articles are written editorially - our team researches your agency, reviews your portfolio, and writes an honest assessment of your strengths and specialisations. It's closer to a Clutch review or a magazine profile than an ad."
+        },
+        {
+          "question": "Can you help us get found by clients looking for specific services?",
+          "answer": "Yes. Your agency profile is tagged with your specialisations (e.g. \"AI Agent Development\", \"React Native\", \"Fintech Design\") so clients searching for specific capability can find you in our directory."
+        },
+        {
+          "question": "What does \"Dedicated Quora Strategy\" involve?",
+          "answer": "Our team identifies high-traffic Quora questions in your agency's niche (e.g. \"How do I find a good AI development agency?\") and contributes authentic answers that reference your agency's relevant work. This targets decision-makers in active research mode."
+        },
+        {
+          "question": "Do you publish client case studies from our existing client work?",
+          "answer": "Yes - the Agency Authority and Market Leader plans include published case study articles. You provide the client story and results; our editorial team shapes it into a compelling article on our platform."
+        },
+        {
+          "question": "We want a full ASO or technical SEO audit for our clients - do you offer that?",
+          "answer": "For comprehensive technical SEO or app store optimisation for your clients, please get in touch with our team directly. We can discuss a tailored consultancy engagement."
+        }
+      ]
+    }
+  },
+  "finalCtaSections": {
+    "web-mobile-apps": {
+      "accentColor": "#ef4d0a",
+      "eyebrow": "READY TO LAUNCH?",
+      "headingPrefix": "Your Product Deserves to Be",
+      "headingHighlight": "Found",
+      "description": "Join 1,000+ founders who used The Web App Pro to reach buyers, early adopters, and investors.",
+      "buttonText": "Submit Your Product Now →",
+      "points": [
+        "Free tier available",
+        "No hidden fees",
+        "Response in 1 business day",
+        "Real human reviewers",
+        "Permanent listing"
+      ]
+    },
+    "ai-tools": {
+      "accentColor": "#5d39f6",
+      "eyebrow": "READY TO LAUNCH?",
+      "headingPrefix": "Your Product Deserves to Be",
+      "headingHighlight": "Found",
+      "description": "Join 1,000+ founders who used The Web App Pro to reach buyers, early adopters, and investors.",
+      "buttonText": "Submit Your Product Now →",
+      "points": [
+        "Free tier available",
+        "No hidden fees",
+        "Response in 1 business day",
+        "Real human reviewers",
+        "Permanent listing"
+      ]
+    },
+    "agencies-service-providers": {
+      "accentColor": "#0f8d5f",
+      "eyebrow": "READY TO LAUNCH?",
+      "headingPrefix": "Your Product Deserves to Be",
+      "headingHighlight": "Found",
+      "description": "Join 1,000+ founders who used The Web App Pro to reach buyers, early adopters, and investors.",
+      "buttonText": "Submit Your Product Now →",
+      "points": [
+        "Free tier available",
+        "No hidden fees",
+        "Response in 1 business day",
+        "Real human reviewers",
+        "Permanent listing"
+      ]
+    }
   }
 }

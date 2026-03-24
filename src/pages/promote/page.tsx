@@ -6,6 +6,9 @@ const promoteOptions = [
   {
     slug: 'web-mobile-apps',
     icon: 'ri-smartphone-line',
+    accent: '#ef4d0a',
+    accentSoftBg: 'rgba(239, 77, 10, 0.12)',
+    accentSoftBorder: 'rgba(239, 77, 10, 0.40)',
     title: 'Web & Mobile App',
     description:
       "You've built a web application, iOS or Android app, or cross-platform product and want real users to find it.",
@@ -14,6 +17,9 @@ const promoteOptions = [
   {
     slug: 'ai-tools',
     icon: 'ri-robot-2-line',
+    accent: '#5d39f6',
+    accentSoftBg: 'rgba(93, 57, 246, 0.14)',
+    accentSoftBorder: 'rgba(93, 57, 246, 0.70)',
     title: 'AI Tool or Product',
     description:
       "You've built an AI-powered tool, LLM product, automation platform, or AI API and want it discovered by the right audience.",
@@ -22,6 +28,9 @@ const promoteOptions = [
   {
     slug: 'agencies-service-providers',
     icon: 'ri-building-2-line',
+    accent: '#0f8d5f',
+    accentSoftBg: 'rgba(15, 141, 95, 0.14)',
+    accentSoftBorder: 'rgba(15, 141, 95, 0.60)',
     title: 'Agency or Service Provider',
     description:
       'You run a development studio, design agency, AI consultancy, or digital services firm and want qualified leads to find you.',
@@ -56,13 +65,17 @@ export default function PromotePage() {
               <Link
                 key={item.title}
                 to={`/promote/${item.slug}`}
-                className="group relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.03] p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.35)] hover:border-[#f25a1a]/40 transition-colors"
+                className="group relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.03] p-5 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-colors"
+                style={{ borderColor: item.accentSoftBorder }}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-[#2b1f1b] border border-[#f25a1a]/20 flex items-center justify-center">
-                    <i className={`${item.icon} text-[#ff7a4b] text-xl`}></i>
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center border transition-colors"
+                    style={{ backgroundColor: item.accentSoftBg, borderColor: item.accentSoftBorder }}
+                  >
+                    <i className={`${item.icon} text-xl`} style={{ color: item.accent }}></i>
                   </div>
-                  <i className="ri-arrow-right-up-line text-white/35 group-hover:text-[#ff7a4b] transition-colors"></i>
+                  <i className="ri-arrow-right-up-line text-white/35 transition-colors" style={{ color: item.accent }}></i>
                 </div>
 
                 <h2 className="text-2xl leading-tight font-bold font-['Manrope'] mb-3">{item.title}</h2>
