@@ -7,7 +7,6 @@ import SuccessNotes from '../../components/success-stories/SuccessNotes';
 import SuccessCTA from '../../components/success-stories/SuccessCTA';
 import SuccessTopics from '../../components/success-stories/SuccessTopics';
 import SuccessFeatures from '../../components/success-stories/SuccessFeatures';
-// import SuccessContact from '../../components/success-stories/SuccessContact';
 import AgenciesContact from '../../components/agencies/AgenciesContact';
 
 const SuccessStoriesPage = () => {
@@ -22,7 +21,6 @@ const SuccessStoriesPage = () => {
                 <SuccessTopics />
                 <SuccessNotes />
                 <SuccessCTA />
-                {/* <SuccessContact /> */}
                 <AgenciesContact/>
             </main>
             <Footer />

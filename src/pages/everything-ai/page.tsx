@@ -13,18 +13,33 @@ import AICTA from '../../components/everything-ai/AICTA';
 
 const EverythingAIPage = () => {
     return (
-        <div className="min-h-screen bg-white text-brand-dark font-sans selection:bg-brand-lime">
+        <div className="min-h-screen bg-[#f7f5ef] text-brand-dark font-sans selection:bg-brand-lime selection:text-black overflow-x-hidden">
             <Header />
 
-            <main>
+            {/* Global Background Decorations - Light Theme */}
+            <div className="fixed inset-0 z-0 pointer-events-none">
+                {/* Grid Lines */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+                
+                {/* Decorative Glowing Blobs - Light Version */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-orange/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-lime/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-30"></div>
+                
+                {/* Center Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-burgundy/5 rounded-full blur-[180px] opacity-10"></div>
+            </div>
+
+            <main className="relative z-10">
                 <AIHero />
 
-                <AITools />
-                <AIDirectories />
-                <AIExperts />
-                <AIAction />
-                <AIInsights />
-                <AICTA />
+                <div className="space-y-0">
+                    <AITools />
+                    <AIDirectories />
+                    <AIExperts />
+                    <AIAction />
+                    <AIInsights />
+                    <AICTA />
+                </div>
             </main>
 
             <Footer />

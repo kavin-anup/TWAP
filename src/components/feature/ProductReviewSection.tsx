@@ -12,7 +12,7 @@ const reviewSections = [
                 stars: 4,
                 description: "Professional web design tool with advanced features and templates",
                 icon: "ri-global-line",
-                iconColor: "text-gray-600 bg-gray-100"
+                iconColor: "text-brand-orange bg-brand-orange/10"
             },
             {
                 id: 402,
@@ -21,7 +21,7 @@ const reviewSections = [
                 stars: 5,
                 description: "Comprehensive analytics solution for tracking business metrics",
                 icon: "ri-bar-chart-box-line",
-                iconColor: "text-gray-600 bg-gray-100"
+                iconColor: "text-brand-lime bg-brand-lime/10"
             }
         ]
     },
@@ -35,7 +35,7 @@ const reviewSections = [
                 stars: 4, // 4.5 visually
                 description: "Browser extension that enhances productivity with smart shortcuts",
                 icon: "ri-chrome-fill",
-                iconColor: "text-gray-600 bg-gray-100"
+                iconColor: "text-brand-orange bg-brand-orange/10"
             },
             {
                 id: 404,
@@ -44,7 +44,7 @@ const reviewSections = [
                 stars: 5,
                 description: "Advanced security extension for safe browsing and privacy protection",
                 icon: "ri-shield-check-line",
-                iconColor: "text-gray-600 bg-gray-100"
+                iconColor: "text-brand-lime bg-brand-lime/10"
             }
         ]
     }
@@ -72,9 +72,9 @@ export default function ProductReviewSection() {
 
                                         {/* Rating */}
                                         <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                                            <div className="flex text-gray-300 text-sm">
+                                            <div className="flex text-gray-200 text-sm">
                                                 {[...Array(5)].map((_, i) => (
-                                                    <i key={i} className={`ri-star-fill ${i < product.stars ? 'text-gray-900' : ''}`}></i>
+                                                    <i key={i} className={`ri-star-fill ${i < product.stars ? 'text-brand-orange' : ''}`}></i>
                                                 ))}
                                             </div>
                                             <span className="text-xs font-bold text-gray-500">{product.rating}</span>
@@ -86,7 +86,7 @@ export default function ProductReviewSection() {
                                     {/* Action */}
                                     <Link
                                         to="#"
-                                        className="px-8 py-3 bg-black text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors whitespace-nowrap"
+                                        className="px-8 py-3 bg-brand-dark text-white text-sm font-bold rounded-lg hover:bg-brand-orange transition-colors whitespace-nowrap"
                                     >
                                         Explore
                                     </Link>

@@ -63,16 +63,14 @@ const AIDirectories = () => {
     };
 
     return (
-        <section className="py-28 bg-[#F5F5F7] relative overflow-hidden">
-            {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-lime/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <section className="py-28 bg-transparent relative overflow-hidden">
 
             <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-2 mb-4">
                             <span className="h-[1px] w-8 bg-brand-orange"></span>
-                            <span className="text-sm font-bold tracking-widest uppercase text-brand-dark">Exclusive Intel</span>
+                            <span className="text-sm font-bold tracking-[0.2em] uppercase text-brand-dark">Exclusive Intel</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
                             Verified AI Service <br />
@@ -81,10 +79,10 @@ const AIDirectories = () => {
                     </div>
 
                     <div className="flex gap-4">
-                        <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-colors">
+                        <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-brand-dark hover:text-white transition-colors">
                             <i className="ri-arrow-left-line text-xl"></i>
                         </button>
-                        <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-colors">
+                        <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-brand-dark hover:text-white transition-colors">
                             <i className="ri-arrow-right-line text-xl"></i>
                         </button>
                     </div>
@@ -103,8 +101,8 @@ const AIDirectories = () => {
                                 transition: 'transform 0.1s ease-out, box-shadow 0.3s ease'
                             }}
                         >
-                            {/* Inner Container for actual content to keep it organized */}
-                            <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden bg-white">
+                            {/* Inner Container for actual content */}
+                            <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden bg-white shadow-sm border border-gray-100">
 
                                 {/* Background Image */}
                                 <div className="absolute inset-0 w-full h-full">
@@ -118,14 +116,14 @@ const AIDirectories = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity duration-500"></div>
                                 </div>
 
-                                {/* Animated Border Frame - Using standard border for simplicity but could be fancy */}
+                                {/* Animated Border Frame */}
                                 <div className={`absolute inset-4 rounded-3xl border border-white/20 z-20 transition-all duration-500 group-hover:inset-0 group-hover:rounded-[2rem] group-hover:border-white/0`}></div>
 
                                 {/* Active Border Highlight */}
-                                <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${item.accent.replace('border-', '')} to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-30`}></div>
+                                <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-orange to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-30`}></div>
 
 
-                                {/* Floating Icon - Parallax it slightly? */}
+                                {/* Floating Icon */}
                                 <div className="absolute top-8 right-8 z-30 transform transition-transform duration-500 group-hover:translate-z-10 group-hover:scale-110" style={{ transform: 'translateZ(20px)' }}>
                                     <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white group-hover:bg-brand-orange group-hover:border-brand-orange transition-colors duration-300">
                                         <i className={`${item.icon} text-2xl`}></i>
@@ -145,7 +143,7 @@ const AIDirectories = () => {
                                     <div className="flex items-center justify-between pt-4 border-t border-white/10 group-hover:border-white/30 transition-colors">
                                         <div className="flex flex-col">
                                             <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Agencies</span>
-                                            <span className={`text-lg font-bold text-white ${item.textAccent}`}>{item.count}</span>
+                                            <span className={`text-lg font-bold text-white`}>{item.count}</span>
                                         </div>
 
                                         <div className="w-10 h-10 rounded-full bg-brand-lime flex items-center justify-center text-black group-hover:bg-white transition-colors">

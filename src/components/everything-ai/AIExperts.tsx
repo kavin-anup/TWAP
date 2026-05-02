@@ -59,7 +59,7 @@ const AIExperts = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-24 bg-transparent overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-12">
                 <h2 className="text-4xl font-bold text-brand-dark mb-4">
                     Featured AI Experts
@@ -67,29 +67,24 @@ const AIExperts = () => {
                 <p className="text-gray-500 max-w-2xl mx-auto text-lg mb-8">
                     Some genius brains and brawns that are helping businesses leverage AI
                 </p>
-
-                {/* <button className="px-6 py-2 rounded-lg border border-red-200 text-red-500 font-medium hover:bg-red-50 transition-colors inline-flex items-center gap-2 mb-8">
-                    Explore More
-                    <i className="ri-arrow-right-up-line"></i>
-                </button> */}
             </div>
 
             <div className="relative w-full">
-                {/* Fading Edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                {/* Fading Edges - Updated for light theme */}
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f7f5ef] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f7f5ef] to-transparent z-10 pointer-events-none"></div>
 
                 <div
                     ref={scrollRef}
-                    className="flex overflow-x-hidden no-scrollbar w-full group/track py-12" // Added padding
+                    className="flex overflow-x-hidden no-scrollbar w-full group/track py-12"
                 >
                     {/* Double the list for infinite loop */}
                     {[...experts, ...experts, ...experts].map((expert, index) => (
                         <div key={index} className="w-[350px] mx-4 flex-shrink-0">
                             <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm transition-all duration-500 h-full flex flex-col items-start text-left group-hover/track:scale-95 
-                                hover:!opacity-100 hover:!blur-none hover:!shadow-2xl hover:z-10 hover:border-brand-orange/30 relative">
+                                hover:!scale-105 hover:!opacity-100 hover:!blur-none hover:!shadow-2xl hover:z-10 hover:border-brand-orange/30 relative">
 
-                                <div className="w-12 h-12 mb-4 rounded-lg bg-gray-50 flex items-center justify-center overflow-hidden">
+                                <div className="w-12 h-12 mb-4 rounded-lg bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">
                                     <img src={expert.logo} alt={expert.name} className="w-full h-full object-cover" />
                                 </div>
 
@@ -110,11 +105,6 @@ const AIExperts = () => {
                                             </span>
                                         ))}
                                     </div>
-
-                                    {/* <button className="w-full py-3 rounded-xl bg-[#E63946] text-white font-bold hover:bg-[#d62839] transition-all shadow-lg shadow-red-200 flex items-center justify-center gap-2">
-                                        <i className="ri-user-follow-line"></i>
-                                        Visit Profile
-                                    </button> */}
                                 </div>
                             </div>
                         </div>

@@ -138,7 +138,7 @@ export default function TopProductsGrid() {
                         )}
                         <button
                             onClick={() => setActiveFilters({})}
-                            className="flex items-center gap-1 hover:text-black hover:underline disabled:opacity-50"
+                            className="flex items-center gap-1 hover:text-brand-orange hover:underline disabled:opacity-50"
                             disabled={Object.keys(activeFilters).filter(k => activeFilters[k]).length === 0}
                         >
                             Reset filters <i className="ri-refresh-line"></i>
@@ -167,8 +167,8 @@ export default function TopProductsGrid() {
                                     key={platform}
                                     onClick={() => setActivePlatform(platform)}
                                     className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${activePlatform === platform
-                                        ? "bg-gray-900 text-white shadow-md transform scale-105"
-                                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                                        ? "bg-brand-dark text-white shadow-md transform scale-105"
+                                        : "text-gray-500 hover:text-brand-dark hover:bg-gray-50"
                                         }`}
                                 >
                                     {platform}
@@ -199,7 +199,7 @@ export default function TopProductsGrid() {
                                 <h3 className="font-bold text-lg text-[#1F2853] mb-2">{product.name}</h3>
                                 <p className="text-sm text-gray-500 mb-6 min-h-[40px] line-clamp-2">{product.description}</p>
 
-                                <Link to="/top-10-project-management-software-2026" className="block w-full py-3 bg-black text-white text-center rounded-lg text-sm font-bold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl translate-y-0 hover:-translate-y-0.5 active:translate-y-0">
+                                <Link to="/top-10-project-management-software-2026" className="block w-full py-3 bg-brand-lime text-brand-dark text-center rounded-lg text-sm font-bold hover:brightness-90 transition-colors shadow-lg hover:shadow-xl translate-y-0 hover:-translate-y-0.5 active:translate-y-0">
                                     {product.buttonText}
                                 </Link>
                             </div>
@@ -208,29 +208,41 @@ export default function TopProductsGrid() {
 
                     {/* Sidebar Promo (Right Column) */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm h-fit sticky top-32">
-                            <div className="flex items-center gap-2 mb-4 text-[#f25a1a] font-bold text-xs uppercase tracking-wider">
-                                <i className="ri-flashlight-fill"></i> Spotlight
+                        <div className="group overflow-hidden rounded-[2rem] bg-[#1B1B36] p-8 shadow-2xl h-fit sticky top-36 border border-white/5 transition-all duration-500 hover:shadow-brand-orange/20">
+                            {/* Decorative background aura */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-orange/20 transition-all duration-700"></div>
+                            <div className="absolute bottom-0 left-0 w-24 h-24 bg-brand-lime/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
+
+                            <div className="relative z-10">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/20 text-brand-orange font-black text-[10px] uppercase tracking-widest mb-6 border border-brand-orange/30">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse"></span>
+                                    Spotlight
+                                </div>
+                                
+                                <h3 className="font-bold text-2xl text-white mb-6 leading-tight">
+                                    Give Your Product <br /> 
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-lime">The Spotlight</span>
+                                </h3>
+
+                                {/* Ad Asset */}
+                                <div className="w-full aspect-square rounded-2xl mb-8 overflow-hidden relative group cursor-pointer border border-white/10">
+                                    <img
+                                        src="/assets/product_spotlight.png"
+                                        alt="Promote your product"
+                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1B1B36] via-transparent to-transparent opacity-60"></div>
+                                </div>
+
+                                <p className="text-sm text-gray-400 mb-8 leading-relaxed">
+                                    Reach thousands of potential customers. <br />
+                                    Boost your visibility and drive conversion today.
+                                </p>
+
+                                <button className="w-full py-4 bg-brand-orange text-white text-center rounded-xl text-sm font-black uppercase tracking-widest hover:shadow-lg hover:shadow-brand-orange/40 transition-all active:scale-95">
+                                    Get Started
+                                </button>
                             </div>
-                            <h3 className="font-bold text-xl text-[#1F2853] mb-6">Give Your Product The Spotlight</h3>
-
-                            {/* Ad Placeholder */}
-                            <div className="w-full h-48 rounded-lg mb-6 overflow-hidden relative group cursor-pointer">
-                                <img
-                                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                                    alt="Promote your product"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-
-                            </div>
-
-                            <p className="text-sm text-gray-500 mb-6">
-                                Reach thousands of potential customers. Boost your visibility today.
-                            </p>
-
-                            <button className="w-full py-3 bg-black text-white text-center rounded-lg text-sm font-bold hover:bg-gray-800 transition-colors">
-                                Get Started
-                            </button>
                         </div>
                     </div>
                 </div>

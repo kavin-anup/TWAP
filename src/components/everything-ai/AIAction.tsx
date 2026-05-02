@@ -33,17 +33,16 @@ const AIAction = () => {
     const [isMuted, setIsMuted] = useState(true);
 
     return (
-        <section className="py-24 bg-[#F3F4F6] text-brand-dark relative overflow-hidden">
-            {/* Background Decoration */}
+        <section className="py-24 bg-transparent text-brand-dark relative overflow-hidden">
+            {/* Background Decoration - Updated for light theme */}
             <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-                <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-lime rounded-full blur-[120px]"></div>
-                <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-burgundy rounded-full blur-[120px]"></div>
+                <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-burgundy rounded-full blur-[150px]"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-brand-dark">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-brand-dark leading-tight">
                             See AI in <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-lime">Action</span>
                         </h2>
                         <p className="text-gray-500 max-w-xl text-lg">
@@ -53,7 +52,7 @@ const AIAction = () => {
 
                     <button className="mt-6 md:mt-0 px-8 py-3 rounded-full border border-gray-200 bg-white text-brand-dark font-medium hover:bg-brand-dark hover:text-white transition-all flex items-center gap-2 shadow-sm">
                         Check Our Reels On Instagram
-                        <i className="ri-instagram-line"></i>
+                        <i className="ri-instagram-line text-brand-orange"></i>
                     </button>
                 </div>
 
@@ -77,7 +76,7 @@ const AIAction = () => {
                                     className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 
                                         ${isHovered ? 'scale-105 opacity-40' : 'scale-100 opacity-80 filter grayscale'}`}
                                 />
-
+                                
                                 {/* Overlay Gradient */}
                                 <div className={`absolute inset-0 transition-colors duration-500 ${isHovered ? 'bg-black/20' : 'bg-black/50'}`}></div>
 

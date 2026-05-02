@@ -76,16 +76,17 @@ export default function MostLovedApps() {
   };
 
   return (
-    <section
-      className="py-16 relative"
-      style={{
-        // backgroundColor: '#f7f5ef'
-        backgroundImage: `url('/assets/loved-apps-bg1.webp')`,
-        backgroundSize: "80%",
-        backgroundPosition: "center",
-        backgroundRepeat: "repeat",
-      }}
-    >
+    <section className="py-16 relative overflow-hidden">
+      {/* Background Image with Opacity */}
+      <div
+        className="absolute inset-0 z-0 opacity-30 pointer-events-none"
+        style={{
+          backgroundImage: `url('/assets/loved-apps-bg1.webp')`,
+          backgroundSize: "80%",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+        }}
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/80 h-full w-full py-6 z-[1]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[2]">
         {/* Header */}

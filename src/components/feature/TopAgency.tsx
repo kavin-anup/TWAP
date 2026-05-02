@@ -118,115 +118,111 @@ export default function TopAgency() {
         </div>
 
         <div className="rounded-[52px] bg-[#252c52] text-white px-6 py-10 sm:px-10 lg:px-16 lg:py-12 shadow-2xl reveal-fade-up">
-          <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-stretch">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Slider Section */}
-            <div className="w-full lg:w-1/2 overflow-hidden">
-              <Swiper
-                onSwiper={(swiper) => {
-                  swiperRef.current = swiper;
-                  // Force update after initialization to ensure loop works
-                  setTimeout(() => {
-                    swiper.update();
-                  }, 50);
-                }}
-                onSlideChange={handleSlideChange}
-                modules={[Navigation]}
-                spaceBetween={24}
-                slidesPerView={1}
-                loop={true}
-                speed={500}
-                breakpoints={{
-                  640: {
-                    slidesPerView: 2,
-                  },
-                }}
-                className="w-full"
-              >
-                {agencies.map((agency, index) => (
-                  <SwiperSlide key={agency.id}>
-                    <div
-                      className="agency-card relative rounded-[48px] h-64 sm:h-72 overflow-hidden shadow-xl group cursor-pointer transition-all duration-300"
-                      onClick={() => handleSlideClick(index)}
-                    >
-                      <img
-                        src={agency.image}
-                        alt={agency.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <div className="absolute bottom-0 left-0 p-6">
-                          <div className="flex gap-1 mb-2">
-                            {Array.from({ length: agency.rating }).map(
-                              (_, i) => (
-                                <Star
-                                  key={i}
-                                  className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                                />
-                              )
-                            )}
+            <div className="w-full lg:w-7/12 relative group">
+              <div className="px-12">
+                <Swiper
+                  onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                    setTimeout(() => {
+                      swiper.update();
+                    }, 50);
+                  }}
+                  onSlideChange={handleSlideChange}
+                  modules={[Navigation]}
+                  spaceBetween={24}
+                  slidesPerView={1}
+                  loop={true}
+                  speed={500}
+                  breakpoints={{
+                    640: {
+                      slidesPerView: 2,
+                    },
+                  }}
+                  className="w-full"
+                >
+                  {agencies.map((agency, index) => (
+                    <SwiperSlide key={agency.id}>
+                      <div
+                        className="agency-card relative rounded-[32px] h-64 sm:h-80 overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 border border-white/10"
+                        onClick={() => handleSlideClick(index)}
+                      >
+                        <img
+                          src={agency.image}
+                          alt={agency.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent">
+                          <div className="absolute bottom-0 left-0 p-6 w-full">
+                            <div className="flex gap-1 mb-2">
+                              {Array.from({ length: agency.rating }).map(
+                                (_, i) => (
+                                  <Star
+                                    key={i}
+                                    className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400"
+                                  />
+                                )
+                              )}
+                            </div>
+                            <h4 className="text-xl font-bold font-['Manrope'] text-white">
+                              {agency.name}
+                            </h4>
+                            <p className="text-xs text-white/60 font-['Poppins']">
+                              {agency.location}
+                            </p>
                           </div>
-                          <h4 className="text-xl font-bold font-['Manrope'] text-white">
-                            {agency.name}
-                          </h4>
-                          <p className="text-sm text-white/80 font-['Poppins']">
-                            {agency.location}
-                          </p>
                         </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-
-              {/* Navigation Buttons */}
-              <div className="flex justify-center gap-4 mt-6">
-                <button
-                  onClick={handlePrev}
-                  className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-[#252c52] transition-colors duration-200"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-[#252c52] transition-colors duration-200"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
+
+              {/* Navigation Buttons - Positioned on sides without overlap */}
+              <button
+                onClick={handlePrev}
+                className="absolute left-0 md:-left-1 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-[#f25a1a] hover:border-[#f25a1a] transition-all duration-300 group/btn shadow-lg"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5 text-white group-hover/btn:scale-110" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-[#f25a1a] hover:border-[#f25a1a] transition-all duration-300 group/btn shadow-lg"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5 text-white group-hover/btn:scale-110" />
+              </button>
             </div>
 
             {/* Content block */}
-            <div className="w-full lg:w-1/2 text-left flex flex-col justify-center">
-              <p className="text-sm uppercase tracking-[0.25em] text-white/70 font-['Manrope'] mb-4">
+            <div className="w-full lg:w-5/12 text-left flex flex-col justify-center py-4 lg:pl-4">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#f25a1a] font-bold font-['Manrope'] mb-4">
                 featured agency
               </p>
               <div
                 key={activeAgency.id}
-                className="transition-all duration-300 animate-in fade-in slide-in-from-right-4"
+                className="transition-all duration-500 animate-in fade-in slide-in-from-right-8"
               >
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-1.5 mb-4">
                   {Array.from({ length: activeAgency.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
                     />
                   ))}
                 </div>
-                <h4 className="text-2xl font-bold font-['Manrope'] text-white mb-4">
+                <h4 className="text-3xl font-bold font-['Manrope'] text-white mb-5 leading-tight">
                   {activeAgency.name}
                 </h4>
-                {/* <h3 className="text-3xl sm:text-4xl font-bold font-['Manrope'] mb-5">
-                  {activeAgency.title}
-                </h3> */}
-                <p className="text-base sm:text-lg text-white/80 leading-relaxed font-['Poppins']">
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed font-['Poppins'] mb-8 max-w-md">
                   {activeAgency.description}
                 </p>
               </div>
 
-              <button className="mt-10 inline-flex items-center justify-center bg-[#f25a1a] text-white px-9 py-3 rounded-full font-semibold font-['Poppins'] shadow-lg hover:bg-[#ff7635] transition-colors duration-200 w-fit">
-                View agency details
+              <button className="inline-flex items-center justify-center bg-[#f25a1a] text-white px-7 py-3 rounded-full font-bold text-sm font-['Poppins'] shadow-xl hover:bg-[#ff7635] hover:-translate-y-0.5 transition-all duration-300 w-fit">
+                View Agency Details
               </button>
             </div>
           </div>

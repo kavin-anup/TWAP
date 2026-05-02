@@ -76,7 +76,7 @@ export default function StatsSection() {
     <section ref={sectionRef} className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-12">
             Measurable
           </h2>
 
@@ -85,22 +85,22 @@ export default function StatsSection() {
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-sm font-semibold text-gray-700">Platform Growth</h3>
-                <div className="flex items-center gap-1 text-blue-600 text-sm font-bold">
+                <div className="flex items-center gap-1 text-brand-orange text-sm font-bold">
                   <i className="ri-arrow-up-circle-fill"></i>
                   <span>+45%</span>
                 </div>
               </div>
-              <div className="h-1 bg-blue-100 rounded-full mb-6">
+              <div className="h-1 bg-brand-orange/10 rounded-full mb-6">
                 <div
-                  className="h-full bg-blue-600 rounded-full transition-all duration-2000 ease-out"
+                  className="h-full bg-brand-orange rounded-full transition-all duration-2000 ease-out"
                   style={{ width: `${isVisible ? (counters.main / 85) * 75 : 0}%` }}
                 ></div>
               </div>
-              <div className="text-6xl md:text-7xl font-bold text-gray-900 mb-4">
+              <div className="text-6xl md:text-7xl font-bold text-brand-dark mb-4">
                 {counters.main}%
               </div>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Regular updates and new tools best way to grow platform <span className="text-blue-600 font-semibold">Success Rate</span>. It also helps us understand your team's needs and improve the accuracy of recommendations.
+                Regular updates and new tools best way to grow platform <span className="text-brand-orange font-semibold">Success Rate</span>. It also helps us understand your team's needs and improve the accuracy of recommendations.
               </p>
             </div>
 
@@ -110,18 +110,18 @@ export default function StatsSection() {
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <h3 className="text-sm font-semibold text-gray-700">User Satisfaction</h3>
-                  <div className="flex items-center gap-1 text-blue-400 text-sm font-bold">
+                  <div className="flex items-center gap-1 text-brand-lime text-sm font-bold">
                     <i className="ri-arrow-up-circle-fill"></i>
                     <span>+32%</span>
                   </div>
                 </div>
-                <div className="h-1 bg-blue-50 rounded-full mb-4">
+                <div className="h-1 bg-brand-lime/10 rounded-full mb-4">
                   <div
-                    className="h-full bg-blue-400 rounded-full transition-all duration-2000 ease-out"
+                    className="h-full bg-brand-lime rounded-full transition-all duration-2000 ease-out"
                     style={{ width: `${isVisible ? counters.userSat : 0}%` }}
                   ></div>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                <div className="text-4xl md:text-5xl font-bold text-brand-dark">
                   {counters.userSat}%
                 </div>
               </div>
@@ -135,13 +135,13 @@ export default function StatsSection() {
                     <span>+18%</span>
                   </div>
                 </div>
-                <div className="h-1 bg-green-50 rounded-full mb-4">
+                <div className="h-1 bg-brand-lime/10 rounded-full mb-4">
                   <div
-                    className="h-full bg-green-500 rounded-full transition-all duration-2000 ease-out"
+                    className="h-full bg-brand-lime rounded-full transition-all duration-2000 ease-out"
                     style={{ width: `${isVisible ? counters.toolAdopt : 0}%` }}
                   ></div>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                <div className="text-4xl md:text-5xl font-bold text-brand-dark">
                   {counters.toolAdopt}%
                 </div>
               </div>
@@ -155,13 +155,13 @@ export default function StatsSection() {
                     <span>-2%</span>
                   </div>
                 </div>
-                <div className="h-1 bg-pink-50 rounded-full mb-4">
+                <div className="h-1 bg-brand-burgundy/10 rounded-full mb-4">
                   <div
-                    className="h-full bg-pink-400 rounded-full transition-all duration-2000 ease-out"
+                    className="h-full bg-brand-burgundy rounded-full transition-all duration-2000 ease-out"
                     style={{ width: `${isVisible ? counters.activeUsers : 0}%` }}
                   ></div>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                <div className="text-4xl md:text-5xl font-bold text-brand-dark">
                   {counters.activeUsers}%
                 </div>
               </div>
@@ -170,18 +170,18 @@ export default function StatsSection() {
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <h3 className="text-sm font-semibold text-gray-700">Premium Conversion</h3>
-                  <div className="flex items-center gap-1 text-blue-600 text-sm font-bold">
+                  <div className="flex items-center gap-1 text-brand-dark text-sm font-bold">
                     <i className="ri-arrow-up-circle-fill"></i>
                     <span>+15%</span>
                   </div>
                 </div>
-                <div className="h-1 bg-blue-100 rounded-full mb-4">
+                <div className="h-1 bg-brand-dark/10 rounded-full mb-4">
                   <div
-                    className="h-full bg-blue-600 rounded-full transition-all duration-2000 ease-out"
+                    className="h-full bg-brand-dark rounded-full transition-all duration-2000 ease-out"
                     style={{ width: `${isVisible ? counters.premium : 0}%` }}
                   ></div>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                <div className="text-4xl md:text-5xl font-bold text-brand-dark">
                   {counters.premium}%
                 </div>
               </div>

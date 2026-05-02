@@ -27,14 +27,14 @@ export default function ReadyToStartCta() {
             ))}
 
             <div className="max-w-3xl mx-auto px-4 relative z-20 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6 tracking-tight">
                     Ready to get started?
                 </h2>
                 <p className="text-gray-600 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
                     Join thousands of developers and designers who are already building the future with our top-rated tools and resources.
                 </p>
 
-                <button className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white text-sm font-bold rounded-xl hover:bg-gray-800 transition-all hover:gap-3 shadow-lg hover:shadow-xl">
+                <button className="inline-flex items-center gap-2 px-8 py-4 bg-brand-dark text-white text-sm font-bold rounded-xl hover:bg-brand-orange transition-all hover:gap-3 shadow-lg hover:shadow-xl">
                     Get Started <i className="ri-arrow-right-line"></i>
                 </button>
             </div>

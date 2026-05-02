@@ -79,12 +79,12 @@ const AITools = () => {
     };
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-transparent">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center mb-16 relative">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-orange/10 rounded-full blur-[50px] pointer-events-none"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-brand-orange/10 rounded-full blur-[80px] pointer-events-none"></div>
                     <div className="relative z-10">
-                        <span className="inline-block px-4 py-1 rounded-full bg-white border border-gray-200 text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 shadow-sm">
+                        <span className="inline-block px-4 py-1 rounded-full bg-white border border-gray-100 text-[10px] font-bold text-brand-orange uppercase tracking-[0.2em] mb-4 shadow-sm">
                             Handpicked
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-4">
@@ -101,17 +101,15 @@ const AITools = () => {
                         <div
                             key={index}
                             onMouseMove={handleMouseMove}
-                            className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl border border-gray-100 overflow-hidden"
+                            className="group relative bg-white rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden"
                         >
-                            {/* Spotlight Effect Layer */}
+                            {/* Spotlight Effect Layer - Subtle for light theme */}
                             <div
                                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                                 style={{
-                                    background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(242, 90, 26, 0.08), transparent 40%)`
+                                    background: `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(242, 90, 26, 0.05), transparent 60%)`
                                 }}
                             ></div>
-
-                            {/* Border Glow via pseudo-element or separate div if needed, but simple spotlight is cleaner for now */}
 
                             <div className="relative z-10 flex gap-5">
                                 {/* Logo with sophisticated shadow effect */}
@@ -136,7 +134,7 @@ const AITools = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center text-xs font-bold text-gray-400 group-hover:text-brand-dark transition-colors cursor-pointer w-max">
+                                    <div className="flex items-center text-xs font-bold text-gray-500 group-hover:text-brand-dark transition-colors cursor-pointer w-max">
                                         View Details
                                         <i className="ri-arrow-right-line ml-1 transition-transform group-hover:translate-x-1"></i>
                                     </div>

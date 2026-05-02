@@ -11,7 +11,7 @@ const topCategories = [
         id: 1,
         title: "Trending",
         subtitle: "Most Popular",
-        gradient: "from-transparent via-black/70 to-black",
+        gradient: "from-transparent via-brand-dark/70 to-brand-dark",
         icon: "ri-fire-fill",
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=100"
     },
@@ -19,7 +19,7 @@ const topCategories = [
         id: 2,
         title: "Editor's Choice",
         subtitle: "Highly Rated",
-        gradient: "from-transparent via-black/70 to-black",
+        gradient: "from-brand-orange/40 via-brand-dark/80 to-brand-dark",
         icon: "ri-star-fill",
         active: true,
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=100"
@@ -28,7 +28,7 @@ const topCategories = [
         id: 3,
         title: "New Arrivals",
         subtitle: "Just Added",
-        gradient: "from-transparent via-black/70 to-black",
+        gradient: "from-brand-lime/20 via-brand-dark/80 to-brand-dark",
         icon: "ri-time-fill",
         image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=100"
     },
@@ -59,7 +59,7 @@ export default function TopProductsPage() {
                                         className={`
                       relative rounded-[2.5rem] p-8 flex flex-col justify-end text-white overflow-hidden shadow-2xl transition-all duration-500 hover:z-30 ease-out group
                       ${isCenter
-                                                ? "w-full md:w-[380px] h-[460px] z-20 scale-100 md:scale-110 translate-y-0 shadow-purple-500/20 mt-0"
+                                                ? "w-full md:w-[380px] h-[460px] z-20 scale-100 md:scale-110 translate-y-0 shadow-brand-orange/20 mt-0"
                                                 : "w-full md:w-[320px] h-[380px] z-10 scale-95 md:opacity-90 hover:opacity-100 hover:scale-105 cursor-pointer grayscale-[30%] hover:grayscale-0 md:mt-5"
                                             }
                       ${index === 2 ? 'md:-ml-10' : ''}

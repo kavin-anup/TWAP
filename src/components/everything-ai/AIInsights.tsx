@@ -78,7 +78,7 @@ const AIInsights = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-white relative" ref={sectionRef}>
+        <section className="py-24 bg-transparent relative" ref={sectionRef}>
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
                 {/* Section Header */}
@@ -88,7 +88,7 @@ const AIInsights = () => {
                             <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
                             <span className="text-brand-orange font-bold text-xs tracking-widest uppercase">Latest Intel</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-brand-dark max-w-lg mb-4">
+                        <h2 className="text-4xl md:text-5xl font-bold text-brand-dark max-w-lg mb-4 leading-tight">
                             Catch Up with <span className="underline decoration-brand-lime decoration-4 underline-offset-4">AI Insights</span>
                         </h2>
                         <p className="text-gray-500 max-w-xl text-lg">
@@ -96,7 +96,7 @@ const AIInsights = () => {
                         </p>
                     </div>
 
-                    <button className={`px-8 py-3 rounded-full bg-gray-100 hover:bg-brand-dark hover:text-white transition-all font-bold text-brand-dark flex items-center gap-2 group transform duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <button className={`px-8 py-3 rounded-full bg-white border border-gray-200 hover:bg-brand-dark hover:text-white transition-all font-bold text-brand-dark flex items-center gap-2 group shadow-sm transform duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         View All Articles
                         <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
                     </button>
@@ -108,7 +108,7 @@ const AIInsights = () => {
                     {insights.map((item, index) => (
                         <div
                             key={index}
-                            className={`group relative rounded-[2rem] overflow-hidden bg-gray-100 cursor-pointer ${item.colSpan} ${item.rowSpan} transform transition-all duration-700 ease-out`}
+                            className={`group relative rounded-[2rem] overflow-hidden bg-gray-100 cursor-pointer shadow-sm hover:shadow-2xl ${item.colSpan} ${item.rowSpan} transform transition-all duration-700 ease-out`}
                             style={{
                                 transitionDelay: `${index * 100}ms`,
                                 opacity: isVisible ? 1 : 0,
@@ -123,7 +123,7 @@ const AIInsights = () => {
                                     alt={item.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-90"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-85"></div>
                             </div>
 
                             {/* Content Overlay */}
@@ -141,7 +141,7 @@ const AIInsights = () => {
                                     <h3 className={`font-bold text-white mb-3 hover:text-brand-lime transition-colors leading-tight ${item.large ? 'text-3xl' : 'text-xl'}`}>
                                         {item.title}
                                     </h3>
-                                    <p className="text-gray-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                    <p className="text-gray-200 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
                                         {item.excerpt}
                                     </p>
                                 </div>
